@@ -1,0 +1,22 @@
+{
+	"name": "@cyph/sdk",
+	"version": "1.0.1",
+	"description": "Client side of Cyph API",
+	"main": "sdk.js",
+	"bin": {
+		"cyph-sdk": "cli.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/cyph/sdk.git"
+	},
+	"keywords": [
+		"cyph",
+		"cryptography"
+	],
+	"author": "Cyph, Inc. <sdk@cyph.com> (https://github.com/cyph)",
+	"license": "Ms-RSL",
+	"bugs": {
+		"url": "https://github.com/cyph/sdk/issues"
+	}
+}
