@@ -2,8 +2,8 @@ all:
 	rm -rf dist 2> /dev/null
 	mkdir dist
 
-	# curl -s https://raw.githubusercontent.com/soywiz/haxe-crypto/465718b/src/com/hurlant/crypto/prng/SecureRandom.hx | \
-	# 	tail -n+3 > SecureRandom.hx
+	curl -s https://raw.githubusercontent.com/soywiz/haxe-crypto/d45955a/src/com/hurlant/crypto/prng/SecureRandom.hx | \
+		tail -n+3 > SecureRandom.hx
 
 	haxe Cyph -cpp dist/cpp
 	rm -rf dist/cpp/obj
