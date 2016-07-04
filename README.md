@@ -1,5 +1,4 @@
-The Cyph SDK allows third-party services to initiate new cyph sessions
-from either a browser or a Node.js server.
+The Cyph SDK allows third-party services to initiate new cyph sessions.
 
 The following optional features are supported:
 
@@ -14,6 +13,22 @@ routed through Twilio's low-latency network traversal infrastructure
 
 * `Cyph.options.nativeCrypto`: Switches from our default cross-browser cryptographic primitives to a
 set of FIPS-approved primitives natively implemented by Google Chrome and Mozilla Firefox
+
+The following languages are supported:
+
+* Bash/shell (via npm package)
+
+* C++
+
+* C#
+
+* Java
+
+* JavaScript (Node.js + browser)
+
+* PHP
+
+* Python
 
 Example uses:
 
