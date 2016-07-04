@@ -54,7 +54,19 @@ public class Cyph extends haxe.lang.HxObject
 				//line 32 "/home/ubuntu/sdk/Cyph.hx"
 				{
 					//line 32 "/home/ubuntu/sdk/Cyph.hx"
-					int v = ((int) (haxe.lang.Runtime.toInt(haxe.root.Cyph.addressSpace.__get(((int) (java.lang.Math.floor(( ( ((double) ((( randomBytes.b[i] & 255 ))) ) / 256 ) * haxe.root.Cyph.addressSpace.length ))) )))) );
+					int __temp_stmt2 = 0;
+					//line 32 "/home/ubuntu/sdk/Cyph.hx"
+					{
+						//line 32 "/home/ubuntu/sdk/Cyph.hx"
+						double x = ((double) (((int) (java.lang.Math.floor(( ( (( randomBytes.b[i] & 255 )) / 256.0 ) * haxe.root.Cyph.addressSpace.length ))) )) );
+						//line 32 "/home/ubuntu/sdk/Cyph.hx"
+						__temp_stmt2 = ((int) (x) );
+					}
+					
+					//line 32 "/home/ubuntu/sdk/Cyph.hx"
+					java.lang.Object __temp_stmt1 = haxe.root.Cyph.addressSpace.__get(__temp_stmt2);
+					//line 32 "/home/ubuntu/sdk/Cyph.hx"
+					int v = ((int) (haxe.lang.Runtime.toInt(__temp_stmt1)) );
 					//line 32 "/home/ubuntu/sdk/Cyph.hx"
 					randomBytes.b[i] = ((byte) (v) );
 				}

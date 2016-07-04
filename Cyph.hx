@@ -29,9 +29,9 @@ class Cyph {
 		var randomBytes	= SecureRandom.getSecureRandomBytes(length);
 
 		for (i in 0...length) {
-			randomBytes.set(i, Cyph.addressSpace[Math.floor(
-				randomBytes.get(i) / 256 * Cyph.addressSpace.length
-			)]);
+			randomBytes.set(i, Cyph.addressSpace[Std.int(Math.floor(
+				randomBytes.get(i) / 256.0 * Cyph.addressSpace.length
+			))]);
 		}
 
 		var guid	= randomBytes.toString();

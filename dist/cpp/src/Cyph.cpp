@@ -7,6 +7,9 @@
 #ifndef INCLUDED_SecureRandom
 #include <SecureRandom.h>
 #endif
+#ifndef INCLUDED_Std
+#include <Std.h>
+#endif
 #ifndef INCLUDED_haxe_io_Bytes
 #include <haxe/io/Bytes.h>
 #endif
@@ -68,7 +71,7 @@ Dynamic Cyph_obj::options;
 				HX_STACK_LINE(33)
 				int tmp5 = randomBytes->b->__get(i);		HX_STACK_VAR(tmp5,"tmp5");
 				HX_STACK_LINE(33)
-				Float tmp6 = (Float(tmp5) / Float((int)256));		HX_STACK_VAR(tmp6,"tmp6");
+				Float tmp6 = (Float(tmp5) / Float(((Float)256.0)));		HX_STACK_VAR(tmp6,"tmp6");
 				HX_STACK_LINE(33)
 				int tmp7 = ::Cyph_obj::addressSpace->length;		HX_STACK_VAR(tmp7,"tmp7");
 				HX_STACK_LINE(33)
@@ -76,13 +79,15 @@ Dynamic Cyph_obj::options;
 				HX_STACK_LINE(32)
 				int tmp9 = ::Math_obj::floor(tmp8);		HX_STACK_VAR(tmp9,"tmp9");
 				HX_STACK_LINE(32)
-				Dynamic tmp10 = ::Cyph_obj::addressSpace->__get(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
+				int tmp10 = ::Std_obj::_int(tmp9);		HX_STACK_VAR(tmp10,"tmp10");
 				HX_STACK_LINE(32)
-				int v = tmp10;		HX_STACK_VAR(v,"v");
+				Dynamic tmp11 = ::Cyph_obj::addressSpace->__get(tmp10);		HX_STACK_VAR(tmp11,"tmp11");
 				HX_STACK_LINE(32)
-				int tmp11 = v;		HX_STACK_VAR(tmp11,"tmp11");
+				int v = tmp11;		HX_STACK_VAR(v,"v");
 				HX_STACK_LINE(32)
-				randomBytes->b[i] = tmp11;
+				int tmp12 = v;		HX_STACK_VAR(tmp12,"tmp12");
+				HX_STACK_LINE(32)
+				randomBytes->b[i] = tmp12;
 			}
 		}
 	}

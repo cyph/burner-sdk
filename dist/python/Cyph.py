@@ -62,7 +62,21 @@ class Cyph:
 		while (_g < length):
 			i = _g
 			_g = (_g + 1)
-			v = python_internal_ArrayImpl._get(Cyph.addressSpace, Math.floor(((randomBytes.b[i] / 256) * len(Cyph.addressSpace))))
+			def _hx_local_0():
+				x = Math.floor(((randomBytes.b[i] / 256.0) * len(Cyph.addressSpace)))
+				def _hx_local_3():
+					def _hx_local_2():
+						_hx_local_1 = None
+						try:
+							_hx_local_1 = int(x)
+						except Exception as _hx_e:
+							_hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
+							e = _hx_e1
+							_hx_local_1 = None
+						return _hx_local_1
+					return _hx_local_2()
+				return _hx_local_3()
+			v = python_internal_ArrayImpl._get(Cyph.addressSpace, _hx_local_0())
 			randomBytes.b[i] = (v & 255)
 		guid = randomBytes.toString()
 		randomBytes.fill(0,length,0)

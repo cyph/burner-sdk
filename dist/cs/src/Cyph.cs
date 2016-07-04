@@ -29,31 +29,34 @@ public class Cyph : global::haxe.lang.HxObject {
 	public static object options;
 	
 	public static string generateGuid(int length) {
-		unchecked {
-			global::haxe.io.Bytes randomBytes = global::SecureRandom.getSecureRandomBytes(length);
-			{
-				int _g = 0;
-				while (( _g < length )) {
-					int i = _g++;
+		global::haxe.io.Bytes randomBytes = global::SecureRandom.getSecureRandomBytes(length);
+		{
+			int _g = 0;
+			while (( _g < length )) {
+				int i = _g++;
+				{
+					int __temp_stmt1 = default(int);
 					{
-						int __temp_stmt1 = default(int);
+						double x = default(double);
 						{
-							double x = global::System.Math.Floor(((double) (( ( ((double) (((int) (randomBytes.b[i]) )) ) / 256 ) * global::Cyph.addressSpace.length )) ));
-							__temp_stmt1 = ((int) (x) );
+							double x1 = global::System.Math.Floor(((double) (( ( ((int) (randomBytes.b[i]) ) / 256.0 ) * global::Cyph.addressSpace.length )) ));
+							x = ((double) (((int) (x1) )) );
 						}
 						
-						int v = ((int) (global::haxe.lang.Runtime.toInt(global::Cyph.addressSpace[__temp_stmt1])) );
-						randomBytes.b[i] = ((byte) (v) );
+						__temp_stmt1 = ((int) (x) );
 					}
 					
+					int v = ((int) (global::haxe.lang.Runtime.toInt(global::Cyph.addressSpace[__temp_stmt1])) );
+					randomBytes.b[i] = ((byte) (v) );
 				}
 				
 			}
 			
-			string guid = randomBytes.toString();
-			randomBytes.fill(0, length, 0);
-			return guid;
 		}
+		
+		string guid = randomBytes.toString();
+		randomBytes.fill(0, length, 0);
+		return guid;
 	}
 	
 	

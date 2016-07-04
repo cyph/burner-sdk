@@ -12,7 +12,7 @@ class Cyph {
 			while($_g < $length) {
 				$i = $_g++;
 				{
-					$v = Cyph::$addressSpace[Math::floor(ord($randomBytes->b[$i]) / 256 * Cyph::$addressSpace->length)];
+					$v = Cyph::$addressSpace[Std::int(Math::floor(ord($randomBytes->b[$i]) / 256.0 * Cyph::$addressSpace->length))];
 					$randomBytes->b[$i] = chr($v);
 					unset($v);
 				}

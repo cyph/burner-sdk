@@ -46,6 +46,7 @@
   <file name="src/Cyph.cpp">
    <depend name="include/Cyph.h"/>
    <depend name="include/SecureRandom.h"/>
+   <depend name="include/Std.h"/>
    <depend name="include/haxe/io/Bytes.h"/>
   </file>
   <file name="src/__boot__.cpp">
