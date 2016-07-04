@@ -44,11 +44,14 @@ class HXCPP_CLASS_ATTRIBUTES  FileInput_obj : public ::haxe::io::Input_obj{
 		static void __boot();
 		static Dynamic file_read;
 		static Dynamic &file_read_dyn() { return file_read;}
+		static Dynamic file_read_char;
+		static Dynamic &file_read_char_dyn() { return file_read_char;}
 		static Dynamic file_close;
 		static Dynamic &file_close_dyn() { return file_close;}
 		Dynamic __f;
+		virtual int readByte( );
+
 		virtual int readBytes( ::haxe::io::Bytes s,int p,int l);
-		Dynamic readBytes_dyn();
 
 		virtual Void close( );
 

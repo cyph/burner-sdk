@@ -1,3 +1,6 @@
+import haxe.io.BytesInput;
+import haxe.io.UInt32Array;
+
 @:expose
 class Cyph {
 	private static var addressSpace	= [
@@ -26,16 +29,18 @@ class Cyph {
 	};
 
 	private static function generateGuid (length: Int) : String {
-		var randomBytes	= SecureRandom.getSecureRandomBytes(length);
+		var byteLength		= length * 4;
+		var randomBytes		= SecureRandom.getSecureRandomBytes(byteLength); 
+		var randomNumbers	= UInt32Array.fromBytes(randomBytes);
 
 		for (i in 0...length) {
 			randomBytes.set(i, Cyph.addressSpace[Std.int(Math.floor(
-				randomBytes.get(i) / 256.0 * Cyph.addressSpace.length
+				randomNumbers.get(i) / 4294967296.0 * Cyph.addressSpace.length
 			))]);
 		}
 
-		var guid	= randomBytes.toString();
-		randomBytes.fill(0, length, 0);
+		var guid	= new BytesInput(randomBytes, 0, length).readString(length);
+		randomBytes.fill(0, byteLength, 0);
 		return guid;
 	}
 

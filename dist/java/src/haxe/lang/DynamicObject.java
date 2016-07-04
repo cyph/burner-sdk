@@ -26,33 +26,33 @@ public class DynamicObject extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me15)
+	public static void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me20)
 	{
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me15.__hx_hashes = new java.lang.String[]{};
+		__temp_me20.__hx_hashes = new java.lang.String[]{};
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me15.__hx_dynamics = new java.lang.Object[]{};
+		__temp_me20.__hx_dynamics = new java.lang.Object[]{};
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me15.__hx_hashes_f = new java.lang.String[]{};
+		__temp_me20.__hx_hashes_f = new java.lang.String[]{};
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me15.__hx_dynamics_f = new double[]{};
+		__temp_me20.__hx_dynamics_f = new double[]{};
 	}
 	
 	
-	public static void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me14, java.lang.String[] __hx_hashes, java.lang.Object[] __hx_dynamics, java.lang.String[] __hx_hashes_f, double[] __hx_dynamics_f)
+	public static void __hx_ctor_haxe_lang_DynamicObject(haxe.lang.DynamicObject __temp_me19, java.lang.String[] __hx_hashes, java.lang.Object[] __hx_dynamics, java.lang.String[] __hx_hashes_f, double[] __hx_dynamics_f)
 	{
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_hashes = __hx_hashes;
+		__temp_me19.__hx_hashes = __hx_hashes;
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_dynamics = __hx_dynamics;
+		__temp_me19.__hx_dynamics = __hx_dynamics;
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_hashes_f = __hx_hashes_f;
+		__temp_me19.__hx_hashes_f = __hx_hashes_f;
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_dynamics_f = __hx_dynamics_f;
+		__temp_me19.__hx_dynamics_f = __hx_dynamics_f;
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_length = __hx_hashes.length;
+		__temp_me19.__hx_length = __hx_hashes.length;
 		//line 43 "/usr/share/haxe/std/java/internal/HxObject.hx"
-		__temp_me14.__hx_length_f = __hx_hashes_f.length;
+		__temp_me19.__hx_length_f = __hx_hashes_f.length;
 	}
 	
 	

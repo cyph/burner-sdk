@@ -12,7 +12,7 @@ namespace haxe.io {
 		}
 		
 		
-		public static void __hx_ctor_haxe_io_Eof(global::haxe.io.Eof __temp_me17) {
+		public static void __hx_ctor_haxe_io_Eof(global::haxe.io.Eof __temp_me21) {
 		}
 		
 		

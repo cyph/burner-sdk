@@ -16,8 +16,11 @@
    <depend name="include/sys/io/File.h"/>
    <depend name="include/sys/io/FileInput.h"/>
   </file>
-  <file name="src/haxe/io/Input.cpp">
-   <depend name="include/haxe/io/Input.h"/>
+  <file name="src/haxe/io/_UInt32Array/UInt32Array_Impl_.cpp">
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.h"/>
+   <depend name="include/haxe/io/_UInt32Array/UInt32Array_Impl_.h"/>
   </file>
   <file name="src/haxe/io/Error.cpp">
    <depend name="include/haxe/io/Error.h"/>
@@ -25,9 +28,31 @@
   <file name="src/haxe/io/Eof.cpp">
    <depend name="include/haxe/io/Eof.h"/>
   </file>
+  <file name="src/haxe/io/BytesInput.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesInput.h"/>
+   <depend name="include/haxe/io/Eof.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+  </file>
+  <file name="src/haxe/io/Input.cpp">
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+  </file>
   <file name="src/haxe/io/Bytes.cpp">
    <depend name="include/haxe/io/Bytes.h"/>
    <depend name="include/haxe/io/Error.h"/>
+  </file>
+  <file name="src/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.cpp">
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/Error.h"/>
+   <depend name="include/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.h"/>
+  </file>
+  <file name="src/haxe/io/ArrayBufferViewImpl.cpp">
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
+   <depend name="include/haxe/io/Bytes.h"/>
   </file>
   <file name="src/cpp/Lib.cpp">
    <depend name="include/cpp/Lib.h"/>
@@ -47,7 +72,11 @@
    <depend name="include/Cyph.h"/>
    <depend name="include/SecureRandom.h"/>
    <depend name="include/Std.h"/>
+   <depend name="include/haxe/io/ArrayBufferViewImpl.h"/>
    <depend name="include/haxe/io/Bytes.h"/>
+   <depend name="include/haxe/io/BytesInput.h"/>
+   <depend name="include/haxe/io/Input.h"/>
+   <depend name="include/haxe/io/_UInt32Array/UInt32Array_Impl_.h"/>
   </file>
   <file name="src/__boot__.cpp">
    <depend name="include/haxe/io/Error.h"/>

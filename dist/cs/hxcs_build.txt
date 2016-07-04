@@ -74,7 +74,7 @@ C _Array.ArrayIterator
 C _Array.ArrayIterator
 M Cyph
 C Cyph
-C Cyph_Anon_10__Fun
+C Cyph_Anon_13__Fun
 M System.ArgumentException
 M cs.internal.Function
 C haxe.lang.Function
@@ -191,6 +191,9 @@ M System.Threading.WaitHandle
 M System.UInt32
 M cs.system.threading.ThreadPriority
 M System.Reflection.Emit.PropertyToken
+M haxe.io.Error
+E haxe.io.Error
+C haxe.io.Error
 M System.IDisposable
 M cs.system.UriPartial
 M System.Collections.IHashCodeProvider
@@ -259,6 +262,8 @@ M System.Runtime.InteropServices._MethodBase
 M System.Runtime.Remoting.ObjectHandle
 M cs.system.security.cryptography.x509certificates.X509Certificate
 M haxe.Constraints
+M haxe.io.UInt32Array
+C haxe.io._UInt32Array.UInt32Array_Impl_
 M System.Runtime.Serialization.IDeserializationCallback
 M cs.system.reflection.MemberTypes
 M System.Runtime.InteropServices._PropertyBuilder
@@ -423,6 +428,9 @@ M Microsoft.Win32.SafeHandles.SafeWaitHandle
 M cs.system.reflection.emit.OperandType
 M System.Security.Policy.ApplicationTrust
 M System.Security.Principal.SecurityIdentifier
+M haxe.io.ArrayBufferView
+C haxe.io.ArrayBufferViewImpl
+C haxe.io._ArrayBufferView.ArrayBufferView_Impl_
 M System.Runtime.InteropServices._Activator
 M cs.system.security.accesscontrol.FileSystemRights
 M cs.system.globalization.TextInfo
@@ -462,6 +470,8 @@ M UInt
 M cs.system.globalization.CalendarWeekRule
 M cs.system.reflection.ImageFileMachine
 M System.Reflection.Emit.FieldBuilder
+M haxe.io.BytesInput
+C haxe.io.BytesInput
 M cs.system.runtime.serialization.StreamingContextStates
 M cs.system.reflection.ProcessorArchitecture
 M cs.system.security.accesscontrol.PropagationFlags
@@ -480,6 +490,8 @@ M SecureRandom
 C SecureRandom
 M System.Security.Policy.IConstantMembershipCondition
 M System.AppDomainSetup
+M haxe.io.Input
+C haxe.io.Input
 M System.Int64
 M System.Runtime.Remoting.IChannelInfo
 M System.Security.AccessControl.CommonSecurityDescriptor

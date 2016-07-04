@@ -57,29 +57,45 @@ class Cyph:
 
 	@staticmethod
 	def generateGuid(length):
-		randomBytes = SecureRandom.getSecureRandomBytes(length)
+		byteLength = (length * 4)
+		randomBytes = SecureRandom.getSecureRandomBytes(byteLength)
+		randomNumbers = haxe_io__UInt32Array_UInt32Array_Impl_.fromBytes(randomBytes)
 		_g = 0
 		while (_g < length):
 			i = _g
 			_g = (_g + 1)
 			def _hx_local_0():
-				x = Math.floor(((randomBytes.b[i] / 256.0) * len(Cyph.addressSpace)))
-				def _hx_local_3():
+				def _hx_local_1():
+					a = None
 					def _hx_local_2():
-						_hx_local_1 = None
+						_this = randomNumbers.bytes
+						pos = (((i << 2)) + randomNumbers.byteOffset)
+						v1 = (((_this.b[pos] | ((_this.b[(pos + 1)] << 8))) | ((_this.b[(pos + 2)] << 16))) | ((_this.b[(pos + 3)] << 24)))
+						return ((v1 | -2147483648) if ((((v1 & -2147483648)) != 0)) else v1)
+					a = _hx_local_2()
+					def _hx_local_4():
+						def _hx_local_3():
+							_hx_int = a
+							return ((4294967296.0 + _hx_int) if ((_hx_int < 0)) else (_hx_int + 0.0))
+						return (_hx_local_3() / 4294967296.0)
+					return _hx_local_4()
+				x = Math.floor((_hx_local_1() * len(Cyph.addressSpace)))
+				def _hx_local_7():
+					def _hx_local_6():
+						_hx_local_5 = None
 						try:
-							_hx_local_1 = int(x)
+							_hx_local_5 = int(x)
 						except Exception as _hx_e:
 							_hx_e1 = _hx_e.val if isinstance(_hx_e, _HxException) else _hx_e
 							e = _hx_e1
-							_hx_local_1 = None
-						return _hx_local_1
-					return _hx_local_2()
-				return _hx_local_3()
+							_hx_local_5 = None
+						return _hx_local_5
+					return _hx_local_6()
+				return _hx_local_7()
 			v = python_internal_ArrayImpl._get(Cyph.addressSpace, _hx_local_0())
 			randomBytes.b[i] = (v & 255)
-		guid = randomBytes.toString()
-		randomBytes.fill(0,length,0)
+		guid = haxe_io_BytesInput(randomBytes, 0, length).readString(length)
+		randomBytes.fill(0,byteLength,0)
 		return guid
 
 	@staticmethod
@@ -126,6 +142,40 @@ class Std:
 		return python_Boot.toString1(s,"")
 
 
+class haxe_io_ArrayBufferViewImpl:
+	_hx_class_name = "haxe.io.ArrayBufferViewImpl"
+	_hx_fields = ["bytes", "byteOffset", "byteLength"]
+
+	def __init__(self,_hx_bytes,pos,length):
+		self.bytes = None
+		self.byteOffset = None
+		self.byteLength = None
+		self.bytes = _hx_bytes
+		self.byteOffset = pos
+		self.byteLength = length
+
+
+
+class haxe_io__ArrayBufferView_ArrayBufferView_Impl_:
+	_hx_class_name = "haxe.io._ArrayBufferView.ArrayBufferView_Impl_"
+	_hx_statics = ["fromBytes"]
+	EMULATED = None
+	buffer = None
+	byteOffset = None
+	byteLength = None
+
+	@staticmethod
+	def fromBytes(_hx_bytes,pos = 0,length = None):
+		if (pos is None):
+			pos = 0
+		if (length is None):
+			length = (_hx_bytes.length - pos)
+		if (((pos < 0) or ((length < 0))) or (((pos + length) > _hx_bytes.length))):
+			raise _HxException(haxe_io_Error.OutsideBounds)
+		a = haxe_io_ArrayBufferViewImpl(_hx_bytes, pos, length)
+		return a
+
+
 class haxe_io_Bytes:
 	_hx_class_name = "haxe.io.Bytes"
 	_hx_fields = ["length", "b"]
@@ -161,9 +211,115 @@ class haxe_io_Bytes:
 
 
 
+class haxe_io_Input:
+	_hx_class_name = "haxe.io.Input"
+	_hx_fields = ["bigEndian"]
+	_hx_methods = ["readByte", "readBytes", "set_bigEndian", "readFullBytes", "readString"]
+
+	def readByte(self):
+		raise _HxException("Not implemented")
+
+	def readBytes(self,s,pos,_hx_len):
+		k = _hx_len
+		b = s.b
+		if (((pos < 0) or ((_hx_len < 0))) or (((pos + _hx_len) > s.length))):
+			raise _HxException(haxe_io_Error.OutsideBounds)
+		while (k > 0):
+			b[pos] = self.readByte()
+			pos = (pos + 1)
+			k = (k - 1)
+		return _hx_len
+
+	def set_bigEndian(self,b):
+		self.bigEndian = b
+		return b
+
+	def readFullBytes(self,s,pos,_hx_len):
+		while (_hx_len > 0):
+			k = self.readBytes(s,pos,_hx_len)
+			pos = (pos + k)
+			_hx_len = (_hx_len - k)
+
+	def readString(self,_hx_len):
+		b = haxe_io_Bytes.alloc(_hx_len)
+		self.readFullBytes(b,0,_hx_len)
+		return b.toString()
+
+
+
+class haxe_io_BytesInput(haxe_io_Input):
+	_hx_class_name = "haxe.io.BytesInput"
+	_hx_fields = ["b", "pos", "len", "totlen"]
+	_hx_methods = ["readByte", "readBytes"]
+	_hx_statics = []
+	_hx_super = haxe_io_Input
+
+
+	def __init__(self,b,pos = None,_hx_len = None):
+		self.b = None
+		self.pos = None
+		self.len = None
+		self.totlen = None
+		if (pos is None):
+			pos = 0
+		if (_hx_len is None):
+			_hx_len = (b.length - pos)
+		if (((pos < 0) or ((_hx_len < 0))) or (((pos + _hx_len) > b.length))):
+			raise _HxException(haxe_io_Error.OutsideBounds)
+		self.b = b.b
+		self.pos = pos
+		self.len = _hx_len
+		self.totlen = _hx_len
+		self.set_bigEndian(False)
+
+	def readByte(self):
+		if (self.len == 0):
+			raise _HxException(haxe_io_Eof())
+		_hx_local_0 = self
+		_hx_local_1 = _hx_local_0.len
+		_hx_local_0.len = (_hx_local_1 - 1)
+		_hx_local_1
+		def _hx_local_5():
+			def _hx_local_4():
+				_hx_local_2 = self
+				_hx_local_3 = _hx_local_2.pos
+				_hx_local_2.pos = (_hx_local_3 + 1)
+				return _hx_local_3
+			return self.b[_hx_local_4()]
+		return _hx_local_5()
+
+	def readBytes(self,buf,pos,_hx_len):
+		if (((pos < 0) or ((_hx_len < 0))) or (((pos + _hx_len) > buf.length))):
+			raise _HxException(haxe_io_Error.OutsideBounds)
+		if ((self.len == 0) and ((_hx_len > 0))):
+			raise _HxException(haxe_io_Eof())
+		if (self.len < _hx_len):
+			_hx_len = self.len
+		b1 = self.b
+		b2 = buf.b
+		_g = 0
+		while (_g < _hx_len):
+			i = _g
+			_g = (_g + 1)
+			b2[(pos + i)] = b1[(self.pos + i)]
+		_hx_local_0 = self
+		_hx_local_1 = _hx_local_0.pos
+		_hx_local_0.pos = (_hx_local_1 + _hx_len)
+		_hx_local_0.pos
+		_hx_local_2 = self
+		_hx_local_3 = _hx_local_2.len
+		_hx_local_2.len = (_hx_local_3 - _hx_len)
+		_hx_local_2.len
+		return _hx_len
+
+
+
 class haxe_io_Eof:
 	_hx_class_name = "haxe.io.Eof"
 	_hx_methods = ["toString"]
+
+	def __init__(self):
+		pass
 
 	def toString(self):
 		return "Eof"
@@ -178,6 +334,28 @@ class haxe_io_Error(Enum):
 haxe_io_Error.Blocked = haxe_io_Error("Blocked", 0, list())
 haxe_io_Error.Overflow = haxe_io_Error("Overflow", 1, list())
 haxe_io_Error.OutsideBounds = haxe_io_Error("OutsideBounds", 2, list())
+
+
+class haxe_io__UInt32Array_UInt32Array_Impl_:
+	_hx_class_name = "haxe.io._UInt32Array.UInt32Array_Impl_"
+	_hx_statics = ["fromData", "fromBytes"]
+	length = None
+	view = None
+
+	@staticmethod
+	def fromData(d):
+		return d
+
+	@staticmethod
+	def fromBytes(_hx_bytes,bytePos = 0,length = None):
+		if (bytePos is None):
+			bytePos = 0
+		def _hx_local_1():
+			def _hx_local_0():
+				this1 = haxe_io__ArrayBufferView_ArrayBufferView_Impl_.fromBytes(_hx_bytes,bytePos,(((((_hx_bytes.length - bytePos) >> 2) if ((length is None)) else length)) << 2))
+				return this1
+			return haxe_io__UInt32Array_UInt32Array_Impl_.fromData(_hx_local_0())
+		return _hx_local_1()
 
 
 class python_Boot:

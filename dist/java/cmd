@@ -1,3 +1,4 @@
+src/haxe/io/_UInt32Array/UInt32Array_Impl_.java
 src/haxe/root/Std.java
 src/haxe/lang/IEquatable.java
 src/haxe/lang/Exceptions.java
@@ -5,7 +6,7 @@ src/haxe/lang/HaxeException.java
 src/haxe/root/Array.java
 src/_Array/ArrayIterator.java
 src/haxe/root/Cyph.java
-src/haxe/root/Cyph_Anon_10__Fun.java
+src/haxe/root/Cyph_Anon_13__Fun.java
 src/haxe/lang/IHxObject.java
 src/haxe/lang/HxObject.java
 src/haxe/lang/DynamicObject.java
@@ -22,13 +23,19 @@ src/haxe/io/Eof.java
 src/haxe/root/ValueType.java
 src/haxe/root/ValueType.java
 src/haxe/root/Type.java
+src/haxe/io/Error.java
+src/haxe/io/Error.java
 src/haxe/lang/Function.java
 src/haxe/lang/VarArgsBase.java
 src/haxe/lang/VarArgsFunction.java
 src/haxe/lang/Closure.java
+src/haxe/io/ArrayBufferViewImpl.java
+src/haxe/io/_ArrayBufferView/ArrayBufferView_Impl_.java
 src/haxe/root/Reflect.java
+src/haxe/io/BytesInput.java
 src/haxe/io/Bytes.java
 src/haxe/ds/_Vector/Vector_Impl_.java
 src/haxe/root/SecureRandom.java
 src/haxe/java/Lib.java
+src/haxe/io/Input.java
 src/haxe/root/StringBuf.java

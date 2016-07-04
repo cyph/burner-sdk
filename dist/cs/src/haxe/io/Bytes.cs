@@ -12,9 +12,9 @@ namespace haxe.io {
 		}
 		
 		
-		public static void __hx_ctor_haxe_io_Bytes(global::haxe.io.Bytes __temp_me16, int length, byte[] b) {
-			__temp_me16.length = length;
-			__temp_me16.b = b;
+		public static void __hx_ctor_haxe_io_Bytes(global::haxe.io.Bytes __temp_me18, int length, byte[] b) {
+			__temp_me18.length = length;
+			__temp_me18.b = b;
 		}
 		
 		

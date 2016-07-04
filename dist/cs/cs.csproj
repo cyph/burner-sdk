@@ -69,9 +69,13 @@
 	
     <Compile Include="src\Type.cs"/>
 	
+    <Compile Include="src\haxe\io\Error.cs"/>
+	
     <Compile Include="src\Reflect.cs"/>
 	
     <Compile Include="src\haxe\io\Bytes.cs"/>
+	
+    <Compile Include="src\haxe\io\UInt32Array.cs"/>
 	
     <Compile Include="src\cs\internal\Iterator.cs"/>
 	
@@ -87,7 +91,13 @@
 	
     <Compile Include="src\haxe\lang\FieldLookup.cs"/>
 	
+    <Compile Include="src\haxe\io\ArrayBufferView.cs"/>
+	
+    <Compile Include="src\haxe\io\BytesInput.cs"/>
+	
     <Compile Include="src\SecureRandom.cs"/>
+	
+    <Compile Include="src\haxe\io\Input.cs"/>
 	
   </ItemGroup>
   

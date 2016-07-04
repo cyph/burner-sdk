@@ -6,6 +6,16 @@ class sys_io_FileInput extends haxe_io_Input {
 		$this->__f = $f;
 	}}
 	public $__f;
+	public function readByte() {
+		$r = fread($this->__f, 1);
+		if(feof($this->__f)) {
+			throw new HException(new haxe_io_Eof());
+		}
+		if(($r === false)) {
+			throw new HException(haxe_io_Error::Custom("An error occurred"));
+		}
+		return ord($r);
+	}
 	public function readBytes($s, $p, $l) {
 		if(feof($this->__f)) {
 			throw new HException(new haxe_io_Eof());

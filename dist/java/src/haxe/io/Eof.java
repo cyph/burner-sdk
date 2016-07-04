@@ -12,12 +12,12 @@ public class Eof extends haxe.lang.HxObject
 	
 	public Eof()
 	{
-		//line 27 "/usr/share/haxe/std/haxe/io/Eof.hx"
+		//line 28 "/usr/share/haxe/std/haxe/io/Eof.hx"
 		haxe.io.Eof.__hx_ctor_haxe_io_Eof(this);
 	}
 	
 	
-	public static void __hx_ctor_haxe_io_Eof(haxe.io.Eof __temp_me9)
+	public static void __hx_ctor_haxe_io_Eof(haxe.io.Eof __temp_me13)
 	{
 	}
 	

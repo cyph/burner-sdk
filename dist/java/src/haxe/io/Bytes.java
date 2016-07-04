@@ -17,12 +17,19 @@ public class Bytes extends haxe.lang.HxObject
 	}
 	
 	
-	public static void __hx_ctor_haxe_io_Bytes(haxe.io.Bytes __temp_me8, int length, byte[] b)
+	public static void __hx_ctor_haxe_io_Bytes(haxe.io.Bytes __temp_me10, int length, byte[] b)
 	{
 		//line 34 "/usr/share/haxe/std/haxe/io/Bytes.hx"
-		__temp_me8.length = length;
+		__temp_me10.length = length;
 		//line 35 "/usr/share/haxe/std/haxe/io/Bytes.hx"
-		__temp_me8.b = b;
+		__temp_me10.b = b;
+	}
+	
+	
+	public static haxe.io.Bytes alloc(int length)
+	{
+		//line 471 "/usr/share/haxe/std/haxe/io/Bytes.hx"
+		return new haxe.io.Bytes(length, new byte[length]);
 	}
 	
 	

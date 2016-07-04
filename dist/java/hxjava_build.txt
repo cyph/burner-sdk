@@ -39,6 +39,8 @@ true=1
 end defines_data
 begin modules
 M haxe.Constraints
+M haxe.io.UInt32Array
+C haxe.io._UInt32Array.UInt32Array_Impl_
 M java.Boot
 M java.nio.file.DirectoryStream
 M java.net.URLConnection
@@ -93,7 +95,7 @@ M java.lang.NumberFormatException
 M java.nio.channels.ClosedChannelException
 M haxe.root.Cyph
 C haxe.root.Cyph
-C haxe.root.Cyph_Anon_10__Fun
+C haxe.root.Cyph_Anon_13__Fun
 M java.nio.channels.CompletionHandler
 M java.util.spi.LocaleNameProvider
 M haxe.ds.WeakMap
@@ -221,6 +223,9 @@ M java.nio.channels.AsynchronousFileChannel
 M java.security.InvalidKeyException
 M java.lang.Thread
 M java.lang.AbstractStringBuilder
+M haxe.io.Error
+E haxe.io.Error
+C haxe.io.Error
 M java.nio.IntBuffer
 M java.internal.Function
 C haxe.lang.Function
@@ -228,6 +233,9 @@ C haxe.lang.VarArgsBase
 C haxe.lang.VarArgsFunction
 C haxe.lang.Closure
 M java.security.Key
+M haxe.io.ArrayBufferView
+C haxe.io.ArrayBufferViewImpl
+C haxe.io._ArrayBufferView.ArrayBufferView_Impl_
 M java.lang.InterruptedException
 M java.util.Iterator
 M java.nio.Buffer
@@ -280,6 +288,9 @@ M java.lang.reflect.GenericDeclaration
 M java.types.Int8
 M java.io.Closeable
 M java.security.SecureRandomSpi
+M haxe.root.UInt
+M haxe.io.BytesInput
+C haxe.io.BytesInput
 M java.lang.Byte
 M java.nio.channels.FileLock
 M haxe.io.Bytes
@@ -313,6 +324,8 @@ C haxe.root.SecureRandom
 M haxe.java.Lib
 C haxe.java.Lib
 M java.lang.SecurityException
+M haxe.io.Input
+C haxe.io.Input
 M java.io.Reader
 M java.io.InputStream
 M java.nio.channels.SeekableByteChannel
