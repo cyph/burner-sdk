@@ -1,3 +1,4 @@
+import haxe.Http;
 import haxe.io.BytesInput;
 import haxe.io.UInt32Array;
 
@@ -44,12 +45,79 @@ class Cyph {
 		return guid;
 	}
 
-	public static function initiateSession (?options: Array<Int>) : String {
+	private static function request (
+		url: String,
+		post: Bool,
+		parameters: Array<{k: String, v: String}>,
+		onData: String -> Void,
+		onError: String -> Void
+	) : Void {
+		#if js
+			var isNode: Bool	= untyped __js__('
+				typeof module !== "undefined" && module.exports
+			');
+
+			if (isNode) {
+				untyped __js__('
+					var body;
+					var method	= "GET";
+
+					if (post) {
+						method	= "POST";
+						body	= new require("form-data")();
+
+						parameters.forEach(function (o) {
+							body.append(o.k, o.v);
+						});
+					}
+
+					require("node-fetch")(url, {body: body, method: method}).
+						then(function (response) {
+							var responseText	= response.text().then(function (s) {
+								return s.trim();
+							});
+
+							if (response.ok) {
+								return responseText;
+							}
+							else {
+								return responseText.then(function (s) {
+									throw new Error(s);
+								});
+							}
+						}).
+						then(onData).
+						catch(onError)
+					;
+				');
+				return;
+			}
+		#end
+
+		var http		= new Http(url);
+		http.onData		= onData;
+		http.onError	= onError;
+
+		for (o in parameters) {
+			http.setParameter(o.k, o.v);
+		}
+
+		http.request(post);
+	}
+
+	public static function initiateSession (
+		apiKey: String,
+		?options: Array<Int>,
+		onData: String -> Void,
+		onError: String -> Void
+	) : Void {
 		if (options == null) {
 			options	= [];
 		}
 
-		return 'https://' +
+		var cyphId	= Cyph.generateGuid(7);
+
+		var cyphUrl	= 'https://' +
 			(
 				options.indexOf(Cyph.options.video) > -1 ?
 					Cyph.services.video :
@@ -61,7 +129,19 @@ class Cyph {
 			(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 			(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
 			(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
-			Cyph.generateGuid(26)
+			cyphId +
+			Cyph.generateGuid(19)
 		;
+
+		Cyph.request(
+			'https://api.cyph.com/preauth',
+			true,
+			[
+				{k: 'apiKey', v: apiKey},
+				{k: 'id', v: cyphId}
+			],
+			function (data) { onData(cyphUrl); },
+			onError
+		);
 	}
 }

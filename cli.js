@@ -1,7 +1,18 @@
 #!/usr/bin/env node
 
-const Cyph	= require('./module');
 
-console.log(Cyph.initiateSession(
-	process.argv.slice(2).map(arg => Cyph.options[arg])
-));
+var Cyph	= require('./module');
+
+var apiKey	= process.argv[2];
+
+if (!apiKey) {
+	console.error('An API key is required.');
+	return;
+}
+
+Cyph.initiateSession(
+	apiKey,
+	process.argv.slice(3).map(function (arg) { return Cyph.options[arg]; }),
+	function (cyphUrl) { console.log(cyphUrl); },
+	function (err) { console.error(err); }
+);
