@@ -1,5 +1,5 @@
 all:
-	rm -rf dist 2> /dev/null
+	rm -rf dist SecureRandom.hx 2> /dev/null
 	mkdir dist
 
 	curl -s https://raw.githubusercontent.com/soywiz/haxe-crypto/d45955a/src/com/hurlant/crypto/prng/SecureRandom.hx | \
@@ -22,5 +22,7 @@ all:
 	mkdir dist/python
 	haxe Cyph -python dist/python/Cyph.py
 
+	rm SecureRandom.hx
+
 clean:
-	rm -rf dist
+	rm -rf dist SecureRandom.hx
