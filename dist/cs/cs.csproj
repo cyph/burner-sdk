@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <OutputType>Dll</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace></RootNamespace>
     <AssemblyName>cs</AssemblyName>
@@ -57,7 +57,9 @@
 	
     <Compile Include="src\Std.cs"/>
 	
-    <Compile Include="src\cs\internal\Null.cs"/>
+    <Compile Include="src\haxe\lang\Null.cs"/>
+	
+    <Compile Include="src\haxe\io\Output.cs"/>
 	
     <Compile Include="src\Array.cs"/>
 	
@@ -65,9 +67,17 @@
 	
     <Compile Include="src\cs\internal\Function.cs"/>
 	
+    <Compile Include="src\sys\net\Socket.cs"/>
+	
+    <Compile Include="src\haxe\Http.cs"/>
+	
     <Compile Include="src\haxe\io\Eof.cs"/>
 	
+    <Compile Include="src\List.cs"/>
+	
     <Compile Include="src\Type.cs"/>
+	
+    <Compile Include="src\Lambda.cs"/>
 	
     <Compile Include="src\haxe\io\Error.cs"/>
 	
@@ -75,9 +85,13 @@
 	
     <Compile Include="src\haxe\io\Bytes.cs"/>
 	
+    <Compile Include="src\haxe\Constraints.cs"/>
+	
     <Compile Include="src\haxe\io\UInt32Array.cs"/>
 	
-    <Compile Include="src\cs\internal\Iterator.cs"/>
+    <Compile Include="src\haxe\ds\StringMap.cs"/>
+	
+    <Compile Include="src\haxe\io\BytesOutput.cs"/>
 	
     <Compile Include="src\cs\internal\StringExt.cs"/>
 	
@@ -85,15 +99,27 @@
 	
     <Compile Include="src\cs\Lib.cs"/>
 	
+    <Compile Include="src\cs\io\NativeOutput.cs"/>
+	
+    <Compile Include="src\EReg.cs"/>
+	
     <Compile Include="src\cs\internal\HxObject.cs"/>
 	
     <Compile Include="src\cs\internal\Exceptions.cs"/>
 	
-    <Compile Include="src\haxe\lang\FieldLookup.cs"/>
+    <Compile Include="src\Math.cs"/>
+	
+    <Compile Include="src\cs\internal\FieldLookup.cs"/>
 	
     <Compile Include="src\haxe\io\ArrayBufferView.cs"/>
 	
+    <Compile Include="src\haxe\io\BytesBuffer.cs"/>
+	
+    <Compile Include="src\cs\io\NativeInput.cs"/>
+	
     <Compile Include="src\haxe\io\BytesInput.cs"/>
+	
+    <Compile Include="src\sys\net\Host.cs"/>
 	
     <Compile Include="src\SecureRandom.cs"/>
 	
