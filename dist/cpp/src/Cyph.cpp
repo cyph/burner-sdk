@@ -33,10 +33,10 @@
 #include <haxe/io/_UInt32Array/UInt32Array_Impl_.h>
 #endif
 
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_32_generateGuid,"Cyph","generateGuid",0x4feb9d7e,"Cyph.generateGuid","Cyph.hx",32,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_54_request,"Cyph","request",0x7c76dd2f,"Cyph.request","Cyph.hx",54,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_143_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",143,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_113_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",113,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_33_generateGuid,"Cyph","generateGuid",0x4feb9d7e,"Cyph.generateGuid","Cyph.hx",33,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_55_request,"Cyph","request",0x7c76dd2f,"Cyph.request","Cyph.hx",55,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_145_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",145,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_114_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",114,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_15_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",15,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_7_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",7,0x050f2930)
 static const ::String _hx_array_data_2ca57e4e_8[] = {
@@ -69,122 +69,130 @@ bool Cyph_obj::_hx_isInstanceOf(int inClassId) {
  ::Dynamic Cyph_obj::options;
 
 ::String Cyph_obj::generateGuid(int length){
-            	HX_GC_STACKFRAME(&_hx_pos_4d4623eba6a46339_32_generateGuid)
-HXLINE(  33)		int byteLength = (length * (int)4);
-HXLINE(  34)		 ::haxe::io::Bytes randomBytes = ::SecureRandom_obj::getSecureRandomBytes(byteLength);
-HXLINE(  35)		 ::haxe::io::ArrayBufferViewImpl randomNumbers = ::haxe::io::_UInt32Array::UInt32Array_Impl__obj::fromBytes(randomBytes,null(),null());
-HXLINE(  37)		{
-HXLINE(  37)			int _g1 = (int)0;
-HXDLIN(  37)			int _g = length;
-HXDLIN(  37)			while((_g1 < _g)){
-HXLINE(  37)				_g1 = (_g1 + (int)1);
-HXDLIN(  37)				int i = (_g1 - (int)1);
-HXLINE(  38)				{
-HXLINE(  38)					::Array< ::Dynamic> v = ::Cyph_obj::addressSpace;
-HXLINE(  39)					 ::haxe::io::Bytes _this = randomNumbers->bytes;
-HXDLIN(  39)					int pos = (((int)i << (int)(int)2) + randomNumbers->byteOffset);
-HXDLIN(  39)					int _this1 = _this->b->__get(pos);
-HXDLIN(  39)					::Array< unsigned char > _this2 = _this->b;
-HXDLIN(  39)					int a = ((int)_this1 | (int)((int)_this2->__get((pos + (int)1)) << (int)(int)8));
-HXDLIN(  39)					::Array< unsigned char > _this3 = _this->b;
-HXDLIN(  39)					int a1 = ((int)a | (int)((int)_this3->__get((pos + (int)2)) << (int)(int)16));
-HXDLIN(  39)					::Array< unsigned char > _this4 = _this->b;
-HXDLIN(  39)					int _hx_int = ((int)a1 | (int)((int)_this4->__get((pos + (int)3)) << (int)(int)24));
-HXDLIN(  39)					Float v1;
-HXDLIN(  39)					if ((_hx_int < (int)0)) {
-HXLINE(  39)						v1 = (((Float)4294967296.0) + _hx_int);
+            	HX_GC_STACKFRAME(&_hx_pos_4d4623eba6a46339_33_generateGuid)
+HXLINE(  34)		int byteLength = (length * (int)4);
+HXLINE(  35)		 ::haxe::io::Bytes randomBytes = ::SecureRandom_obj::getSecureRandomBytes(byteLength);
+HXLINE(  36)		 ::haxe::io::ArrayBufferViewImpl randomNumbers = ::haxe::io::_UInt32Array::UInt32Array_Impl__obj::fromBytes(randomBytes,null(),null());
+HXLINE(  38)		{
+HXLINE(  38)			int _g1 = (int)0;
+HXDLIN(  38)			int _g = length;
+HXDLIN(  38)			while((_g1 < _g)){
+HXLINE(  38)				_g1 = (_g1 + (int)1);
+HXDLIN(  38)				int i = (_g1 - (int)1);
+HXLINE(  39)				{
+HXLINE(  39)					::Array< ::Dynamic> v = ::Cyph_obj::addressSpace;
+HXLINE(  40)					 ::haxe::io::Bytes _this = randomNumbers->bytes;
+HXDLIN(  40)					int pos = (((int)i << (int)(int)2) + randomNumbers->byteOffset);
+HXDLIN(  40)					int _this1 = _this->b->__get(pos);
+HXDLIN(  40)					::Array< unsigned char > _this2 = _this->b;
+HXDLIN(  40)					int a = ((int)_this1 | (int)((int)_this2->__get((pos + (int)1)) << (int)(int)8));
+HXDLIN(  40)					::Array< unsigned char > _this3 = _this->b;
+HXDLIN(  40)					int a1 = ((int)a | (int)((int)_this3->__get((pos + (int)2)) << (int)(int)16));
+HXDLIN(  40)					::Array< unsigned char > _this4 = _this->b;
+HXDLIN(  40)					int _hx_int = ((int)a1 | (int)((int)_this4->__get((pos + (int)3)) << (int)(int)24));
+HXDLIN(  40)					Float v1;
+HXDLIN(  40)					if ((_hx_int < (int)0)) {
+HXLINE(  40)						v1 = (((Float)4294967296.0) + _hx_int);
             					}
             					else {
-HXLINE(  39)						v1 = (_hx_int + ((Float)0.0));
+HXLINE(  40)						v1 = (_hx_int + ((Float)0.0));
             					}
-HXLINE(  38)					int v2 = v->__get(::Std_obj::_hx_int(::Math_obj::floor((((Float)v1 / (Float)((Float)4294967296.0)) * ::Cyph_obj::addressSpace->length))));
-HXDLIN(  38)					randomBytes->b[i] = v2;
+HXLINE(  39)					int v2 = v->__get(::Std_obj::_hx_int(::Math_obj::floor((((Float)v1 / (Float)((Float)4294967296.0)) * ::Cyph_obj::addressSpace->length))));
+HXDLIN(  39)					randomBytes->b[i] = v2;
             				}
             			}
             		}
-HXLINE(  43)		::String guid =  ::haxe::io::BytesInput_obj::__alloc( HX_CTX ,randomBytes,(int)0,length)->readString(length);
-HXLINE(  44)		randomBytes->fill((int)0,byteLength,(int)0);
-HXLINE(  45)		return guid;
+HXLINE(  44)		::String guid =  ::haxe::io::BytesInput_obj::__alloc( HX_CTX ,randomBytes,(int)0,length)->readString(length);
+HXLINE(  45)		randomBytes->fill((int)0,byteLength,(int)0);
+HXLINE(  46)		return guid;
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(Cyph_obj,generateGuid,return )
 
 void Cyph_obj::request(::String url,bool post,::Array< ::Dynamic> parameters, ::Dynamic onData, ::Dynamic onError){
-            	HX_GC_STACKFRAME(&_hx_pos_4d4623eba6a46339_54_request)
-HXLINE(  97)		 ::haxe::Http http =  ::haxe::Http_obj::__alloc( HX_CTX ,url);
-HXLINE(  98)		http->onData = onData;
-HXLINE(  99)		http->onError = onError;
-HXLINE( 101)		{
-HXLINE( 101)			int _g = (int)0;
-HXDLIN( 101)			while((_g < parameters->length)){
-HXLINE( 101)				 ::Dynamic o = parameters->__get(_g);
-HXDLIN( 101)				_g = (_g + (int)1);
-HXLINE( 102)				http->setParameter(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
+            	HX_GC_STACKFRAME(&_hx_pos_4d4623eba6a46339_55_request)
+HXLINE(  98)		 ::haxe::Http http =  ::haxe::Http_obj::__alloc( HX_CTX ,url);
+HXLINE(  99)		http->onData = onData;
+HXLINE( 100)		http->onError = onError;
+HXLINE( 102)		{
+HXLINE( 102)			int _g = (int)0;
+HXDLIN( 102)			while((_g < parameters->length)){
+HXLINE( 102)				 ::Dynamic o = parameters->__get(_g);
+HXDLIN( 102)				_g = (_g + (int)1);
+HXLINE( 103)				http->setParameter(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
             			}
             		}
-HXLINE( 105)		http->request(post);
+HXLINE( 106)		http->request(post);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC5(Cyph_obj,request,(void))
 
 void Cyph_obj::initiateSession(::String apiKey,::Array< int > options, ::Dynamic onData, ::Dynamic onError){
-            		HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0,::String,cyphUrl8, ::Dynamic,onData) HXARGC(1)
+            		HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0, ::Dynamic,onData,::String,cyphUrl10) HXARGC(1)
             		void _hx_run(::String data){
-            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_143_initiateSession)
-HXLINE( 143)			onData(cyphUrl8);
+            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_145_initiateSession)
+HXLINE( 145)			onData(cyphUrl10);
             		}
             		HX_END_LOCAL_FUNC1((void))
 
-            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_113_initiateSession)
-HXLINE( 114)		if (hx::IsNull( options )) {
-HXLINE( 115)			options = ::Array_obj< int >::__new(0);
+            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_114_initiateSession)
+HXLINE( 115)		if (hx::IsNull( options )) {
+HXLINE( 116)			options = ::Array_obj< int >::__new(0);
             		}
-HXLINE( 118)		::String cyphId = ::Cyph_obj::generateGuid((int)7);
-HXLINE( 121)		::String cyphUrl;
-HXDLIN( 121)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 121)			cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
+HXLINE( 119)		::String cyphId = ::Cyph_obj::generateGuid((int)7);
+HXLINE( 122)		::String cyphUrl;
+HXDLIN( 122)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 122)			cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
             		}
             		else {
-HXLINE( 124)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 121)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
+HXLINE( 125)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 122)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
             			}
             			else {
-HXLINE( 121)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
+HXLINE( 122)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
             			}
             		}
-HXLINE( 120)		::String cyphUrl1 = ((HX_("https://",cf,b4,ae,3e) + cyphUrl) + HX_("/#",14,29,00,00));
-HXLINE( 129)		::String cyphUrl2;
-HXDLIN( 129)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 129)			cyphUrl2 = HX_("&",26,00,00,00);
+HXLINE( 121)		::String cyphUrl1 = ((HX_("https://",cf,b4,ae,3e) + cyphUrl) + HX_("/#",14,29,00,00));
+HXLINE( 130)		::String cyphUrl2;
+HXDLIN( 130)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("telehealth",46,e6,42,e1),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 130)			cyphUrl2 = HX_("@",40,00,00,00);
             		}
             		else {
-HXLINE( 129)			cyphUrl2 = HX_("",00,00,00,00);
+HXLINE( 130)			cyphUrl2 = HX_("",00,00,00,00);
             		}
-HXLINE( 120)		::String cyphUrl3 = (cyphUrl1 + cyphUrl2);
-HXLINE( 130)		::String cyphUrl4;
-HXDLIN( 130)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 130)			cyphUrl4 = HX_("$",24,00,00,00);
-            		}
-            		else {
-HXLINE( 130)			cyphUrl4 = HX_("",00,00,00,00);
-            		}
-HXLINE( 120)		::String cyphUrl5 = (cyphUrl3 + cyphUrl4);
-HXLINE( 131)		::String cyphUrl6;
-HXDLIN( 131)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 131)			cyphUrl6 = HX_("%",25,00,00,00);
+HXLINE( 121)		::String cyphUrl3 = (cyphUrl1 + cyphUrl2);
+HXLINE( 131)		::String cyphUrl4;
+HXDLIN( 131)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 131)			cyphUrl4 = HX_("&",26,00,00,00);
             		}
             		else {
-HXLINE( 131)			cyphUrl6 = HX_("",00,00,00,00);
+HXLINE( 131)			cyphUrl4 = HX_("",00,00,00,00);
             		}
-HXLINE( 120)		::String cyphUrl7 = ((cyphUrl5 + cyphUrl6) + cyphId);
-HXDLIN( 120)		::String cyphUrl8 = (cyphUrl7 + ::Cyph_obj::generateGuid((int)19));
-HXLINE( 136)		::Cyph_obj::request(HX_("https://api.cyph.com/preauth",60,c4,58,26),true,::Array_obj< ::Dynamic>::__new(2)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE( 121)		::String cyphUrl5 = (cyphUrl3 + cyphUrl4);
+HXLINE( 132)		::String cyphUrl6;
+HXDLIN( 132)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 132)			cyphUrl6 = HX_("$",24,00,00,00);
+            		}
+            		else {
+HXLINE( 132)			cyphUrl6 = HX_("",00,00,00,00);
+            		}
+HXLINE( 121)		::String cyphUrl7 = (cyphUrl5 + cyphUrl6);
+HXLINE( 133)		::String cyphUrl8;
+HXDLIN( 133)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 133)			cyphUrl8 = HX_("%",25,00,00,00);
+            		}
+            		else {
+HXLINE( 133)			cyphUrl8 = HX_("",00,00,00,00);
+            		}
+HXLINE( 121)		::String cyphUrl9 = ((cyphUrl7 + cyphUrl8) + cyphId);
+HXDLIN( 121)		::String cyphUrl10 = (cyphUrl9 + ::Cyph_obj::generateGuid((int)19));
+HXLINE( 138)		::Cyph_obj::request(HX_("https://buu700-master-dot-cyphme.appspot.com/preauth",90,72,1a,6f),true,::Array_obj< ::Dynamic>::__new(2)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("apiKey",25,a1,1f,8b))
             			->setFixed(1,HX_("v",76,00,00,00),apiKey)))->init(1, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("id",db,5b,00,00))
-            			->setFixed(1,HX_("v",76,00,00,00),cyphId))), ::Dynamic(new _hx_Closure_0(cyphUrl8,onData)),onError);
+            			->setFixed(1,HX_("v",76,00,00,00),cyphId))), ::Dynamic(new _hx_Closure_0(onData,cyphUrl10)),onError);
             	}
 
 
@@ -312,18 +320,19 @@ HXLINE(   7)		addressSpace = ::Array_obj< ::String >::fromData( _hx_array_data_2
 {
             	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_18_boot)
 HXLINE(  18)		services =  ::Dynamic(hx::Anon_obj::Create(3)
-            			->setFixed(0,HX_("video",7b,14,fc,36),HX_("cyph.video",3b,d6,17,97))
-            			->setFixed(1,HX_("voice",b2,25,f7,3a),HX_("cyph.audio",96,3a,9c,87))
-            			->setFixed(2,HX_("chat",d8,5e,bf,41),HX_("cyph.im",24,02,be,37)));
+            			->setFixed(0,HX_("video",7b,14,fc,36),HX_("buu700-master.cyph.ws/#video",bf,fc,6c,2c))
+            			->setFixed(1,HX_("voice",b2,25,f7,3a),HX_("buu700-master.cyph.ws/#audio",1a,61,f1,1c))
+            			->setFixed(2,HX_("chat",d8,5e,bf,41),HX_("buu700-master.cyph.ws",28,bb,3c,b4)));
             	}
 {
             	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_24_boot)
-HXLINE(  24)		options =  ::Dynamic(hx::Anon_obj::Create(5)
+HXLINE(  24)		options =  ::Dynamic(hx::Anon_obj::Create(6)
             			->setFixed(0,HX_("disableP2P",46,97,a5,b6),(int)4)
-            			->setFixed(1,HX_("video",7b,14,fc,36),(int)2)
-            			->setFixed(2,HX_("voice",b2,25,f7,3a),(int)1)
-            			->setFixed(3,HX_("nativeCrypto",38,16,6a,3e),(int)5)
-            			->setFixed(4,HX_("modestBranding",1f,fb,4c,44),(int)3));
+            			->setFixed(1,HX_("telehealth",46,e6,42,e1),(int)6)
+            			->setFixed(2,HX_("video",7b,14,fc,36),(int)2)
+            			->setFixed(3,HX_("voice",b2,25,f7,3a),(int)1)
+            			->setFixed(4,HX_("nativeCrypto",38,16,6a,3e),(int)5)
+            			->setFixed(5,HX_("modestBranding",1f,fb,4c,44),(int)3));
             	}
 }
 

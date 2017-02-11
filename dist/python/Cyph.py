@@ -171,10 +171,10 @@ class Cyph:
         if (options is None):
             options = []
         cyphId = Cyph.generateGuid(7)
-        cyphUrl = ((((((("https://" + HxOverrides.stringOrNull(((Cyph.services.video if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.video,None) > -1)) else (Cyph.services.voice if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.voice,None) > -1)) else Cyph.services.chat))))) + "/#") + HxOverrides.stringOrNull((("&" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.modestBranding,None) > -1)) else "")))) + HxOverrides.stringOrNull((("$" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.disableP2P,None) > -1)) else "")))) + HxOverrides.stringOrNull((("%" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.nativeCrypto,None) > -1)) else "")))) + ("null" if cyphId is None else cyphId)) + HxOverrides.stringOrNull(Cyph.generateGuid(19)))
+        cyphUrl = (((((((("https://" + HxOverrides.stringOrNull(((Cyph.services.video if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.video,None) > -1)) else (Cyph.services.voice if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.voice,None) > -1)) else Cyph.services.chat))))) + "/#") + HxOverrides.stringOrNull((("@" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.telehealth,None) > -1)) else "")))) + HxOverrides.stringOrNull((("&" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.modestBranding,None) > -1)) else "")))) + HxOverrides.stringOrNull((("$" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.disableP2P,None) > -1)) else "")))) + HxOverrides.stringOrNull((("%" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.nativeCrypto,None) > -1)) else "")))) + ("null" if cyphId is None else cyphId)) + HxOverrides.stringOrNull(Cyph.generateGuid(19)))
         def _hx_local_0(data):
             onData(cyphUrl)
-        Cyph.request("https://api.cyph.com/preauth",True,[_hx_AnonObject({'k': "apiKey", 'v': apiKey}), _hx_AnonObject({'k': "id", 'v': cyphId})],_hx_local_0,onError)
+        Cyph.request("https://buu700-master-dot-cyphme.appspot.com/preauth",True,[_hx_AnonObject({'k': "apiKey", 'v': apiKey}), _hx_AnonObject({'k': "id", 'v': cyphId})],_hx_local_0,onError)
 
 
 class EReg:
@@ -2052,8 +2052,8 @@ def _hx_init_Cyph_addressSpace():
         return HxString.charCodeAt(s,0)
     return list(map(_hx_local_0,["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]))
 Cyph.addressSpace = _hx_init_Cyph_addressSpace()
-Cyph.services = _hx_AnonObject({'chat': "cyph.im", 'voice': "cyph.audio", 'video': "cyph.video"})
-Cyph.options = _hx_AnonObject({'voice': 1, 'video': 2, 'modestBranding': 3, 'disableP2P': 4, 'nativeCrypto': 5})
+Cyph.services = _hx_AnonObject({'chat': "buu700-master.cyph.ws", 'voice': "buu700-master.cyph.ws/#audio", 'video': "buu700-master.cyph.ws/#video"})
+Cyph.options = _hx_AnonObject({'voice': 1, 'video': 2, 'modestBranding': 3, 'disableP2P': 4, 'nativeCrypto': 5, 'telehealth': 6})
 haxe_Http.PROXY = None
 python_Boot.keywords = set(["and", "del", "from", "not", "with", "as", "elif", "global", "or", "yield", "assert", "else", "if", "pass", "None", "break", "except", "import", "raise", "True", "class", "exec", "in", "return", "False", "continue", "finally", "is", "try", "def", "for", "lambda", "while"])
 python_Boot.prefixLength = len("_hx_")
