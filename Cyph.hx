@@ -16,9 +16,9 @@ class Cyph {
 	});
 
 	private static var services		= {
-		chat: 'cyph.im',
-		voice: 'cyph.audio',
-		video: 'cyph.video'
+		chat: 'buu700-master.cyph.ws',
+		voice: 'buu700-master.cyph.ws/#audio',
+		video: 'buu700-master.cyph.ws/#video'
 	};
 
 	public static var options		= {
@@ -26,7 +26,8 @@ class Cyph {
 		video: 2,
 		modestBranding: 3,
 		disableP2P: 4,
-		nativeCrypto: 5
+		nativeCrypto: 5,
+		telehealth: 6
 	};
 
 	private static function generateGuid (length: Int) : String {
@@ -126,6 +127,7 @@ class Cyph {
 						Cyph.services.chat
 			) +
 			'/#' +
+			(options.indexOf(Cyph.options.telehealth) > -1 ? '@' : '') +
 			(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 			(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
 			(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
@@ -134,7 +136,7 @@ class Cyph {
 		;
 
 		Cyph.request(
-			'https://api.cyph.com/preauth',
+			'https://buu700-master-dot-cyphme.appspot.com/preauth',
 			true,
 			[
 				{k: 'apiKey', v: apiKey},
