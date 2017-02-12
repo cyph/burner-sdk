@@ -17,8 +17,8 @@ class Cyph {
 
 	private static var services		= {
 		chat: 'buu700-master.cyph.ws',
-		voice: 'buu700-master.cyph.ws/#audio',
-		video: 'buu700-master.cyph.ws/#video'
+		voice: 'buu700-master-dot-cyph-audio-dot-cyphme.appspot.com',
+		video: 'buu700-master-dot-cyph-video-dot-cyphme.appspot.com'
 	};
 
 	public static var options		= {
