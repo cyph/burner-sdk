@@ -2052,7 +2052,7 @@ def _hx_init_Cyph_addressSpace():
         return HxString.charCodeAt(s,0)
     return list(map(_hx_local_0,["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]))
 Cyph.addressSpace = _hx_init_Cyph_addressSpace()
-Cyph.services = _hx_AnonObject({'chat': "buu700-master.cyph.ws", 'voice': "buu700-master.cyph.ws/#audio", 'video': "buu700-master.cyph.ws/#video"})
+Cyph.services = _hx_AnonObject({'chat': "buu700-master.cyph.ws", 'voice': "buu700-master-dot-cyph-audio-dot-cyphme.appspot.com", 'video': "buu700-master-dot-cyph-video-dot-cyphme.appspot.com"})
 Cyph.options = _hx_AnonObject({'voice': 1, 'video': 2, 'modestBranding': 3, 'disableP2P': 4, 'nativeCrypto': 5, 'telehealth': 6})
 haxe_Http.PROXY = None
 python_Boot.keywords = set(["and", "del", "from", "not", "with", "as", "elif", "global", "or", "yield", "assert", "else", "if", "pass", "None", "break", "except", "import", "raise", "True", "class", "exec", "in", "return", "False", "continue", "finally", "is", "try", "def", "for", "lambda", "while"])

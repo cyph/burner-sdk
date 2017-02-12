@@ -35,8 +35,8 @@
 
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_33_generateGuid,"Cyph","generateGuid",0x4feb9d7e,"Cyph.generateGuid","Cyph.hx",33,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_55_request,"Cyph","request",0x7c76dd2f,"Cyph.request","Cyph.hx",55,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_145_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",145,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_114_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",114,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_141_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",141,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_110_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",110,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_15_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",15,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_7_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",7,0x050f2930)
 static const ::String _hx_array_data_2ca57e4e_8[] = {
@@ -112,18 +112,18 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(Cyph_obj,generateGuid,return )
 
 void Cyph_obj::request(::String url,bool post,::Array< ::Dynamic> parameters, ::Dynamic onData, ::Dynamic onError){
             	HX_GC_STACKFRAME(&_hx_pos_4d4623eba6a46339_55_request)
-HXLINE(  98)		 ::haxe::Http http =  ::haxe::Http_obj::__alloc( HX_CTX ,url);
-HXLINE(  99)		http->onData = onData;
-HXLINE( 100)		http->onError = onError;
-HXLINE( 102)		{
-HXLINE( 102)			int _g = (int)0;
-HXDLIN( 102)			while((_g < parameters->length)){
-HXLINE( 102)				 ::Dynamic o = parameters->__get(_g);
-HXDLIN( 102)				_g = (_g + (int)1);
-HXLINE( 103)				http->setParameter(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
+HXLINE(  94)		 ::haxe::Http http =  ::haxe::Http_obj::__alloc( HX_CTX ,url);
+HXLINE(  95)		http->onData = onData;
+HXLINE(  96)		http->onError = onError;
+HXLINE(  98)		{
+HXLINE(  98)			int _g = (int)0;
+HXDLIN(  98)			while((_g < parameters->length)){
+HXLINE(  98)				 ::Dynamic o = parameters->__get(_g);
+HXDLIN(  98)				_g = (_g + (int)1);
+HXLINE(  99)				http->setParameter(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
             			}
             		}
-HXLINE( 106)		http->request(post);
+HXLINE( 102)		http->request(post);
             	}
 
 
@@ -132,63 +132,63 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC5(Cyph_obj,request,(void))
 void Cyph_obj::initiateSession(::String apiKey,::Array< int > options, ::Dynamic onData, ::Dynamic onError){
             		HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0, ::Dynamic,onData,::String,cyphUrl10) HXARGC(1)
             		void _hx_run(::String data){
-            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_145_initiateSession)
-HXLINE( 145)			onData(cyphUrl10);
+            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_141_initiateSession)
+HXLINE( 141)			onData(cyphUrl10);
             		}
             		HX_END_LOCAL_FUNC1((void))
 
-            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_114_initiateSession)
-HXLINE( 115)		if (hx::IsNull( options )) {
-HXLINE( 116)			options = ::Array_obj< int >::__new(0);
+            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_110_initiateSession)
+HXLINE( 111)		if (hx::IsNull( options )) {
+HXLINE( 112)			options = ::Array_obj< int >::__new(0);
             		}
-HXLINE( 119)		::String cyphId = ::Cyph_obj::generateGuid((int)7);
-HXLINE( 122)		::String cyphUrl;
-HXDLIN( 122)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 122)			cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
+HXLINE( 115)		::String cyphId = ::Cyph_obj::generateGuid((int)7);
+HXLINE( 118)		::String cyphUrl;
+HXDLIN( 118)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 118)			cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
             		}
             		else {
-HXLINE( 125)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 122)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
+HXLINE( 121)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 118)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
             			}
             			else {
-HXLINE( 122)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
+HXLINE( 118)				cyphUrl = ( (::String)(::Cyph_obj::services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
             			}
             		}
-HXLINE( 121)		::String cyphUrl1 = ((HX_("https://",cf,b4,ae,3e) + cyphUrl) + HX_("/#",14,29,00,00));
-HXLINE( 130)		::String cyphUrl2;
-HXDLIN( 130)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("telehealth",46,e6,42,e1),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 130)			cyphUrl2 = HX_("@",40,00,00,00);
+HXLINE( 117)		::String cyphUrl1 = ((HX_("https://",cf,b4,ae,3e) + cyphUrl) + HX_("/#",14,29,00,00));
+HXLINE( 126)		::String cyphUrl2;
+HXDLIN( 126)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("telehealth",46,e6,42,e1),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 126)			cyphUrl2 = HX_("@",40,00,00,00);
             		}
             		else {
-HXLINE( 130)			cyphUrl2 = HX_("",00,00,00,00);
+HXLINE( 126)			cyphUrl2 = HX_("",00,00,00,00);
             		}
-HXLINE( 121)		::String cyphUrl3 = (cyphUrl1 + cyphUrl2);
-HXLINE( 131)		::String cyphUrl4;
-HXDLIN( 131)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 131)			cyphUrl4 = HX_("&",26,00,00,00);
-            		}
-            		else {
-HXLINE( 131)			cyphUrl4 = HX_("",00,00,00,00);
-            		}
-HXLINE( 121)		::String cyphUrl5 = (cyphUrl3 + cyphUrl4);
-HXLINE( 132)		::String cyphUrl6;
-HXDLIN( 132)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 132)			cyphUrl6 = HX_("$",24,00,00,00);
+HXLINE( 117)		::String cyphUrl3 = (cyphUrl1 + cyphUrl2);
+HXLINE( 127)		::String cyphUrl4;
+HXDLIN( 127)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 127)			cyphUrl4 = HX_("&",26,00,00,00);
             		}
             		else {
-HXLINE( 132)			cyphUrl6 = HX_("",00,00,00,00);
+HXLINE( 127)			cyphUrl4 = HX_("",00,00,00,00);
             		}
-HXLINE( 121)		::String cyphUrl7 = (cyphUrl5 + cyphUrl6);
-HXLINE( 133)		::String cyphUrl8;
-HXDLIN( 133)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 133)			cyphUrl8 = HX_("%",25,00,00,00);
+HXLINE( 117)		::String cyphUrl5 = (cyphUrl3 + cyphUrl4);
+HXLINE( 128)		::String cyphUrl6;
+HXDLIN( 128)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 128)			cyphUrl6 = HX_("$",24,00,00,00);
             		}
             		else {
-HXLINE( 133)			cyphUrl8 = HX_("",00,00,00,00);
+HXLINE( 128)			cyphUrl6 = HX_("",00,00,00,00);
             		}
-HXLINE( 121)		::String cyphUrl9 = ((cyphUrl7 + cyphUrl8) + cyphId);
-HXDLIN( 121)		::String cyphUrl10 = (cyphUrl9 + ::Cyph_obj::generateGuid((int)19));
-HXLINE( 138)		::Cyph_obj::request(HX_("https://buu700-master-dot-cyphme.appspot.com/preauth",90,72,1a,6f),true,::Array_obj< ::Dynamic>::__new(2)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE( 117)		::String cyphUrl7 = (cyphUrl5 + cyphUrl6);
+HXLINE( 129)		::String cyphUrl8;
+HXDLIN( 129)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 129)			cyphUrl8 = HX_("%",25,00,00,00);
+            		}
+            		else {
+HXLINE( 129)			cyphUrl8 = HX_("",00,00,00,00);
+            		}
+HXLINE( 117)		::String cyphUrl9 = ((cyphUrl7 + cyphUrl8) + cyphId);
+HXDLIN( 117)		::String cyphUrl10 = (cyphUrl9 + ::Cyph_obj::generateGuid((int)19));
+HXLINE( 134)		::Cyph_obj::request(HX_("https://buu700-master-dot-cyphme.appspot.com/preauth",90,72,1a,6f),true,::Array_obj< ::Dynamic>::__new(2)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("apiKey",25,a1,1f,8b))
             			->setFixed(1,HX_("v",76,00,00,00),apiKey)))->init(1, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("id",db,5b,00,00))
@@ -320,8 +320,8 @@ HXLINE(   7)		addressSpace = ::Array_obj< ::String >::fromData( _hx_array_data_2
 {
             	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_18_boot)
 HXLINE(  18)		services =  ::Dynamic(hx::Anon_obj::Create(3)
-            			->setFixed(0,HX_("video",7b,14,fc,36),HX_("buu700-master.cyph.ws/#video",bf,fc,6c,2c))
-            			->setFixed(1,HX_("voice",b2,25,f7,3a),HX_("buu700-master.cyph.ws/#audio",1a,61,f1,1c))
+            			->setFixed(0,HX_("video",7b,14,fc,36),HX_("buu700-master-dot-cyph-video-dot-cyphme.appspot.com",8c,bc,9b,89))
+            			->setFixed(1,HX_("voice",b2,25,f7,3a),HX_("buu700-master-dot-cyph-audio-dot-cyphme.appspot.com",91,83,c7,2a))
             			->setFixed(2,HX_("chat",d8,5e,bf,41),HX_("buu700-master.cyph.ws",28,bb,3c,b4)));
             	}
 {

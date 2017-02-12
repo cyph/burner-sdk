@@ -116,7 +116,7 @@ class Cyph {
 	function __toString() { return 'Cyph'; }
 }
 Cyph::$addressSpace = _hx_deref((new _hx_array(array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"))))->map(array(new _hx_lambda(array(), "Cyph_1"), 'execute'));
-Cyph::$services = _hx_anonymous(array("chat" => "buu700-master.cyph.ws", "voice" => "buu700-master.cyph.ws/#audio", "video" => "buu700-master.cyph.ws/#video"));
+Cyph::$services = _hx_anonymous(array("chat" => "buu700-master.cyph.ws", "voice" => "buu700-master-dot-cyph-audio-dot-cyphme.appspot.com", "video" => "buu700-master-dot-cyph-video-dot-cyphme.appspot.com"));
 Cyph::$options = _hx_anonymous(array("voice" => 1, "video" => 2, "modestBranding" => 3, "disableP2P" => 4, "nativeCrypto" => 5, "telehealth" => 6));
 function Cyph_0(&$cyphUrl5, &$onData, $data) {
 	{
