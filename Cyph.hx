@@ -59,36 +59,32 @@ class Cyph {
 
 			if (isNode) {
 				untyped __js__('
-					var body;
-					var method	= "GET";
+					var request	= require("request");
+
+					var callback	= function(err, response, body) {
+						if (err) {
+							onError(err);
+						}
+						else if (response.statusCode !== 200) {
+							onError(body);
+						}
+						else {
+							onData(body);
+						}
+					};
 
 					if (post) {
-						method	= "POST";
-						body	= new require("form-data")();
+						var data	= {form: {}, url: url};
 
 						parameters.forEach(function (o) {
-							body.append(o.k, o.v);
+							data.form[o.k]	= o.v;
 						});
+
+						request.post(data, callback);
 					}
-
-					require("node-fetch")(url, {body: body, method: method}).
-						then(function (response) {
-							var responseText	= response.text().then(function (s) {
-								return s.trim();
-							});
-
-							if (response.ok) {
-								return responseText;
-							}
-							else {
-								return responseText.then(function (s) {
-									throw new Error(s);
-								});
-							}
-						}).
-						then(onData).
-						catch(onError)
-					;
+					else {
+						request(url, callback);
+					}
 				');
 				return;
 			}
