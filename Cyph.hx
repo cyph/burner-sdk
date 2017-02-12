@@ -16,9 +16,9 @@ class Cyph {
 	});
 
 	private static var services		= {
-		chat: 'buu700-master.cyph.ws',
-		voice: 'buu700-master-dot-cyph-audio-dot-cyphme.appspot.com',
-		video: 'buu700-master-dot-cyph-video-dot-cyphme.appspot.com'
+		chat: 'simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#',
+		voice: 'simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#audio/',
+		video: 'simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#video/'
 	};
 
 	public static var options		= {
@@ -122,7 +122,6 @@ class Cyph {
 						Cyph.services.voice :
 						Cyph.services.chat
 			) +
-			'/#' +
 			(options.indexOf(Cyph.options.telehealth) > -1 ? '@' : '') +
 			(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 			(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
@@ -132,7 +131,7 @@ class Cyph {
 		;
 
 		Cyph.request(
-			'https://buu700-master-dot-cyphme.appspot.com/preauth',
+			'https://simple-buu700-master-dot-cyphme.appspot.com/preauth',
 			true,
 			[
 				{k: 'apiKey', v: apiKey},
