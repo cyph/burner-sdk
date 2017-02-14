@@ -4,26 +4,26 @@ package haxe.root;
 import haxe.root.*;
 
 @SuppressWarnings(value={"rawtypes", "unchecked"})
-public class Cyph_initiateSession_140__Fun extends haxe.lang.Function
+public class Cyph_initiateSession_145__Fun extends haxe.lang.Function
 {
-	public Cyph_initiateSession_140__Fun(haxe.lang.Function onData, java.lang.String cyphUrl)
+	public Cyph_initiateSession_145__Fun(haxe.lang.Function onData, java.lang.String cyphUrl)
 	{
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		super(1, 0);
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		this.onData = onData;
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		this.cyphUrl = cyphUrl;
 	}
 	
 	
 	@Override public java.lang.Object __hx_invoke1_o(double __fn_float1, java.lang.Object __fn_dyn1)
 	{
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		java.lang.String data = ( (( __fn_dyn1 == haxe.lang.Runtime.undefined )) ? (haxe.lang.Runtime.toString(__fn_float1)) : (haxe.lang.Runtime.toString(__fn_dyn1)) );
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		this.onData.__hx_invoke1_o(0.0, this.cyphUrl);
-		//line 140 "/cyph/Cyph.hx"
+		//line 145 "/cyph/Cyph.hx"
 		return null;
 	}
 	

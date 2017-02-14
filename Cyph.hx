@@ -2,6 +2,7 @@ import haxe.Http;
 import haxe.io.BytesInput;
 import haxe.io.UInt32Array;
 
+
 @:expose
 class Cyph {
 	private static var addressSpace	= [
@@ -54,38 +55,43 @@ class Cyph {
 		onError: String -> Void
 	) : Void {
 		#if js
-			var isNode: Bool	= untyped __js__('
-				typeof module !== "undefined" && module.exports
-			');
+			var fetch: Dynamic	= untyped __js__('(function () {
+				try {
+					return typeof fetch !== "undefined" ? fetch : require("node-fetch");
+				}
+				catch (_) {}
+			})()');
 
-			if (isNode) {
+			if (fetch) {
 				untyped __js__('
-					var request	= require("request");
-
-					var callback	= function(err, response, body) {
-						if (err) {
-							onError(err);
-						}
-						else if (response.statusCode !== 200) {
-							onError(body);
-						}
-						else {
-							onData(body);
-						}
-					};
+					var data	= {method: "GET"};
 
 					if (post) {
-						var data	= {form: {}, url: url};
-
-						parameters.forEach(function (o) {
-							data.form[o.k]	= o.v;
-						});
-
-						request.post(data, callback);
+						data.method		= "POST";
+						data.headers	= {"Content-Type": "application/x-www-form-urlencoded"};
+						data.body		= parameters.
+							map(function (o) { return o.k + "=" + o.v; }).
+							join("&")
+						;
 					}
-					else {
-						request(url, callback);
-					}
+
+					fetch(url, data).
+						then(function (response) {
+							var responseText	= response.text().then(function (s) {
+								return s.trim();
+							});
+							if (response.ok) {
+								return responseText;
+							}
+							else {
+								return responseText.then(function (s) {
+									throw new Error(s);
+								});
+							}
+						}).
+						then(onData).
+						catch(onError)
+					;
 				');
 				return;
 			}

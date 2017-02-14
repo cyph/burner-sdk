@@ -20,6 +20,6 @@
 		"url": "https://github.com/cyph/sdk/issues"
 	},
 	"dependencies": {
-		"request": "*"
+		"node-fetch": "*"
 	}
 }
