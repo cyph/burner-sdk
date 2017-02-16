@@ -124,7 +124,7 @@ class HxString:
 class Cyph:
     _hx_class_name = "Cyph"
     __slots__ = ()
-    _hx_statics = ["addressSpace", "services", "options", "generateGuid", "request", "initiateSession"]
+    _hx_statics = ["addressSpace", "services", "options", "generateGuid", "request", "generateLink", "initiateSession"]
 
     @staticmethod
     def generateGuid(length):
@@ -155,26 +155,35 @@ class Cyph:
         return guid
 
     @staticmethod
-    def request(url,post,parameters,onData,onError):
+    def request(url,post,headers,parameters,onData,onError):
         http = haxe_Http(url)
         http.onData = onData
         http.onError = onError
         _g = 0
-        while (_g < len(parameters)):
-            o = (parameters[_g] if _g >= 0 and _g < len(parameters) else None)
+        while (_g < len(headers)):
+            o = (headers[_g] if _g >= 0 and _g < len(headers) else None)
             _g = (_g + 1)
-            http.setParameter(o.k,o.v)
+            http.setHeader(o.k,o.v)
+        _g1 = 0
+        while (_g1 < len(parameters)):
+            o1 = (parameters[_g1] if _g1 >= 0 and _g1 < len(parameters) else None)
+            _g1 = (_g1 + 1)
+            http.setParameter(o1.k,o1.v)
         http.request(post)
 
     @staticmethod
-    def initiateSession(apiKey,options = None,onData = None,onError = None):
+    def generateLink(options = None):
         if (options is None):
             options = []
-        cyphId = Cyph.generateGuid(7)
-        cyphUrl = ((((((("https://" + HxOverrides.stringOrNull(((Cyph.services.video if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.video,None) > -1)) else (Cyph.services.voice if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.voice,None) > -1)) else Cyph.services.chat))))) + HxOverrides.stringOrNull((("@" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.telehealth,None) > -1)) else "")))) + HxOverrides.stringOrNull((("&" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.modestBranding,None) > -1)) else "")))) + HxOverrides.stringOrNull((("$" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.disableP2P,None) > -1)) else "")))) + HxOverrides.stringOrNull((("%" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.nativeCrypto,None) > -1)) else "")))) + ("null" if cyphId is None else cyphId)) + HxOverrides.stringOrNull(Cyph.generateGuid(19)))
+        id = Cyph.generateGuid(7)
+        return _hx_AnonObject({'id': id, 'link': ((((((("https://" + HxOverrides.stringOrNull(((Cyph.services.video if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.video,None) > -1)) else (Cyph.services.voice if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.voice,None) > -1)) else Cyph.services.chat))))) + "/#") + HxOverrides.stringOrNull((("&" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.modestBranding,None) > -1)) else "")))) + HxOverrides.stringOrNull((("$" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.disableP2P,None) > -1)) else "")))) + HxOverrides.stringOrNull((("%" if ((python_internal_ArrayImpl.indexOf(options,Cyph.options.nativeCrypto,None) > -1)) else "")))) + ("null" if id is None else id)) + HxOverrides.stringOrNull(Cyph.generateGuid(19)))})
+
+    @staticmethod
+    def initiateSession(apiKey,options = None,onData = None,onError = None):
+        linkData = Cyph.generateLink(options)
         def _hx_local_0(data):
-            onData(cyphUrl)
-        Cyph.request("https://simple-buu700-master-dot-cyphme.appspot.com/preauth",True,[_hx_AnonObject({'k': "apiKey", 'v': apiKey}), _hx_AnonObject({'k': "id", 'v': cyphId})],_hx_local_0,onError)
+            onData(linkData.link)
+        Cyph.request(("https://api.cyph.com/preauth/" + HxOverrides.stringOrNull(linkData.id)),True,[_hx_AnonObject({'k': "Authorization", 'v': apiKey})],[],_hx_local_0,onError)
 
 
 class EReg:
@@ -461,7 +470,7 @@ class haxe_IMap:
 class haxe_Http:
     _hx_class_name = "haxe.Http"
     _hx_fields = ["url", "responseData", "noShutdown", "cnxTimeout", "responseHeaders", "chunk_size", "chunk_buf", "file", "postData", "headers", "params"]
-    _hx_methods = ["setParameter", "request", "customRequest", "readHttpResponse", "readChunk", "onData", "onError", "onStatus"]
+    _hx_methods = ["setHeader", "setParameter", "request", "customRequest", "readHttpResponse", "readChunk", "onData", "onError", "onStatus"]
     _hx_statics = ["PROXY"]
 
     def __init__(self,url):
@@ -476,6 +485,13 @@ class haxe_Http:
         self.headers = List()
         self.params = List()
         self.cnxTimeout = 10
+
+    def setHeader(self,header,value):
+        def _hx_local_0(h):
+            return (h.header != header)
+        self.headers = Lambda.filter(self.headers,_hx_local_0)
+        self.headers.push(_hx_AnonObject({'header': header, 'value': value}))
+        return self
 
     def setParameter(self,param,value):
         def _hx_local_0(p):

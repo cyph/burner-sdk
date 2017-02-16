@@ -57,8 +57,11 @@ class HXCPP_CLASS_ATTRIBUTES Cyph_obj : public hx::Object
 		static ::String generateGuid(int length);
 		static ::Dynamic generateGuid_dyn();
 
-		static void request(::String url,bool post,::Array< ::Dynamic> parameters, ::Dynamic onData, ::Dynamic onError);
+		static void request(::String url,bool post,::Array< ::Dynamic> headers,::Array< ::Dynamic> parameters, ::Dynamic onData, ::Dynamic onError);
 		static ::Dynamic request_dyn();
+
+		static  ::Dynamic generateLink(::Array< int > options);
+		static ::Dynamic generateLink_dyn();
 
 		static void initiateSession(::String apiKey,::Array< int > options, ::Dynamic onData, ::Dynamic onError);
 		static ::Dynamic initiateSession_dyn();

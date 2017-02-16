@@ -9,7 +9,7 @@ src/haxe/root/Array.java
 src/_Array/ArrayIterator.java
 src/haxe/ds/StringMap.java
 src/haxe/root/Cyph.java
-src/haxe/root/Cyph_initiateSession_146__Fun.java
+src/haxe/root/Cyph_initiateSession_159__Fun.java
 src/haxe/root/Cyph_Anon_15__Fun.java
 src/sys/net/Socket.java
 src/haxe/java/io/NativeInput.java
@@ -24,6 +24,7 @@ src/haxe/lang/StringExt.java
 src/haxe/lang/StringRefl.java
 src/haxe/io/BytesOutput.java
 src/haxe/Http.java
+src/haxe/Http_setHeader_103__Fun.java
 src/haxe/Http_setParameter_121__Fun.java
 src/haxe/Http_request_390__Fun.java
 src/haxe/Http_customRequest_527__Fun.java

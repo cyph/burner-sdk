@@ -80,7 +80,7 @@ M cs.system.text.regularexpressions.MatchEvaluator
 M System.MemberAccessException
 M Cyph
 C Cyph
-C Cyph_initiateSession_146__Fun
+C Cyph_initiateSession_159__Fun
 C Cyph_Anon_15__Fun
 M System.ArgumentException
 M cs.internal.Function
@@ -132,6 +132,7 @@ M System.Net.Sockets.LingerOption
 M System.RuntimeMethodHandle
 M haxe.Http
 C haxe.Http
+C haxe.Http_setHeader_103__Fun
 C haxe.Http_setParameter_121__Fun
 C haxe.Http_request_390__Fun
 C haxe.Http_customRequest_527__Fun

@@ -50,6 +50,7 @@ class Cyph {
 	private static function request (
 		url: String,
 		post: Bool,
+		headers: Array<{k: String, v: String}>,
 		parameters: Array<{k: String, v: String}>,
 		onData: String -> Void,
 		onError: String -> Void
@@ -64,12 +65,17 @@ class Cyph {
 
 			if (fetch) {
 				untyped __js__('
-					var data	= {method: "GET"};
+					var data	= {
+						headers: headers.reduce(
+							function (acc, o) { acc[o.k] = o.v; return acc; },
+							{}
+						),
+						method: post ? "POST" : "GET"
+					};
 
-					if (post) {
-						data.method		= "POST";
-						data.headers	= {"Content-Type": "application/x-www-form-urlencoded"};
-						data.body		= parameters.
+					if (post && parameters.length > 0) {
+						data.headers["Content-Type"]	= "application/x-www-form-urlencoded";
+						data.body						= parameters.
 							map(function (o) { return o.k + "=" + o.v; }).
 							join("&")
 						;
@@ -101,11 +107,41 @@ class Cyph {
 		http.onData		= onData;
 		http.onError	= onError;
 
+		for (o in headers) {
+			http.setHeader(o.k, o.v);
+		}
+
 		for (o in parameters) {
 			http.setParameter(o.k, o.v);
 		}
 
 		http.request(post);
+	}
+
+	public static function generateLink (?options: Array<Int>) : {id: String, link: String} {
+		if (options == null) {
+			options	= [];
+		}
+
+		var id	= Cyph.generateGuid(7);
+
+		return {
+			id: id,
+			link: 'https://' +
+				(
+					options.indexOf(Cyph.options.video) > -1 ?
+						Cyph.services.video :
+						options.indexOf(Cyph.options.voice) > -1 ?
+							Cyph.services.voice :
+							Cyph.services.chat
+				) +
+				'/#' +
+				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
+				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
+				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
+				id +
+				Cyph.generateGuid(19)
+		};
 	}
 
 	public static function initiateSession (
@@ -114,36 +150,14 @@ class Cyph {
 		onData: String -> Void,
 		onError: String -> Void
 	) : Void {
-		if (options == null) {
-			options	= [];
-		}
-
-		var cyphId	= Cyph.generateGuid(7);
-
-		var cyphUrl	= 'https://' +
-			(
-				options.indexOf(Cyph.options.video) > -1 ?
-					Cyph.services.video :
-					options.indexOf(Cyph.options.voice) > -1 ?
-						Cyph.services.voice :
-						Cyph.services.chat
-			) +
-			(options.indexOf(Cyph.options.telehealth) > -1 ? '@' : '') +
-			(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
-			(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
-			(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
-			cyphId +
-			Cyph.generateGuid(19)
-		;
+		var linkData	= Cyph.generateLink(options);
 
 		Cyph.request(
-			'https://simple-buu700-master-dot-cyphme.appspot.com/preauth',
+			'https://simple-buu700-master-dot-cyphme.appspot.com/preauth/' + linkData.id,
 			true,
-			[
-				{k: 'apiKey', v: apiKey},
-				{k: 'id', v: cyphId}
-			],
-			function (data) { onData(cyphUrl); },
+			[{k: 'Authorization', v: apiKey}],
+			[],
+			function (data) { onData(linkData.link); },
 			onError
 		);
 	}

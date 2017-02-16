@@ -55,6 +55,13 @@ namespace haxe {
 		
 		public global::List<object> @params;
 		
+		public virtual global::haxe.Http setHeader(string header, string @value) {
+			this.headers = global::Lambda.filter<object>(((object) (this.headers) ), ((global::haxe.lang.Function) (new global::haxe.Http_setHeader_103__Fun(header)) ));
+			this.headers.push(new global::haxe.lang.DynamicObject(new int[]{834174833, 2097154445}, new object[]{@value, header}, new int[]{}, new double[]{}));
+			return this;
+		}
+		
+		
 		public virtual global::haxe.Http setParameter(string param, string @value) {
 			this.@params = global::Lambda.filter<object>(((object) (this.@params) ), ((global::haxe.lang.Function) (new global::haxe.Http_setParameter_121__Fun(param)) ));
 			this.@params.push(new global::haxe.lang.DynamicObject(new int[]{834174833, 1029013645}, new object[]{@value, param}, new int[]{}, new double[]{}));
@@ -916,6 +923,12 @@ namespace haxe {
 					}
 					
 					
+					case 1554480847:
+					{
+						return ((global::haxe.lang.Function) (new global::haxe.lang.Closure(this, "setHeader", 1554480847)) );
+					}
+					
+					
 					case 1836776262:
 					{
 						return this.@params;
@@ -1055,6 +1068,12 @@ namespace haxe {
 					}
 					
 					
+					case 1554480847:
+					{
+						return this.setHeader(global::haxe.lang.Runtime.toString(dynargs[0]), global::haxe.lang.Runtime.toString(dynargs[1]));
+					}
+					
+					
 					default:
 					{
 						return base.__hx_invokeField(field, hash, dynargs);
@@ -1085,6 +1104,28 @@ namespace haxe {
 			base.__hx_getFields(baseArr);
 		}
 		
+		
+	}
+}
+
+
+
+#pragma warning disable 109, 114, 219, 429, 168, 162
+namespace haxe {
+	public class Http_setHeader_103__Fun : global::haxe.lang.Function {
+		
+		public Http_setHeader_103__Fun(string header) : base(1, 0) {
+			this.header = header;
+		}
+		
+		
+		public override object __hx_invoke1_o(double __fn_float1, object __fn_dyn1) {
+			object h = ( (( __fn_dyn1 == global::haxe.lang.Runtime.undefined )) ? (((object) (__fn_float1) )) : (((object) (__fn_dyn1) )) );
+			return  ! (string.Equals(global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(h, "header", 2097154445, true)), this.header)) ;
+		}
+		
+		
+		public string header;
 		
 	}
 }
