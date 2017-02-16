@@ -67,6 +67,17 @@ public class Http extends haxe.lang.HxObject
 	
 	public haxe.root.List<java.lang.Object> params;
 	
+	public haxe.Http setHeader(java.lang.String header, java.lang.String value)
+	{
+		//line 103 "/usr/share/haxe/std/haxe/Http.hx"
+		this.headers = ((haxe.root.List<java.lang.Object>) (haxe.root.Lambda.filter(((java.lang.Object) (this.headers) ), ((haxe.lang.Function) (new haxe.Http_setHeader_103__Fun(header)) ))) );
+		//line 104 "/usr/share/haxe/std/haxe/Http.hx"
+		this.headers.push(new haxe.lang.DynamicObject(new java.lang.String[]{"header", "value"}, new java.lang.Object[]{header, value}, new java.lang.String[]{}, new double[]{}));
+		//line 105 "/usr/share/haxe/std/haxe/Http.hx"
+		return this;
+	}
+	
+	
 	public haxe.Http setParameter(java.lang.String param, java.lang.String value)
 	{
 		//line 121 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1920,15 +1931,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case -995427962:
+				case 260127119:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("params")) 
+					if (field.equals("setHeader")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						return this.params;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setHeader")) );
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1945,6 +1956,22 @@ public class Http extends haxe.lang.HxObject
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						return this.postData;
+					}
+					
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					break;
+				}
+				
+				
+				case -995427962:
+				{
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					if (field.equals("params")) 
+					{
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						__temp_executeDef1 = false;
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						return this.params;
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -2088,15 +2115,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case -801118873:
+				case 260127119:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("setParameter")) 
+					if (field.equals("setHeader")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						return this.setParameter(haxe.lang.Runtime.toString(dynargs.__get(0)), haxe.lang.Runtime.toString(dynargs.__get(1)));
+						return this.setHeader(haxe.lang.Runtime.toString(dynargs.__get(0)), haxe.lang.Runtime.toString(dynargs.__get(1)));
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -2120,15 +2147,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case 1095692943:
+				case -801118873:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("request")) 
+					if (field.equals("setParameter")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						this.request(dynargs.__get(0));
+						return this.setParameter(haxe.lang.Runtime.toString(dynargs.__get(0)), haxe.lang.Runtime.toString(dynargs.__get(1)));
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -2145,6 +2172,22 @@ public class Http extends haxe.lang.HxObject
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						this.customRequest(haxe.lang.Runtime.toBool(dynargs.__get(0)), ((haxe.io.Output) (dynargs.__get(1)) ), ((sys.net.Socket) (dynargs.__get(2)) ), haxe.lang.Runtime.toString(dynargs.__get(3)));
+					}
+					
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					break;
+				}
+				
+				
+				case 1095692943:
+				{
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					if (field.equals("request")) 
+					{
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						__temp_executeDef1 = false;
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						this.request(dynargs.__get(0));
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"

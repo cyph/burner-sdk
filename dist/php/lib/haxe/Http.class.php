@@ -24,8 +24,13 @@ class haxe_Http {
 	public $postData;
 	public $headers;
 	public $params;
+	public function setHeader($header, $value) {
+		$this->headers = Lambda::filter($this->headers, array(new _hx_lambda(array(&$header), "haxe_Http_3"), 'execute'));
+		$this->headers->push(_hx_anonymous(array("header" => $header, "value" => $value)));
+		return $this;
+	}
 	public function setParameter($param, $value) {
-		$this->params = Lambda::filter($this->params, array(new _hx_lambda(array(&$param), "haxe_Http_3"), 'execute'));
+		$this->params = Lambda::filter($this->params, array(new _hx_lambda(array(&$param), "haxe_Http_4"), 'execute'));
 		$this->params->push(_hx_anonymous(array("param" => $param, "value" => $value)));
 		return $this;
 	}
@@ -36,7 +41,7 @@ class haxe_Http {
 		$output = new haxe_io_BytesOutput();
 		$old = (property_exists($this, "onError") ? $this->onError: array($this, "onError"));
 		$err = false;
-		$this->onError = array(new _hx_lambda(array(&$_gthis, &$err, &$me1, &$old, &$output), "haxe_Http_4"), 'execute');
+		$this->onError = array(new _hx_lambda(array(&$_gthis, &$err, &$me1, &$old, &$output), "haxe_Http_5"), 'execute');
 		$this->customRequest($post, $output, null, null);
 		if(!$err) {
 			$me2 = (property_exists($me1, "onData") ? $me1->onData: array($me1, "onData"));
@@ -185,7 +190,7 @@ class haxe_Http {
 			if($tmp1) {
 				$tmp2 = null;
 				if(!$multipart) {
-					$tmp2 = !Lambda::exists($this->headers, array(new _hx_lambda(array(), "haxe_Http_5"), 'execute'));
+					$tmp2 = !Lambda::exists($this->headers, array(new _hx_lambda(array(), "haxe_Http_6"), 'execute'));
 				} else {
 					$tmp2 = true;
 				}
@@ -663,12 +668,17 @@ function haxe_Http_2(&$__hx__this, $status) {
 	{
 	}
 }
-function haxe_Http_3(&$param, $p) {
+function haxe_Http_3(&$header, $h) {
+	{
+		return $h->header !== $header;
+	}
+}
+function haxe_Http_4(&$param, $p) {
 	{
 		return $p->param !== $param;
 	}
 }
-function haxe_Http_4(&$_gthis, &$err, &$me1, &$old, &$output, $e) {
+function haxe_Http_5(&$_gthis, &$err, &$me1, &$old, &$output, $e) {
 	{
 		$me1->responseData = $output->getBytes()->toString();
 		$err = true;
@@ -676,7 +686,7 @@ function haxe_Http_4(&$_gthis, &$err, &$me1, &$old, &$output, $e) {
 		$_gthis->onError($e);
 	}
 }
-function haxe_Http_5($h) {
+function haxe_Http_6($h) {
 	{
 		return $h->header === "Content-Type";
 	}

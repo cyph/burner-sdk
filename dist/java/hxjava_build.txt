@@ -109,7 +109,7 @@ M java.lang.NumberFormatException
 M java.nio.channels.ClosedChannelException
 M haxe.root.Cyph
 C haxe.root.Cyph
-C haxe.root.Cyph_initiateSession_145__Fun
+C haxe.root.Cyph_initiateSession_159__Fun
 C haxe.root.Cyph_Anon_15__Fun
 M java.net.InetSocketAddress
 M java.nio.channels.CompletionHandler
@@ -180,6 +180,7 @@ M javax.net.ServerSocketFactory
 M java.lang.reflect.InvocationTargetException
 M haxe.Http
 C haxe.Http
+C haxe.Http_setHeader_103__Fun
 C haxe.Http_setParameter_121__Fun
 C haxe.Http_request_390__Fun
 C haxe.Http_customRequest_527__Fun

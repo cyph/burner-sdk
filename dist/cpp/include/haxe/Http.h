@@ -66,6 +66,9 @@ class HXCPP_CLASS_ATTRIBUTES Http_obj : public hx::Object
 		::String postData;
 		 ::List headers;
 		 ::List params;
+		 ::haxe::Http setHeader(::String header,::String value);
+		::Dynamic setHeader_dyn();
+
 		 ::haxe::Http setParameter(::String param,::String value);
 		::Dynamic setParameter_dyn();
 

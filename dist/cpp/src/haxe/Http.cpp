@@ -63,100 +63,102 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_41928364ac00b4ad_79_new,"haxe.Http","new",0x57ac51e2,"haxe.Http.new","/usr/share/haxe/std/haxe/Http.hx",79,0x6694f828)
+HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_103_setHeader,"haxe.Http","setHeader",0x34bd0dd1,"haxe.Http.setHeader","/usr/share/haxe/std/haxe/Http.hx",103,0x6694f828)
+HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_102_setHeader,"haxe.Http","setHeader",0x34bd0dd1,"haxe.Http.setHeader","/usr/share/haxe/std/haxe/Http.hx",102,0x6694f828)
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_121_setParameter,"haxe.Http","setParameter",0x96e033e5,"haxe.Http.setParameter","/usr/share/haxe/std/haxe/Http.hx",121,0x6694f828)
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_120_setParameter,"haxe.Http","setParameter",0x96e033e5,"haxe.Http.setParameter","/usr/share/haxe/std/haxe/Http.hx",120,0x6694f828)
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_390_request,"haxe.Http","request",0xb2c949d1,"haxe.Http.request","/usr/share/haxe/std/haxe/Http.hx",390,0x6694f828)
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_189_request,"haxe.Http","request",0xb2c949d1,"haxe.Http.request","/usr/share/haxe/std/haxe/Http.hx",189,0x6694f828)
-static const bool _hx_array_data_eaa978f0_5[] = {
+static const bool _hx_array_data_eaa978f0_7[] = {
 	0,
 };
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_425_customRequest,"haxe.Http","customRequest",0x68e97fa0,"haxe.Http.customRequest","/usr/share/haxe/std/haxe/Http.hx",425,0x6694f828)
-static const ::String _hx_array_data_eaa978f0_12[] = {
+static const ::String _hx_array_data_eaa978f0_14[] = {
 	HX_("--",60,27,00,00),
 };
-static const ::String _hx_array_data_eaa978f0_13[] = {
-	HX_("\r\n",5d,0b,00,00),
-};
-static const ::String _hx_array_data_eaa978f0_14[] = {
-	HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c),
-};
 static const ::String _hx_array_data_eaa978f0_15[] = {
-	HX_("\"",22,00,00,00),
+	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_16[] = {
-	HX_("\r\n",5d,0b,00,00),
+	HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c),
 };
 static const ::String _hx_array_data_eaa978f0_17[] = {
-	HX_("\r\n",5d,0b,00,00),
+	HX_("\"",22,00,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_18[] = {
 	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_19[] = {
-	HX_("--",60,27,00,00),
+	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_20[] = {
 	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_21[] = {
-	HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c),
+	HX_("--",60,27,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_22[] = {
-	HX_("\"; filename=\"",b3,3a,e5,4f),
-};
-static const ::String _hx_array_data_eaa978f0_23[] = {
-	HX_("\"",22,00,00,00),
-};
-static const ::String _hx_array_data_eaa978f0_24[] = {
 	HX_("\r\n",5d,0b,00,00),
 };
+static const ::String _hx_array_data_eaa978f0_23[] = {
+	HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c),
+};
+static const ::String _hx_array_data_eaa978f0_24[] = {
+	HX_("\"; filename=\"",b3,3a,e5,4f),
+};
 static const ::String _hx_array_data_eaa978f0_25[] = {
-	HX_(" ",20,00,00,00),
+	HX_("\"",22,00,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_26[] = {
-	HX_("POST ",c0,87,85,44),
+	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_27[] = {
-	HX_("GET ",ea,ca,22,2f),
+	HX_(" ",20,00,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_28[] = {
-	HX_("http://",52,75,cd,5a),
+	HX_("POST ",c0,87,85,44),
 };
 static const ::String _hx_array_data_eaa978f0_29[] = {
-	HX_(":",3a,00,00,00),
+	HX_("GET ",ea,ca,22,2f),
 };
 static const ::String _hx_array_data_eaa978f0_30[] = {
-	HX_("&",26,00,00,00),
+	HX_("http://",52,75,cd,5a),
 };
 static const ::String _hx_array_data_eaa978f0_31[] = {
+	HX_(":",3a,00,00,00),
+};
+static const ::String _hx_array_data_eaa978f0_32[] = {
+	HX_("&",26,00,00,00),
+};
+static const ::String _hx_array_data_eaa978f0_33[] = {
 	HX_("?",3f,00,00,00),
 };
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_527_customRequest,"haxe.Http","customRequest",0x68e97fa0,"haxe.Http.customRequest","/usr/share/haxe/std/haxe/Http.hx",527,0x6694f828)
-static const ::String _hx_array_data_eaa978f0_33[] = {
+static const ::String _hx_array_data_eaa978f0_35[] = {
 	HX_("Content-Type: ",f4,2b,e6,1d),
 };
-static const ::String _hx_array_data_eaa978f0_34[] = {
+static const ::String _hx_array_data_eaa978f0_36[] = {
 	HX_("multipart/form-data",f0,f8,88,db),
 };
-static const ::String _hx_array_data_eaa978f0_35[] = {
+static const ::String _hx_array_data_eaa978f0_37[] = {
 	HX_("; boundary=",ee,f7,f2,1a),
 };
-static const ::String _hx_array_data_eaa978f0_36[] = {
+static const ::String _hx_array_data_eaa978f0_38[] = {
 	HX_("application/x-www-form-urlencoded",9e,61,91,fa),
 };
-static const ::String _hx_array_data_eaa978f0_37[] = {
-	HX_("\r\n",5d,0b,00,00),
-};
-static const ::String _hx_array_data_eaa978f0_38[] = {
-	HX_("Connection: close\r\n",31,73,d3,b4),
-};
 static const ::String _hx_array_data_eaa978f0_39[] = {
-	HX_(": ",a6,32,00,00),
+	HX_("\r\n",5d,0b,00,00),
 };
 static const ::String _hx_array_data_eaa978f0_40[] = {
-	HX_("\r\n",5d,0b,00,00),
+	HX_("Connection: close\r\n",31,73,d3,b4),
 };
 static const ::String _hx_array_data_eaa978f0_41[] = {
+	HX_(": ",a6,32,00,00),
+};
+static const ::String _hx_array_data_eaa978f0_42[] = {
+	HX_("\r\n",5d,0b,00,00),
+};
+static const ::String _hx_array_data_eaa978f0_43[] = {
 	HX_("\r\n",5d,0b,00,00),
 };
 HX_LOCAL_STACK_FRAME(_hx_pos_41928364ac00b4ad_585_readHttpResponse,"haxe.Http","readHttpResponse",0x6bff43dd,"haxe.Http.readHttpResponse","/usr/share/haxe/std/haxe/Http.hx",585,0x6694f828)
@@ -189,6 +191,25 @@ Dynamic Http_obj::__Create(hx::DynamicArray inArgs)
 bool Http_obj::_hx_isInstanceOf(int inClassId) {
 	return inClassId==(int)0x00000001 || inClassId==(int)0x09372f0e;
 }
+
+ ::haxe::Http Http_obj::setHeader(::String header,::String value){
+            		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_0,::String,header) HXARGC(1)
+            		bool _hx_run( ::Dynamic h){
+            			HX_STACKFRAME(&_hx_pos_41928364ac00b4ad_103_setHeader)
+HXLINE( 103)			return (( (::String)(h->__Field(HX_("header",8d,09,00,fd),hx::paccDynamic)) ) != header);
+            		}
+            		HX_END_LOCAL_FUNC1(return)
+
+            	HX_STACKFRAME(&_hx_pos_41928364ac00b4ad_102_setHeader)
+HXLINE( 103)		this->headers = ::Lambda_obj::filter(this->headers, ::Dynamic(new _hx_Closure_0(header)));
+HXLINE( 104)		this->headers->push( ::Dynamic(hx::Anon_obj::Create(2)
+            			->setFixed(0,HX_("header",8d,09,00,fd),header)
+            			->setFixed(1,HX_("value",71,7f,b8,31),value)));
+HXLINE( 105)		return hx::ObjectPtr<OBJ_>(this);
+            	}
+
+
+HX_DEFINE_DYNAMIC_FUNC2(Http_obj,setHeader,return )
 
  ::haxe::Http Http_obj::setParameter(::String param,::String value){
             		HX_BEGIN_LOCAL_FUNC_S1(hx::LocalFunc,_hx_Closure_0,::String,param) HXARGC(1)
@@ -226,7 +247,7 @@ HXLINE( 190)		 ::haxe::Http me = hx::ObjectPtr<OBJ_>(this);
 HXLINE( 386)		 ::haxe::Http me1 = hx::ObjectPtr<OBJ_>(this);
 HXLINE( 387)		 ::haxe::io::BytesOutput output =  ::haxe::io::BytesOutput_obj::__alloc( HX_CTX );
 HXLINE( 388)		 ::Dynamic old = this->onError;
-HXLINE( 389)		::Array< bool > err = ::Array_obj< bool >::fromData( _hx_array_data_eaa978f0_5,1);
+HXLINE( 389)		::Array< bool > err = ::Array_obj< bool >::fromData( _hx_array_data_eaa978f0_7,1);
 HXLINE( 390)		this->onError =  ::Dynamic(new _hx_Closure_0(err,_gthis,output,me1,old));
 HXLINE( 401)		this->customRequest(post,output,null(),null());
 HXLINE( 402)		if (!(err->__get((int)0))) {
@@ -305,7 +326,7 @@ HXLINE( 465)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 465)							b->flush();
             						}
 HXDLIN( 465)						if (hx::IsNull( b->b )) {
-HXLINE( 465)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_12,1);
+HXLINE( 465)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_14,1);
             						}
             						else {
 HXLINE( 465)							b->b->push(HX_("--",60,27,00,00));
@@ -328,7 +349,7 @@ HXLINE( 467)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 467)							b->flush();
             						}
 HXDLIN( 467)						if (hx::IsNull( b->b )) {
-HXLINE( 467)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_13,1);
+HXLINE( 467)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_15,1);
             						}
             						else {
 HXLINE( 467)							b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -339,7 +360,7 @@ HXLINE( 468)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 468)							b->flush();
             						}
 HXDLIN( 468)						if (hx::IsNull( b->b )) {
-HXLINE( 468)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_14,1);
+HXLINE( 468)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_16,1);
             						}
             						else {
 HXLINE( 468)							b->b->push(HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c));
@@ -363,7 +384,7 @@ HXLINE( 470)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 470)							b->flush();
             						}
 HXDLIN( 470)						if (hx::IsNull( b->b )) {
-HXLINE( 470)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_15,1);
+HXLINE( 470)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_17,1);
             						}
             						else {
 HXLINE( 470)							b->b->push(HX_("\"",22,00,00,00));
@@ -374,7 +395,7 @@ HXLINE( 471)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 471)							b->flush();
             						}
 HXDLIN( 471)						if (hx::IsNull( b->b )) {
-HXLINE( 471)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_16,1);
+HXLINE( 471)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_18,1);
             						}
             						else {
 HXLINE( 471)							b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -385,7 +406,7 @@ HXLINE( 472)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 472)							b->flush();
             						}
 HXDLIN( 472)						if (hx::IsNull( b->b )) {
-HXLINE( 472)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_17,1);
+HXLINE( 472)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_19,1);
             						}
             						else {
 HXLINE( 472)							b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -409,7 +430,7 @@ HXLINE( 474)						if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 474)							b->flush();
             						}
 HXDLIN( 474)						if (hx::IsNull( b->b )) {
-HXLINE( 474)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_18,1);
+HXLINE( 474)							b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_20,1);
             						}
             						else {
 HXLINE( 474)							b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -422,7 +443,7 @@ HXLINE( 476)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 476)					b->flush();
             				}
 HXDLIN( 476)				if (hx::IsNull( b->b )) {
-HXLINE( 476)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_19,1);
+HXLINE( 476)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_21,1);
             				}
             				else {
 HXLINE( 476)					b->b->push(HX_("--",60,27,00,00));
@@ -445,7 +466,7 @@ HXLINE( 478)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 478)					b->flush();
             				}
 HXDLIN( 478)				if (hx::IsNull( b->b )) {
-HXLINE( 478)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_20,1);
+HXLINE( 478)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_22,1);
             				}
             				else {
 HXLINE( 478)					b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -456,7 +477,7 @@ HXLINE( 479)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 479)					b->flush();
             				}
 HXDLIN( 479)				if (hx::IsNull( b->b )) {
-HXLINE( 479)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_21,1);
+HXLINE( 479)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_23,1);
             				}
             				else {
 HXLINE( 479)					b->b->push(HX_("Content-Disposition: form-data; name=\"",bf,46,3a,1c));
@@ -480,7 +501,7 @@ HXLINE( 481)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 481)					b->flush();
             				}
 HXDLIN( 481)				if (hx::IsNull( b->b )) {
-HXLINE( 481)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_22,1);
+HXLINE( 481)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_24,1);
             				}
             				else {
 HXLINE( 481)					b->b->push(HX_("\"; filename=\"",b3,3a,e5,4f));
@@ -504,7 +525,7 @@ HXLINE( 483)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 483)					b->flush();
             				}
 HXDLIN( 483)				if (hx::IsNull( b->b )) {
-HXLINE( 483)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_23,1);
+HXLINE( 483)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_25,1);
             				}
             				else {
 HXLINE( 483)					b->b->push(HX_("\"",22,00,00,00));
@@ -515,7 +536,7 @@ HXLINE( 484)				if (hx::IsNotNull( b->charBuf )) {
 HXLINE( 484)					b->flush();
             				}
 HXDLIN( 484)				if (hx::IsNull( b->b )) {
-HXLINE( 484)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_24,1);
+HXLINE( 484)					b->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_26,1);
             				}
             				else {
 HXLINE( 484)					b->b->push(HX_("\r\n",5d,0b,00,00));
@@ -571,7 +592,7 @@ HXLINE( 500)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 500)					b8->flush();
             				}
 HXDLIN( 500)				if (hx::IsNull( b8->b )) {
-HXLINE( 500)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_25,1);
+HXLINE( 500)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_27,1);
             				}
             				else {
 HXLINE( 500)					b8->b->push(HX_(" ",20,00,00,00));
@@ -584,7 +605,7 @@ HXLINE( 502)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 502)					b8->flush();
             				}
 HXDLIN( 502)				if (hx::IsNull( b8->b )) {
-HXLINE( 502)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_26,1);
+HXLINE( 502)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_28,1);
             				}
             				else {
 HXLINE( 502)					b8->b->push(HX_("POST ",c0,87,85,44));
@@ -595,7 +616,7 @@ HXLINE( 504)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 504)					b8->flush();
             				}
 HXDLIN( 504)				if (hx::IsNull( b8->b )) {
-HXLINE( 504)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_27,1);
+HXLINE( 504)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_29,1);
             				}
             				else {
 HXLINE( 504)					b8->b->push(HX_("GET ",ea,ca,22,2f));
@@ -608,7 +629,7 @@ HXLINE( 507)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 507)					b8->flush();
             				}
 HXDLIN( 507)				if (hx::IsNull( b8->b )) {
-HXLINE( 507)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_28,1);
+HXLINE( 507)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_30,1);
             				}
             				else {
 HXLINE( 507)					b8->b->push(HX_("http://",52,75,cd,5a));
@@ -632,7 +653,7 @@ HXLINE( 510)					if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 510)						b8->flush();
             					}
 HXDLIN( 510)					if (hx::IsNull( b8->b )) {
-HXLINE( 510)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_29,1);
+HXLINE( 510)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_31,1);
             					}
             					else {
 HXLINE( 510)						b8->b->push(HX_(":",3a,00,00,00));
@@ -677,7 +698,7 @@ HXLINE( 518)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 518)					b8->flush();
             				}
 HXDLIN( 518)				if (hx::IsNull( b8->b )) {
-HXLINE( 518)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_30,1);
+HXLINE( 518)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_32,1);
             				}
             				else {
 HXLINE( 518)					b8->b->push(HX_("&",26,00,00,00));
@@ -688,7 +709,7 @@ HXLINE( 520)				if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 520)					b8->flush();
             				}
 HXDLIN( 520)				if (hx::IsNull( b8->b )) {
-HXLINE( 520)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_31,1);
+HXLINE( 520)					b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_33,1);
             				}
             				else {
 HXLINE( 520)					b8->b->push(HX_("?",3f,00,00,00));
@@ -762,7 +783,7 @@ HXLINE( 528)						if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 528)							b8->flush();
             						}
 HXDLIN( 528)						if (hx::IsNull( b8->b )) {
-HXLINE( 528)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_33,1);
+HXLINE( 528)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_35,1);
             						}
             						else {
 HXLINE( 528)							b8->b->push(HX_("Content-Type: ",f4,2b,e6,1d));
@@ -774,7 +795,7 @@ HXLINE( 530)							if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 530)								b8->flush();
             							}
 HXDLIN( 530)							if (hx::IsNull( b8->b )) {
-HXLINE( 530)								b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_34,1);
+HXLINE( 530)								b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_36,1);
             							}
             							else {
 HXLINE( 530)								b8->b->push(HX_("multipart/form-data",f0,f8,88,db));
@@ -785,7 +806,7 @@ HXLINE( 531)							if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 531)								b8->flush();
             							}
 HXDLIN( 531)							if (hx::IsNull( b8->b )) {
-HXLINE( 531)								b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_35,1);
+HXLINE( 531)								b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_37,1);
             							}
             							else {
 HXLINE( 531)								b8->b->push(HX_("; boundary=",ee,f7,f2,1a));
@@ -809,7 +830,7 @@ HXLINE( 534)						if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 534)							b8->flush();
             						}
 HXDLIN( 534)						if (hx::IsNull( b8->b )) {
-HXLINE( 534)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_36,1);
+HXLINE( 534)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_38,1);
             						}
             						else {
 HXLINE( 534)							b8->b->push(HX_("application/x-www-form-urlencoded",9e,61,91,fa));
@@ -820,7 +841,7 @@ HXLINE( 535)						if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 535)							b8->flush();
             						}
 HXDLIN( 535)						if (hx::IsNull( b8->b )) {
-HXLINE( 535)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_37,1);
+HXLINE( 535)							b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_39,1);
             						}
             						else {
 HXLINE( 535)							b8->b->push(HX_("\r\n",5d,0b,00,00));
@@ -860,7 +881,7 @@ HXLINE( 542)			if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 542)				b8->flush();
             			}
 HXDLIN( 542)			if (hx::IsNull( b8->b )) {
-HXLINE( 542)				b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_38,1);
+HXLINE( 542)				b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_40,1);
             			}
             			else {
 HXLINE( 542)				b8->b->push(HX_("Connection: close\r\n",31,73,d3,b4));
@@ -890,7 +911,7 @@ HXLINE( 545)					if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 545)						b8->flush();
             					}
 HXDLIN( 545)					if (hx::IsNull( b8->b )) {
-HXLINE( 545)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_39,1);
+HXLINE( 545)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_41,1);
             					}
             					else {
 HXLINE( 545)						b8->b->push(HX_(": ",a6,32,00,00));
@@ -914,7 +935,7 @@ HXLINE( 547)					if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 547)						b8->flush();
             					}
 HXDLIN( 547)					if (hx::IsNull( b8->b )) {
-HXLINE( 547)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_40,1);
+HXLINE( 547)						b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_42,1);
             					}
             					else {
 HXLINE( 547)						b8->b->push(HX_("\r\n",5d,0b,00,00));
@@ -927,7 +948,7 @@ HXLINE( 549)			if (hx::IsNotNull( b8->charBuf )) {
 HXLINE( 549)				b8->flush();
             			}
 HXDLIN( 549)			if (hx::IsNull( b8->b )) {
-HXLINE( 549)				b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_41,1);
+HXLINE( 549)				b8->b = ::Array_obj< ::String >::fromData( _hx_array_data_eaa978f0_43,1);
             			}
             			else {
 HXLINE( 549)				b8->b->push(HX_("\r\n",5d,0b,00,00));
@@ -996,7 +1017,7 @@ HXLINE( 567)						len = ( ( ::haxe::io::Input)(this->file->__Field(HX_("io",e6,5
             						if (_hx_e.IsClass<  ::haxe::io::Eof >() ){
             							HX_STACK_BEGIN_CATCH
             							 ::haxe::io::Eof e = _hx_e;
-HXLINE( 568)							goto _hx_goto_10;
+HXLINE( 568)							goto _hx_goto_12;
             						}
             						else {
             							HX_STACK_DO_THROW(_hx_e);
@@ -1006,7 +1027,7 @@ HXLINE( 569)					sock->output->writeFullBytes(buf,(int)0,len);
 HXLINE( 570)					 ::Dynamic _hx_tmp4 = this->file;
 HXDLIN( 570)					_hx_tmp4->__SetField(HX_("size",c1,a0,53,4c),(( (int)(_hx_tmp4->__Field(HX_("size",c1,a0,53,4c),hx::paccDynamic)) ) - len),hx::paccDynamic);
             				}
-            				_hx_goto_10:;
+            				_hx_goto_12:;
 HXLINE( 572)				sock->write(HX_("\r\n",5d,0b,00,00));
 HXLINE( 573)				sock->write(HX_("--",60,27,00,00));
 HXLINE( 574)				sock->write(boundary);
@@ -1084,7 +1105,7 @@ HXLINE( 596)			switch((int)(k)){
             				case (int)1: {
 HXLINE( 598)					int c = s->b->__get((int)0);
 HXLINE( 599)					if ((c == (int)10)) {
-HXLINE( 600)						goto _hx_goto_42;
+HXLINE( 600)						goto _hx_goto_44;
             					}
 HXLINE( 601)					if ((c == (int)13)) {
 HXLINE( 602)						k = (int)3;
@@ -1098,7 +1119,7 @@ HXLINE( 604)						k = (int)4;
 HXLINE( 606)					int c1 = s->b->__get((int)1);
 HXLINE( 607)					if ((c1 == (int)10)) {
 HXLINE( 608)						if ((s->b->__get((int)0) == (int)13)) {
-HXLINE( 609)							goto _hx_goto_42;
+HXLINE( 609)							goto _hx_goto_44;
             						}
 HXLINE( 610)						k = (int)4;
             					}
@@ -1123,7 +1144,7 @@ HXLINE( 620)							if ((s->b->__get((int)0) != (int)10)) {
 HXLINE( 621)								k = (int)2;
             							}
             							else {
-HXLINE( 623)								goto _hx_goto_42;
+HXLINE( 623)								goto _hx_goto_44;
             							}
             						}
             					}
@@ -1167,7 +1188,7 @@ HXDLIN( 636)							if (_hx_tmp2) {
 HXLINE( 637)								k = (int)2;
             							}
             							else {
-HXLINE( 639)								goto _hx_goto_42;
+HXLINE( 639)								goto _hx_goto_44;
             							}
             						}
             					}
@@ -1192,7 +1213,7 @@ HXLINE( 644)								k = (int)1;
             				break;
             			}
             		}
-            		_hx_goto_42:;
+            		_hx_goto_44:;
 HXLINE( 651)		::Array< ::String > headers = b->getBytes()->toString().split(HX_("\r\n",5d,0b,00,00));
 HXLINE( 653)		::String response = ( (::String)(headers->shift()) );
 HXLINE( 654)		::Array< ::String > rp = response.split(HX_(" ",20,00,00,00));
@@ -1233,13 +1254,13 @@ HXLINE( 671)					::String _g11 = hname.toLowerCase();
 HXDLIN( 671)					::String _hx_switch_0 = _g11;
             					if (  (_hx_switch_0==HX_("content-length",ba,f0,cc,86)) ){
 HXLINE( 674)						size = ::Std_obj::parseInt(hval);
-HXDLIN( 674)						goto _hx_goto_46;
+HXDLIN( 674)						goto _hx_goto_48;
             					}
             					if (  (_hx_switch_0==HX_("transfer-encoding",75,95,2e,69)) ){
 HXLINE( 676)						chunked = (hval.toLowerCase() == HX_("chunked",0c,54,d3,50));
-HXDLIN( 676)						goto _hx_goto_46;
+HXDLIN( 676)						goto _hx_goto_48;
             					}
-            					_hx_goto_46:;
+            					_hx_goto_48:;
             				}
             			}
             		}
@@ -1255,10 +1276,10 @@ HXLINE( 689)			try {
 HXLINE( 690)				while(true){
 HXLINE( 691)					int len = sock->input->readBytes(buf,(int)0,bufsize);
 HXLINE( 692)					if (!(this->readChunk(chunk_re,api,buf,len))) {
-HXLINE( 693)						goto _hx_goto_47;
+HXLINE( 693)						goto _hx_goto_49;
             					}
             				}
-            				_hx_goto_47:;
+            				_hx_goto_49:;
             			}
             			catch( ::Dynamic _hx_e){
             				if (_hx_e.IsClass<  ::haxe::io::Eof >() ){
@@ -1563,6 +1584,7 @@ hx::Val Http_obj::__Field(const ::String &inName,hx::PropertyAccess inCallProp)
 		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"chunk_buf") ) { return hx::Val( chunk_buf); }
+		if (HX_FIELD_EQ(inName,"setHeader") ) { return hx::Val( setHeader_dyn()); }
 		if (HX_FIELD_EQ(inName,"readChunk") ) { return hx::Val( readChunk_dyn()); }
 		break;
 	case 10:
@@ -1694,6 +1716,7 @@ static ::String Http_obj_sMemberFields[] = {
 	HX_HCSTRING("postData","\xaa","\xb6","\xa2","\x00"),
 	HX_HCSTRING("headers","\x46","\x52","\x08","\x63"),
 	HX_HCSTRING("params","\x46","\xfb","\x7a","\xed"),
+	HX_HCSTRING("setHeader","\xcf","\x7e","\xa7","\x5c"),
 	HX_HCSTRING("setParameter","\xa7","\xf5","\xff","\x6c"),
 	HX_HCSTRING("request","\x4f","\xdf","\x84","\x44"),
 	HX_HCSTRING("customRequest","\x9e","\x47","\x93","\xee"),
