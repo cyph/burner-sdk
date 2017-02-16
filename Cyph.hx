@@ -49,6 +49,7 @@ class Cyph {
 	private static function request (
 		url: String,
 		post: Bool,
+		headers: Array<{k: String, v: String}>,
 		parameters: Array<{k: String, v: String}>,
 		onData: String -> Void,
 		onError: String -> Void
@@ -63,12 +64,17 @@ class Cyph {
 
 			if (fetch) {
 				untyped __js__('
-					var data	= {method: "GET"};
+					var data	= {
+						headers: headers.reduce(
+							function (acc, o) { acc[o.k] = o.v; return acc; },
+							{}
+						),
+						method: post ? "POST" : "GET"
+					};
 
-					if (post) {
-						data.method		= "POST";
-						data.headers	= {"Content-Type": "application/x-www-form-urlencoded"};
-						data.body		= parameters.
+					if (post && parameters.length > 0) {
+						data.headers["Content-Type"]	= "application/x-www-form-urlencoded";
+						data.body						= parameters.
 							map(function (o) { return o.k + "=" + o.v; }).
 							join("&")
 						;
@@ -99,6 +105,10 @@ class Cyph {
 		var http		= new Http(url);
 		http.onData		= onData;
 		http.onError	= onError;
+
+		for (o in headers) {
+			http.setHeader(o.k, o.v);
+		}
 
 		for (o in parameters) {
 			http.setParameter(o.k, o.v);
@@ -142,12 +152,10 @@ class Cyph {
 		var linkData	= Cyph.generateLink(options);
 
 		Cyph.request(
-			'https://api.cyph.com/preauth',
+			'https://api.cyph.com/preauth/' + linkData.id,
 			true,
-			[
-				{k: 'apiKey', v: apiKey},
-				{k: 'id', v: linkData.id}
-			],
+			[{k: 'Authorization', v: apiKey}],
+			[],
 			function (data) { onData(linkData.link); },
 			onError
 		);
