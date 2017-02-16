@@ -107,42 +107,48 @@ class Cyph {
 		http.request(post);
 	}
 
+	public static function generateLink (?options: Array<Int>) : {id: String, link: String} {
+		if (options == null) {
+			options	= [];
+		}
+
+		var id	= Cyph.generateGuid(7);
+
+		return {
+			id: id,
+			link: 'https://' +
+				(
+					options.indexOf(Cyph.options.video) > -1 ?
+						Cyph.services.video :
+						options.indexOf(Cyph.options.voice) > -1 ?
+							Cyph.services.voice :
+							Cyph.services.chat
+				) +
+				'/#' +
+				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
+				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
+				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
+				id +
+				Cyph.generateGuid(19)
+		};
+	}
+
 	public static function initiateSession (
 		apiKey: String,
 		?options: Array<Int>,
 		onData: String -> Void,
 		onError: String -> Void
 	) : Void {
-		if (options == null) {
-			options	= [];
-		}
-
-		var cyphId	= Cyph.generateGuid(7);
-
-		var cyphUrl	= 'https://' +
-			(
-				options.indexOf(Cyph.options.video) > -1 ?
-					Cyph.services.video :
-					options.indexOf(Cyph.options.voice) > -1 ?
-						Cyph.services.voice :
-						Cyph.services.chat
-			) +
-			'/#' +
-			(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
-			(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
-			(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
-			cyphId +
-			Cyph.generateGuid(19)
-		;
+		var linkData	= Cyph.generateLink(options);
 
 		Cyph.request(
 			'https://api.cyph.com/preauth',
 			true,
 			[
 				{k: 'apiKey', v: apiKey},
-				{k: 'id', v: cyphId}
+				{k: 'id', v: linkData.id}
 			],
-			function (data) { onData(cyphUrl); },
+			function (data) { onData(linkData.link); },
 			onError
 		);
 	}
