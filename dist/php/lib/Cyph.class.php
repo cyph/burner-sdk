@@ -117,13 +117,13 @@ class Cyph {
 	}
 	static function initiateSession($apiKey, $options = null, $onData, $onError) {
 		$linkData = Cyph::generateLink($options);
-		Cyph::request("https://api.cyph.com/preauth/" . _hx_string_or_null($linkData->id), true, (new _hx_array(array(_hx_anonymous(array("k" => "Authorization", "v" => $apiKey))))), (new _hx_array(array())), array(new _hx_lambda(array(&$linkData, &$onData), "Cyph_0"), 'execute'), $onError);
+		Cyph::request("https://simple-buu700-master-dot-cyphme.appspot.com/preauth/" . _hx_string_or_null($linkData->id), true, (new _hx_array(array(_hx_anonymous(array("k" => "Authorization", "v" => $apiKey))))), (new _hx_array(array())), array(new _hx_lambda(array(&$linkData, &$onData), "Cyph_0"), 'execute'), $onError);
 	}
 	function __toString() { return 'Cyph'; }
 }
 Cyph::$addressSpace = _hx_deref((new _hx_array(array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"))))->map(array(new _hx_lambda(array(), "Cyph_1"), 'execute'));
-Cyph::$services = _hx_anonymous(array("chat" => "cyph.im", "voice" => "cyph.audio", "video" => "cyph.video"));
-Cyph::$options = _hx_anonymous(array("voice" => 1, "video" => 2, "modestBranding" => 3, "disableP2P" => 4, "nativeCrypto" => 5));
+Cyph::$services = _hx_anonymous(array("chat" => "simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#", "voice" => "simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#audio/", "video" => "simple-buu700-master-dot-cyph-im-dot-cyphme.appspot.com/#video/"));
+Cyph::$options = _hx_anonymous(array("voice" => 1, "video" => 2, "modestBranding" => 3, "disableP2P" => 4, "nativeCrypto" => 5, "telehealth" => 6));
 function Cyph_0(&$linkData, &$onData, $data) {
 	{
 		call_user_func_array($onData, array($linkData->link));

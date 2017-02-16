@@ -183,7 +183,7 @@ class Cyph:
         linkData = Cyph.generateLink(options)
         def _hx_local_0(data):
             onData(linkData.link)
-        Cyph.request(("https://api.cyph.com/preauth/" + HxOverrides.stringOrNull(linkData.id)),True,[_hx_AnonObject({'k': "Authorization", 'v': apiKey})],[],_hx_local_0,onError)
+        Cyph.request(("https://simple-buu700-master-dot-cyphme.appspot.com/preauth/" + HxOverrides.stringOrNull(linkData.id)),True,[_hx_AnonObject({'k': "Authorization", 'v': apiKey})],[],_hx_local_0,onError)
 
 
 class EReg:

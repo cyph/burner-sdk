@@ -87,67 +87,67 @@ public class Cyph extends haxe.lang.HxObject
 	
 	public static void request(java.lang.String url, boolean post, haxe.root.Array<java.lang.Object> headers, haxe.root.Array<java.lang.Object> parameters, haxe.lang.Function onData, haxe.lang.Function onError)
 	{
-		//line 105 "/cyph/Cyph.hx"
-		haxe.Http http = new haxe.Http(haxe.lang.Runtime.toString(url));
 		//line 106 "/cyph/Cyph.hx"
-		http.onData = onData;
+		haxe.Http http = new haxe.Http(haxe.lang.Runtime.toString(url));
 		//line 107 "/cyph/Cyph.hx"
+		http.onData = onData;
+		//line 108 "/cyph/Cyph.hx"
 		http.onError = onError;
-		//line 109 "/cyph/Cyph.hx"
+		//line 110 "/cyph/Cyph.hx"
 		{
-			//line 109 "/cyph/Cyph.hx"
+			//line 110 "/cyph/Cyph.hx"
 			int _g = 0;
-			//line 109 "/cyph/Cyph.hx"
+			//line 110 "/cyph/Cyph.hx"
 			while (( _g < headers.length ))
 			{
-				//line 109 "/cyph/Cyph.hx"
-				java.lang.Object o = headers.__get(_g);
-				//line 109 "/cyph/Cyph.hx"
-				 ++ _g;
 				//line 110 "/cyph/Cyph.hx"
+				java.lang.Object o = headers.__get(_g);
+				//line 110 "/cyph/Cyph.hx"
+				 ++ _g;
+				//line 111 "/cyph/Cyph.hx"
 				http.setHeader(haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(o, "k", true)), haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(o, "v", true)));
 			}
 			
 		}
 		
-		//line 113 "/cyph/Cyph.hx"
+		//line 114 "/cyph/Cyph.hx"
 		{
-			//line 113 "/cyph/Cyph.hx"
+			//line 114 "/cyph/Cyph.hx"
 			int _g1 = 0;
-			//line 113 "/cyph/Cyph.hx"
+			//line 114 "/cyph/Cyph.hx"
 			while (( _g1 < parameters.length ))
 			{
-				//line 113 "/cyph/Cyph.hx"
-				java.lang.Object o1 = parameters.__get(_g1);
-				//line 113 "/cyph/Cyph.hx"
-				 ++ _g1;
 				//line 114 "/cyph/Cyph.hx"
+				java.lang.Object o1 = parameters.__get(_g1);
+				//line 114 "/cyph/Cyph.hx"
+				 ++ _g1;
+				//line 115 "/cyph/Cyph.hx"
 				http.setParameter(haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(o1, "k", true)), haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(o1, "v", true)));
 			}
 			
 		}
 		
-		//line 117 "/cyph/Cyph.hx"
+		//line 118 "/cyph/Cyph.hx"
 		http.request(post);
 	}
 	
 	
 	public static java.lang.Object generateLink(haxe.root.Array<java.lang.Object> options)
 	{
-		//line 121 "/cyph/Cyph.hx"
+		//line 122 "/cyph/Cyph.hx"
 		if (( options == null )) 
 		{
-			//line 122 "/cyph/Cyph.hx"
+			//line 123 "/cyph/Cyph.hx"
 			options = new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{});
 		}
 		
-		//line 125 "/cyph/Cyph.hx"
+		//line 126 "/cyph/Cyph.hx"
 		java.lang.String id = haxe.root.Cyph.generateGuid(7);
-		//line 127 "/cyph/Cyph.hx"
+		//line 128 "/cyph/Cyph.hx"
 		{
-			//line 129 "/cyph/Cyph.hx"
+			//line 130 "/cyph/Cyph.hx"
 			java.lang.String __temp_odecl1 = ( ( ( ( ( ( ( "https://" + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "video", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "video", true))) : (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "voice", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "voice", true))) : (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "chat", true))) )) )) ) + "/#" ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "modestBranding", true)) ), null) > -1 )) ? ("&") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "disableP2P", true)) ), null) > -1 )) ? ("$") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "nativeCrypto", true)) ), null) > -1 )) ? ("%") : ("") )) ) + id ) + haxe.root.Cyph.generateGuid(19) );
-			//line 127 "/cyph/Cyph.hx"
+			//line 128 "/cyph/Cyph.hx"
 			return new haxe.lang.DynamicObject(new java.lang.String[]{"id", "link"}, new java.lang.Object[]{id, __temp_odecl1}, new java.lang.String[]{}, new double[]{});
 		}
 		
@@ -156,10 +156,10 @@ public class Cyph extends haxe.lang.HxObject
 	
 	public static void initiateSession(java.lang.String apiKey, haxe.root.Array<java.lang.Object> options, haxe.lang.Function onData, haxe.lang.Function onError)
 	{
-		//line 152 "/cyph/Cyph.hx"
+		//line 153 "/cyph/Cyph.hx"
 		java.lang.Object linkData = haxe.root.Cyph.generateLink(options);
-		//line 154 "/cyph/Cyph.hx"
-		haxe.root.Cyph.request(( "https://api.cyph.com/preauth/" + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_159__Fun(onData, linkData), onError);
+		//line 155 "/cyph/Cyph.hx"
+		haxe.root.Cyph.request(( "https://simple-buu700-master-dot-cyphme.appspot.com/preauth/" + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_160__Fun(onData, linkData), onError);
 	}
 	
 	
