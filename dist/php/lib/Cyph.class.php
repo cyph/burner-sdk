@@ -113,7 +113,7 @@ class Cyph {
 		} else {
 			$tmp3 = "";
 		}
-		return _hx_anonymous(array("id" => $id, "link" => "https://" . _hx_string_or_null($tmp) . "/#" . _hx_string_or_null($tmp1) . _hx_string_or_null($tmp2) . _hx_string_or_null($tmp3) . _hx_string_or_null($id) . _hx_string_or_null(Cyph::generateGuid(19))));
+		return _hx_anonymous(array("id" => $id, "link" => "https://" . _hx_string_or_null($tmp) . _hx_string_or_null($tmp1) . _hx_string_or_null($tmp2) . _hx_string_or_null($tmp3) . _hx_string_or_null($id) . _hx_string_or_null(Cyph::generateGuid(19))));
 	}
 	static function initiateSession($apiKey, $options = null, $onData, $onError) {
 		$linkData = Cyph::generateLink($options);

@@ -146,7 +146,7 @@ public class Cyph extends haxe.lang.HxObject
 		//line 128 "/cyph/Cyph.hx"
 		{
 			//line 130 "/cyph/Cyph.hx"
-			java.lang.String __temp_odecl1 = ( ( ( ( ( ( ( "https://" + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "video", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "video", true))) : (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "voice", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "voice", true))) : (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "chat", true))) )) )) ) + "/#" ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "modestBranding", true)) ), null) > -1 )) ? ("&") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "disableP2P", true)) ), null) > -1 )) ? ("$") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "nativeCrypto", true)) ), null) > -1 )) ? ("%") : ("") )) ) + id ) + haxe.root.Cyph.generateGuid(19) );
+			java.lang.String __temp_odecl1 = ( ( ( ( ( ( "https://" + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "video", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "video", true))) : (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "voice", true)) ), null) > -1 )) ? (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "voice", true))) : (haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "chat", true))) )) )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "modestBranding", true)) ), null) > -1 )) ? ("&") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "disableP2P", true)) ), null) > -1 )) ? ("$") : ("") )) ) + (( (( options.indexOf(((int) (haxe.lang.Runtime.getField_f(haxe.root.Cyph.options, "nativeCrypto", true)) ), null) > -1 )) ? ("%") : ("") )) ) + id ) + haxe.root.Cyph.generateGuid(19) );
 			//line 128 "/cyph/Cyph.hx"
 			return new haxe.lang.DynamicObject(new java.lang.String[]{"id", "link"}, new java.lang.Object[]{id, __temp_odecl1}, new java.lang.String[]{}, new double[]{});
 		}
@@ -156,10 +156,10 @@ public class Cyph extends haxe.lang.HxObject
 	
 	public static void initiateSession(java.lang.String apiKey, haxe.root.Array<java.lang.Object> options, haxe.lang.Function onData, haxe.lang.Function onError)
 	{
-		//line 153 "/cyph/Cyph.hx"
+		//line 152 "/cyph/Cyph.hx"
 		java.lang.Object linkData = haxe.root.Cyph.generateLink(options);
-		//line 155 "/cyph/Cyph.hx"
-		haxe.root.Cyph.request(( "https://simple-buu700-master-dot-cyphme.appspot.com/preauth/" + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_160__Fun(onData, linkData), onError);
+		//line 154 "/cyph/Cyph.hx"
+		haxe.root.Cyph.request(( "https://simple-buu700-master-dot-cyphme.appspot.com/preauth/" + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_159__Fun(onData, linkData), onError);
 	}
 	
 	

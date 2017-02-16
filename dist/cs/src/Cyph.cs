@@ -95,7 +95,7 @@ public class Cyph : global::haxe.lang.HxObject {
 			
 			string id = global::Cyph.generateGuid(7);
 			{
-				string __temp_odecl1 = global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat("https://", (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "video", 922489979, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "video", 922489979, true))) : (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "voice", 989275570, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "voice", 989275570, true))) : (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "chat", 1103060696, true))) )) ))), "/#"), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "modestBranding", 1145895711, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("&") : ("") ))), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "disableP2P", 916821830, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("$") : ("") ))), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "nativeCrypto", 1047139896, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("%") : ("") ))), id), global::Cyph.generateGuid(19));
+				string __temp_odecl1 = global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat("https://", (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "video", 922489979, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "video", 922489979, true))) : (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "voice", 989275570, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "voice", 989275570, true))) : (global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(global::Cyph.services, "chat", 1103060696, true))) )) ))), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "modestBranding", 1145895711, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("&") : ("") ))), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "disableP2P", 916821830, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("$") : ("") ))), (( (( options.indexOf(((int) (global::haxe.lang.Runtime.getField_f(global::Cyph.options, "nativeCrypto", 1047139896, true)) ), default(global::haxe.lang.Null<int>)) > -1 )) ? ("%") : ("") ))), id), global::Cyph.generateGuid(19));
 				return new global::haxe.lang.DynamicObject(new int[]{23515, 1202919418}, new object[]{id, __temp_odecl1}, new int[]{}, new double[]{});
 			}
 			
@@ -105,7 +105,7 @@ public class Cyph : global::haxe.lang.HxObject {
 	
 	public static void initiateSession(string apiKey, global::Array<int> options, global::haxe.lang.Function onData, global::haxe.lang.Function onError) {
 		object linkData = global::Cyph.generateLink(options);
-		global::Cyph.request(global::haxe.lang.Runtime.concat("https://simple-buu700-master-dot-cyphme.appspot.com/preauth/", global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(linkData, "id", 23515, true))), true, new global::Array<object>(new object[]{new global::haxe.lang.DynamicObject(new int[]{107, 118}, new object[]{"Authorization", apiKey}, new int[]{}, new double[]{})}), new global::Array<object>(new object[]{}), new global::Cyph_initiateSession_160__Fun(onData, linkData), onError);
+		global::Cyph.request(global::haxe.lang.Runtime.concat("https://simple-buu700-master-dot-cyphme.appspot.com/preauth/", global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(linkData, "id", 23515, true))), true, new global::Array<object>(new object[]{new global::haxe.lang.DynamicObject(new int[]{107, 118}, new object[]{"Authorization", apiKey}, new int[]{}, new double[]{})}), new global::Array<object>(new object[]{}), new global::Cyph_initiateSession_159__Fun(onData, linkData), onError);
 	}
 	
 	
@@ -114,9 +114,9 @@ public class Cyph : global::haxe.lang.HxObject {
 
 
 #pragma warning disable 109, 114, 219, 429, 168, 162
-public class Cyph_initiateSession_160__Fun : global::haxe.lang.Function {
+public class Cyph_initiateSession_159__Fun : global::haxe.lang.Function {
 	
-	public Cyph_initiateSession_160__Fun(global::haxe.lang.Function onData, object linkData) : base(1, 0) {
+	public Cyph_initiateSession_159__Fun(global::haxe.lang.Function onData, object linkData) : base(1, 0) {
 		this.onData = onData;
 		this.linkData = linkData;
 	}
