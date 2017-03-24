@@ -136,10 +136,10 @@ class Cyph {
 			id: id,
 			link: (
 					options.indexOf(Cyph.options.video) > -1 ?
-						Cyph.services.video :
+						services.video :
 						options.indexOf(Cyph.options.voice) > -1 ?
-							Cyph.services.voice :
-							Cyph.services.chat
+							services.voice :
+							services.chat
 				) +
 				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
