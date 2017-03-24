@@ -17,17 +17,19 @@ class Cyph {
 	});
 
 	private static var services		= {
-		chat: 'cyph.im',
-		voice: 'cyph.audio',
-		video: 'cyph.video'
+		backend: 'https://api.cyph.com',
+		chat: 'https://cyph.im/#',
+		video: 'https://cyph.video/#',
+		voice: 'https://cyph.audio/#'
 	};
 
 	public static var options		= {
-		voice: 1,
-		video: 2,
-		modestBranding: 3,
-		disableP2P: 4,
-		nativeCrypto: 5
+		disableP2P: 1,
+		modestBranding: 2,
+		nativeCrypto: 3,
+		telehealth: 4,
+		video: 5,
+		voice: 6
 	};
 
 	private static function generateGuid (length: Int) : String {
@@ -117,24 +119,28 @@ class Cyph {
 		http.request(post);
 	}
 
-	public static function generateLink (?options: Array<Int>) : {id: String, link: String} {
+	public static function generateLink (
+		?options: Array<Int>,
+		?services: {backend: String, chat: String, video: String, voice: String}
+	) : {id: String, link: String} {
 		if (options == null) {
 			options	= [];
+		}
+		if (services == null) {
+			services	= Cyph.services;
 		}
 
 		var id	= Cyph.generateGuid(7);
 
 		return {
 			id: id,
-			link: 'https://' +
-				(
+			link: (
 					options.indexOf(Cyph.options.video) > -1 ?
 						Cyph.services.video :
 						options.indexOf(Cyph.options.voice) > -1 ?
 							Cyph.services.voice :
 							Cyph.services.chat
 				) +
-				'/#' +
 				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
 				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
@@ -146,13 +152,18 @@ class Cyph {
 	public static function initiateSession (
 		apiKey: String,
 		?options: Array<Int>,
+		?services: {backend: String, chat: String, video: String, voice: String},
 		onData: String -> Void,
 		onError: String -> Void
 	) : Void {
+		if (services == null) {
+			services	= Cyph.services;
+		}
+
 		var linkData	= Cyph.generateLink(options);
 
 		Cyph.request(
-			'https://api.cyph.com/preauth/' + linkData.id,
+			services.backend + '/preauth/' + linkData.id,
 			true,
 			[{k: 'Authorization', v: apiKey}],
 			[],

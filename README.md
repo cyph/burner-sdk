@@ -34,19 +34,23 @@ The following languages are supported:
 
 Example uses:
 
+	const Cyph = require('@cyph/sdk');
+
 	Cyph.initiateSession(
 		apiKey,
 		undefined,
+		undefined,
 		cyphLink => console.log(cyphLink),
 		err => console.error(err)
-	) // "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
+	); // "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
 
 	Cyph.initiateSession(
 		apiKey,
 		[Cyph.options.voice],
+		undefined,
 		cyphLink => console.log(cyphLink),
 		err => console.error(err)
-	) // "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+	); // "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
 
 	Cyph.initiateSession(
 		apiKey,
@@ -56,6 +60,12 @@ Example uses:
 			Cyph.options.nativeCrypto,
 			Cyph.options.video
 		],
+		{
+			backend: 'https://api.cyph.com',
+			chat: 'https://starfleet.cyph.ws/#',
+			video: 'https://starfleet.cyph.ws/#video/',
+			voice: 'https://starfleet.cyph.ws/#audio/'
+		},
 		cyphLink => console.log(cyphLink),
 		err => console.error(err)
-	) // "https://cyph.video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+	); // "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
