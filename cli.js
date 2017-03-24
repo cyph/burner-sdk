@@ -43,7 +43,9 @@ Cyph.initiateSession(
 			return services;
 		},
 		undefined
-	),
-	function (cyphUrl) { console.log(cyphUrl); },
-	function (err) { console.error(err); }
-);
+	)
+).then(function (cyphUrl) {
+	console.log(cyphUrl);
+}).catch(function (err) {
+	console.error(err);
+});
