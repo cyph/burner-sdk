@@ -90,12 +90,12 @@ class Cyph {
 		$id = Cyph::generateGuid(7);
 		$tmp = null;
 		if($options->indexOf(Cyph::$options->video, null) > -1) {
-			$tmp = Cyph::$services->video;
+			$tmp = $services->video;
 		} else {
 			if($options->indexOf(Cyph::$options->voice, null) > -1) {
-				$tmp = Cyph::$services->voice;
+				$tmp = $services->voice;
 			} else {
-				$tmp = Cyph::$services->chat;
+				$tmp = $services->chat;
 			}
 		}
 		$tmp1 = null;

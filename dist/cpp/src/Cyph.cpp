@@ -149,14 +149,14 @@ HXLINE( 130)			services = ::Cyph_obj::services;
 HXLINE( 133)		::String id = ::Cyph_obj::generateGuid((int)7);
 HXLINE( 137)		::String _hx_tmp;
 HXDLIN( 137)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 137)			_hx_tmp = ( (::String)(::Cyph_obj::services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
+HXLINE( 137)			_hx_tmp = ( (::String)(services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
             		}
             		else {
 HXLINE( 140)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 137)				_hx_tmp = ( (::String)(::Cyph_obj::services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
+HXLINE( 137)				_hx_tmp = ( (::String)(services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
             			}
             			else {
-HXLINE( 137)				_hx_tmp = ( (::String)(::Cyph_obj::services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
+HXLINE( 137)				_hx_tmp = ( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
             			}
             		}
 HXLINE( 144)		::String _hx_tmp1;
