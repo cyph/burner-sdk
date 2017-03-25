@@ -171,7 +171,7 @@ public class Cyph extends haxe.lang.HxObject
 		}
 		
 		//line 163 "/cyph/Cyph.hx"
-		java.lang.Object linkData = haxe.root.Cyph.generateLink(options, null);
+		java.lang.Object linkData = haxe.root.Cyph.generateLink(options, services);
 		//line 165 "/cyph/Cyph.hx"
 		haxe.root.Cyph.request(( ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "backend", true)) + "/preauth/" ) + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_170__Fun(onData, linkData), onError);
 	}

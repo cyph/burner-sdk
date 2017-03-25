@@ -122,7 +122,7 @@ class Cyph {
 		if($services === null) {
 			$services = Cyph::$services;
 		}
-		$linkData = Cyph::generateLink($options, null);
+		$linkData = Cyph::generateLink($options, $services);
 		Cyph::request(_hx_string_or_null($services->backend) . "/preauth/" . _hx_string_or_null($linkData->id), true, (new _hx_array(array(_hx_anonymous(array("k" => "Authorization", "v" => $apiKey))))), (new _hx_array(array())), array(new _hx_lambda(array(&$linkData, &$onData), "Cyph_0"), 'execute'), $onError);
 	}
 	function __toString() { return 'Cyph'; }

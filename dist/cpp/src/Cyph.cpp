@@ -203,7 +203,7 @@ HXLINE( 170)			onData( ::Dynamic(linkData->__Field(HX_("link",fa,17,b3,47),hx::p
 HXLINE( 159)		if (hx::IsNull( services )) {
 HXLINE( 160)			services = ::Cyph_obj::services;
             		}
-HXLINE( 163)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,null());
+HXLINE( 163)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,services);
 HXLINE( 165)		::Cyph_obj::request(((( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) + HX_("/preauth/",f3,23,8b,ce)) + ( (::String)(linkData->__Field(HX_("id",db,5b,00,00),hx::paccDynamic)) )),true,::Array_obj< ::Dynamic>::__new(1)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("Authorization",d9,69,3c,31))
             			->setFixed(1,HX_("v",76,00,00,00),apiKey))),::Array_obj< ::Dynamic>::__new(0), ::Dynamic(new _hx_Closure_0(linkData,onData)),onError);

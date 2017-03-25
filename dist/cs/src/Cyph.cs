@@ -112,7 +112,7 @@ public class Cyph : global::haxe.lang.HxObject {
 			services = global::Cyph.services;
 		}
 		
-		object linkData = global::Cyph.generateLink(options, null);
+		object linkData = global::Cyph.generateLink(options, services);
 		global::Cyph.request(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(services, "backend", 2072493076, true)), "/preauth/"), global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(linkData, "id", 23515, true))), true, new global::Array<object>(new object[]{new global::haxe.lang.DynamicObject(new int[]{107, 118}, new object[]{"Authorization", apiKey}, new int[]{}, new double[]{})}), new global::Array<object>(new object[]{}), new global::Cyph_initiateSession_170__Fun(onData, linkData), onError);
 	}
 	

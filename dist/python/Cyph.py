@@ -184,7 +184,7 @@ class Cyph:
     def initiateSession(apiKey,options = None,services = None,onData = None,onError = None):
         if (services is None):
             services = Cyph.services
-        linkData = Cyph.generateLink(options)
+        linkData = Cyph.generateLink(options,services)
         def _hx_local_0(data):
             onData(linkData.link)
         Cyph.request(((HxOverrides.stringOrNull(services.backend) + "/preauth/") + HxOverrides.stringOrNull(linkData.id)),True,[_hx_AnonObject({'k': "Authorization", 'v': apiKey})],[],_hx_local_0,onError)
