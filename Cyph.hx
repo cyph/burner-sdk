@@ -160,7 +160,7 @@ class Cyph {
 			services	= Cyph.services;
 		}
 
-		var linkData	= Cyph.generateLink(options);
+		var linkData	= Cyph.generateLink(options, services);
 
 		Cyph.request(
 			services.backend + '/preauth/' + linkData.id,

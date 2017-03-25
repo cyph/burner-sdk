@@ -1,6 +1,6 @@
 {
 	"name": "@cyph/sdk",
-	"version": "2.0.2",
+	"version": "2.0.4",
 	"description": "Client side of Cyph API",
 	"main": "module.js",
 	"bin": {
