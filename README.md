@@ -2,6 +2,8 @@
 
 The Cyph SDK allows third-party services to initiate new Cyph sessions.
 
+---
+
 The following optional features are supported:
 
 * `Cyph.options.disableP2P`: Disables P2P networking for voice/video calls, with traffic instead
