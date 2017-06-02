@@ -1,3 +1,5 @@
+# @cyph/sdk
+
 The Cyph SDK allows third-party services to initiate new cyph sessions.
 
 The following optional features are supported:
@@ -26,31 +28,66 @@ The following languages are supported:
 
 * Java
 
-* JavaScript (Node.js + browser)
+* JavaScript/TypeScript (Node.js + browser)
 
 * PHP
 
 * Python
 
-Example uses:
+---
 
-	const Cyph = require('@cyph/sdk');
+# Example uses
+
+JavaScript (ES6) / TypeScript:
+
+	import {Cyph} from '@cyph/sdk';
+
+	(async () => {
+		console.log(await Cyph.initiateSession(apiKey));
+		// "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
+
+		console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
+		// "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+
+		console.log(
+			await Cyph.initiateSession(
+				apiKey,
+				[
+					Cyph.options.disableP2P,
+					Cyph.options.modestBranding,
+					Cyph.options.nativeCrypto,
+					Cyph.options.video
+				],
+				{
+					backend: 'https://api.cyph.com',
+					chat: 'https://starfleet.cyph.ws/#',
+					video: 'https://starfleet.cyph.ws/#video/',
+					voice: 'https://starfleet.cyph.ws/#audio/'
+				}
+			)
+		);
+		// "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+	})();
+
+JavaScript (ES5):
+
+	var Cyph = require('@cyph/sdk');
 
 	Cyph.initiateSession(
 		apiKey,
 		undefined,
 		undefined,
-		cyphLink => console.log(cyphLink),
-		err => console.error(err)
-	); // "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
+		function (cyphLink) { console.log(cyphLink); },
+		function (err) { console.error(err); }
+	);
 
 	Cyph.initiateSession(
 		apiKey,
 		[Cyph.options.voice],
 		undefined,
-		cyphLink => console.log(cyphLink),
-		err => console.error(err)
-	); // "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+		function (cyphLink) { console.log(cyphLink); },
+		function (err) { console.error(err); }
+	);
 
 	Cyph.initiateSession(
 		apiKey,
@@ -66,6 +103,6 @@ Example uses:
 			video: 'https://starfleet.cyph.ws/#video/',
 			voice: 'https://starfleet.cyph.ws/#audio/'
 		},
-		cyphLink => console.log(cyphLink),
-		err => console.error(err)
-	); // "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+		function (cyphLink) { console.log(cyphLink); },
+		function (err) { console.error(err); }
+	);
