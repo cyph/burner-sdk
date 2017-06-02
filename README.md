@@ -1,6 +1,6 @@
 # @cyph/sdk
 
-The Cyph SDK allows third-party services to initiate new cyph sessions.
+The Cyph SDK allows third-party services to initiate new Cyph sessions.
 
 The following optional features are supported:
 
@@ -18,6 +18,8 @@ set of FIPS-approved primitives natively implemented by Google Chrome and Mozill
 
 * `Cyph.options.voice`: Goes directly into a voice call
 
+---
+
 The following languages are supported:
 
 * Bash/shell (via npm package)
@@ -34,8 +36,6 @@ The following languages are supported:
 
 * Python
 
----
-
 # Example uses
 
 JavaScript (ES6) / TypeScript:
@@ -44,11 +44,14 @@ JavaScript (ES6) / TypeScript:
 
 	(async () => {
 
+
 	console.log(await Cyph.initiateSession(apiKey));
 	// "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
 
+
 	console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
 	// "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+
 
 	console.log(
 		await Cyph.initiateSession(
@@ -68,6 +71,7 @@ JavaScript (ES6) / TypeScript:
 		)
 	);
 	// "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+
 
 	})();
 
