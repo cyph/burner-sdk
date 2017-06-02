@@ -26,4 +26,5 @@ Cyph.initiateSession	= function (apiKey, options, services, onData, onError) {
 	}
 };
 
+Cyph.Cyph		= Cyph;
 module.exports	= Cyph;
