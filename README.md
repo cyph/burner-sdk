@@ -43,30 +43,32 @@ JavaScript (ES6) / TypeScript:
 	import {Cyph} from '@cyph/sdk';
 
 	(async () => {
-		console.log(await Cyph.initiateSession(apiKey));
-		// "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
 
-		console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
-		// "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+	console.log(await Cyph.initiateSession(apiKey));
+	// "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
 
-		console.log(
-			await Cyph.initiateSession(
-				apiKey,
-				[
-					Cyph.options.disableP2P,
-					Cyph.options.modestBranding,
-					Cyph.options.nativeCrypto,
-					Cyph.options.video
-				],
-				{
-					backend: 'https://api.cyph.com',
-					chat: 'https://starfleet.cyph.ws/#',
-					video: 'https://starfleet.cyph.ws/#video/',
-					voice: 'https://starfleet.cyph.ws/#audio/'
-				}
-			)
-		);
-		// "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+	console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
+	// "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
+
+	console.log(
+		await Cyph.initiateSession(
+			apiKey,
+			[
+				Cyph.options.disableP2P,
+				Cyph.options.modestBranding,
+				Cyph.options.nativeCrypto,
+				Cyph.options.video
+			],
+			{
+				backend: 'https://api.cyph.com',
+				chat: 'https://starfleet.cyph.ws/#',
+				video: 'https://starfleet.cyph.ws/#video/',
+				voice: 'https://starfleet.cyph.ws/#audio/'
+			}
+		)
+	);
+	// "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
+
 	})();
 
 JavaScript (ES5):
