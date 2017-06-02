@@ -32,7 +32,7 @@ The following languages are supported:
 
 * Java
 
-* JavaScript/TypeScript (Node.js + browser)
+* JavaScript / TypeScript (Node.js + browser)
 
 * PHP
 
@@ -40,7 +40,7 @@ The following languages are supported:
 
 # Example uses
 
-JavaScript (ES6) / TypeScript:
+JavaScript (ES2017) / TypeScript:
 
 	import {Cyph} from '@cyph/sdk';
 
