@@ -157,6 +157,21 @@ PHP:
 		function ($err) { echo $err; }
 	);
 
+Command line shell:
+
+	cyph-sdk $apiKey
+
+
+	cyph-sdk $apiKey voice
+
+
+	cyph-sdk $apiKey voice '{
+		"backend": "https://api.cyph.com",
+		"chat": "https://starfleet.cyph.ws/#",
+		"video": "https://starfleet.cyph.ws/#video/",
+		"voice": "https://starfleet.cyph.ws/#audio/"
+	}'
+
 # Coming soon
 
 Python 3 will be supported after an upcoming release of Haxe, as in the following example:
