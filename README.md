@@ -1,10 +1,11 @@
 # @cyph/sdk
 
+## Overview
+
 The Cyph SDK allows third-party services to initiate new Cyph sessions.
 
----
-
-The following optional features are supported:
+The core functionality is to create an ephemeral encrypted text chat link that can be
+shared with two parties. Additionally, the following optional features are supported:
 
 * `Cyph.options.disableP2P`: Disables P2P networking for voice/video calls, with traffic instead
 routed through Twilio's low-latency network traversal infrastructure
@@ -20,11 +21,20 @@ set of FIPS-approved primitives natively implemented by Google Chrome and Mozill
 
 * `Cyph.options.voice`: Goes directly into a voice call
 
----
+## Language support
 
-The following languages are supported:
+This library is built using [Haxe](https://en.wikipedia.org/wiki/Haxe),
+which enables using one code base to target many different platforms.
 
-* Bash/shell (via npm package)
+The following languages are actively supported:
+
+* Command line shell (via npm package)
+
+* JavaScript / TypeScript (Node.js + browser)
+
+* Python 3
+
+The following languages have experimental support:
 
 * C++
 
@@ -32,13 +42,9 @@ The following languages are supported:
 
 * Java
 
-* JavaScript / TypeScript (Node.js + browser)
-
 * PHP
 
-* Python
-
-# Example uses
+## Example uses
 
 JavaScript (ES2017) / TypeScript:
 
@@ -81,6 +87,7 @@ JavaScript (ES5):
 
 	var Cyph = require('@cyph/sdk');
 
+
 	Cyph.initiateSession(
 		apiKey,
 		undefined,
@@ -89,6 +96,7 @@ JavaScript (ES5):
 		function (err) { console.error(err); }
 	);
 
+
 	Cyph.initiateSession(
 		apiKey,
 		[Cyph.options.voice],
@@ -96,6 +104,7 @@ JavaScript (ES5):
 		function (cyphLink) { console.log(cyphLink); },
 		function (err) { console.error(err); }
 	);
+
 
 	Cyph.initiateSession(
 		apiKey,
@@ -114,3 +123,36 @@ JavaScript (ES5):
 		function (cyphLink) { console.log(cyphLink); },
 		function (err) { console.error(err); }
 	);
+
+Python:
+
+	from Cyph import Cyph
+
+
+	Cyph.initiateSession(
+		apiKey,
+		onData = lambda cyphLink: print(cyphLink),
+		onError = lambda err: print(err)
+	)
+
+
+	Cyph.initiateSession(
+		apiKey,
+		[Cyph.options.voice],
+		onData = lambda cyphLink: print(cyphLink),
+		onError = lambda err: print(err)
+	)
+
+
+	Cyph.initiateSession(
+		apiKey,
+		[Cyph.options.voice],
+		{
+			'backend': 'https://api.cyph.com',
+			'chat': 'https://starfleet.cyph.ws/#',
+			'video': 'https://starfleet.cyph.ws/#video/',
+			'voice': 'https://starfleet.cyph.ws/#audio/'
+		},
+		lambda cyphLink: print(cyphLink),
+		lambda err: print(err)
+	)
