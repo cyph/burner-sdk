@@ -146,7 +146,12 @@ PHP:
 
 	Cyph::initiateSession(
 		$apiKey,
-		[Cyph::$options->voice],
+		[
+			Cyph::$options->disableP2P,
+			Cyph::$options->modestBranding,
+			Cyph::$options->nativeCrypto,
+			Cyph::$options->video
+		],
 		array(
 			'backend' => 'https://api.cyph.com',
 			'chat' => 'https://starfleet.cyph.ws/#',
@@ -165,7 +170,7 @@ Command line shell:
 	cyph-sdk $apiKey voice
 
 
-	cyph-sdk $apiKey voice '{
+	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
 		"backend": "https://api.cyph.com",
 		"chat": "https://starfleet.cyph.ws/#",
 		"video": "https://starfleet.cyph.ws/#video/",
@@ -196,7 +201,12 @@ Python 3 will be supported after an upcoming release of Haxe, as in the followin
 
 	Cyph.initiateSession(
 		apiKey,
-		[Cyph.options.voice],
+		[
+			Cyph.options.disableP2P,
+			Cyph.options.modestBranding,
+			Cyph.options.nativeCrypto,
+			Cyph.options.video
+		],
 		{
 			'backend': 'https://api.cyph.com',
 			'chat': 'https://starfleet.cyph.ws/#',
