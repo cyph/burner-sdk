@@ -5,7 +5,9 @@
 The Cyph SDK allows third-party services to initiate new Cyph sessions.
 
 The core functionality is to create an ephemeral encrypted text chat link that can be
-shared with two parties. Additionally, the following optional features are supported:
+shared with two parties.
+
+Additionally, the following optional features are supported:
 
 * `Cyph.options.disableP2P`: Disables P2P networking for voice/video calls, with traffic instead
 routed through Twilio's low-latency network traversal infrastructure
@@ -21,14 +23,14 @@ set of FIPS-approved primitives natively implemented by Google Chrome and Mozill
 
 * `Cyph.options.voice`: Goes directly into a voice call
 
-## Language support
+## Language Support
 
 This library is built using [Haxe](https://en.wikipedia.org/wiki/Haxe),
 which enables using one code base to target many different platforms.
 
-The following languages are actively supported:
+Supported languages:
 
-* Command line shell (via npm package)
+* Command line shell
 
 * JavaScript / TypeScript (Node.js + browser)
 
@@ -40,7 +42,25 @@ The following languages have experimental support:
 
 * Java
 
-## Example uses
+## Example Uses
+
+Command line shell:
+
+	cyph-sdk $apiKey
+	# https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr
+
+
+	cyph-sdk $apiKey voice
+	# https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW
+
+
+	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
+		"backend": "https://api.cyph.com",
+		"chat": "https://starfleet.cyph.ws/#",
+		"video": "https://starfleet.cyph.ws/#video/",
+		"voice": "https://starfleet.cyph.ws/#audio/"
+	}'
+	# https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe
 
 JavaScript (ES2017) / TypeScript:
 
@@ -50,11 +70,9 @@ JavaScript (ES2017) / TypeScript:
 
 
 	console.log(await Cyph.initiateSession(apiKey));
-	// "https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr"
 
 
 	console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
-	// "https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW"
 
 
 	console.log(
@@ -74,7 +92,6 @@ JavaScript (ES2017) / TypeScript:
 			}
 		)
 	);
-	// "https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe"
 
 
 	})();
@@ -162,22 +179,7 @@ PHP:
 		function ($err) { echo $err; }
 	);
 
-Command line shell:
-
-	cyph-sdk $apiKey
-
-
-	cyph-sdk $apiKey voice
-
-
-	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
-		"backend": "https://api.cyph.com",
-		"chat": "https://starfleet.cyph.ws/#",
-		"video": "https://starfleet.cyph.ws/#video/",
-		"voice": "https://starfleet.cyph.ws/#audio/"
-	}'
-
-# Coming soon
+# Coming Soon
 
 Python 3 will be supported after an upcoming release of Haxe, as in the following example:
 
