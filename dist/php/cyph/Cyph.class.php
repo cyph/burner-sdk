@@ -60,6 +60,9 @@ class Cyph {
 		$http = new haxe_Http($url);
 		$http->onData = $onData;
 		$http->onError = $onError;
+		if($post) {
+			$http->setPostData("");
+		}
 		{
 			$_g = 0;
 			while($_g < $headers->length) {
@@ -80,13 +83,7 @@ class Cyph {
 		}
 		$http->request($post);
 	}
-	static function generateLink($options = null, $services = null) {
-		if($options === null) {
-			$options = (new _hx_array(array()));
-		}
-		if($services === null) {
-			$services = Cyph::$services;
-		}
+	static function generateLink($options, $services) {
 		$id = Cyph::generateGuid(7);
 		$tmp = null;
 		if($options->indexOf(Cyph::$options->video, null) > -1) {
@@ -119,8 +116,15 @@ class Cyph {
 		return _hx_anonymous(array("id" => $id, "link" => _hx_string_or_null($tmp) . _hx_string_or_null($tmp1) . _hx_string_or_null($tmp2) . _hx_string_or_null($tmp3) . _hx_string_or_null($id) . _hx_string_or_null(Cyph::generateGuid(19))));
 	}
 	static function initiateSession($apiKey, $options = null, $services = null, $onData, $onError) {
+		if($options === null) {
+			$options = (new _hx_array(array()));
+		} else {
+			$options = new _hx_array($options);
+		}
 		if($services === null) {
 			$services = Cyph::$services;
+		} else {
+			$services = _hx_anonymous($services);
 		}
 		$linkData = Cyph::generateLink($options, $services);
 		Cyph::request(_hx_string_or_null($services->backend) . "/preauth/" . _hx_string_or_null($linkData->id), true, (new _hx_array(array(_hx_anonymous(array("k" => "Authorization", "v" => $apiKey))))), (new _hx_array(array())), array(new _hx_lambda(array(&$linkData, &$onData), "Cyph_0"), 'execute'), $onError);

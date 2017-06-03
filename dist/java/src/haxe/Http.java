@@ -89,6 +89,15 @@ public class Http extends haxe.lang.HxObject
 	}
 	
 	
+	public haxe.Http setPostData(java.lang.String data)
+	{
+		//line 142 "/usr/share/haxe/std/haxe/Http.hx"
+		this.postData = data;
+		//line 143 "/usr/share/haxe/std/haxe/Http.hx"
+		return this;
+	}
+	
+	
 	public void request(java.lang.Object post)
 	{
 		//line 189 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1899,15 +1908,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case -801118873:
+				case -1549120788:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("setParameter")) 
+					if (field.equals("setPostData")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setParameter")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setPostData")) );
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1931,15 +1940,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case 260127119:
+				case -801118873:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("setHeader")) 
+					if (field.equals("setParameter")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setHeader")) );
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setParameter")) );
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1963,15 +1972,15 @@ public class Http extends haxe.lang.HxObject
 				}
 				
 				
-				case -995427962:
+				case 260127119:
 				{
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-					if (field.equals("params")) 
+					if (field.equals("setHeader")) 
 					{
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
-						return this.params;
+						return ((haxe.lang.Function) (new haxe.lang.Closure(this, "setHeader")) );
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -1988,6 +1997,22 @@ public class Http extends haxe.lang.HxObject
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						return this.headers;
+					}
+					
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					break;
+				}
+				
+				
+				case -995427962:
+				{
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					if (field.equals("params")) 
+					{
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						__temp_executeDef1 = false;
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						return this.params;
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
@@ -2172,6 +2197,22 @@ public class Http extends haxe.lang.HxObject
 						__temp_executeDef1 = false;
 						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
 						this.customRequest(haxe.lang.Runtime.toBool(dynargs.__get(0)), ((haxe.io.Output) (dynargs.__get(1)) ), ((sys.net.Socket) (dynargs.__get(2)) ), haxe.lang.Runtime.toString(dynargs.__get(3)));
+					}
+					
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					break;
+				}
+				
+				
+				case -1549120788:
+				{
+					//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+					if (field.equals("setPostData")) 
+					{
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						__temp_executeDef1 = false;
+						//line 40 "/usr/share/haxe/std/haxe/Http.hx"
+						return this.setPostData(haxe.lang.Runtime.toString(dynargs.__get(0)));
 					}
 					
 					//line 40 "/usr/share/haxe/std/haxe/Http.hx"

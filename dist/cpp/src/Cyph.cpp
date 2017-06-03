@@ -35,9 +35,9 @@
 
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_35_generateGuid,"Cyph","generateGuid",0x4feb9d7e,"Cyph.generateGuid","Cyph.hx",35,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_58_request,"Cyph","request",0x7c76dd2f,"Cyph.request","Cyph.hx",58,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_125_generateLink,"Cyph","generateLink",0x533097ef,"Cyph.generateLink","Cyph.hx",125,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_170_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",170,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_158_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",158,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_129_generateLink,"Cyph","generateLink",0x533097ef,"Cyph.generateLink","Cyph.hx",129,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_181_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",181,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_155_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",155,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_16_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",16,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_8_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",8,0x050f2930)
 static const ::String _hx_array_data_2ca57e4e_10[] = {
@@ -116,74 +116,71 @@ void Cyph_obj::request(::String url,bool post,::Array< ::Dynamic> headers,::Arra
 HXLINE( 107)		 ::haxe::Http http =  ::haxe::Http_obj::__alloc( HX_CTX ,url);
 HXLINE( 108)		http->onData = onData;
 HXLINE( 109)		http->onError = onError;
-HXLINE( 111)		{
-HXLINE( 111)			int _g = (int)0;
-HXDLIN( 111)			while((_g < headers->length)){
-HXLINE( 111)				 ::Dynamic o = headers->__get(_g);
-HXDLIN( 111)				_g = (_g + (int)1);
-HXLINE( 112)				http->setHeader(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
-            			}
+HXLINE( 111)		if (post) {
+HXLINE( 112)			http->setPostData(HX_("",00,00,00,00));
             		}
 HXLINE( 115)		{
-HXLINE( 115)			int _g1 = (int)0;
-HXDLIN( 115)			while((_g1 < parameters->length)){
-HXLINE( 115)				 ::Dynamic o1 = parameters->__get(_g1);
-HXDLIN( 115)				_g1 = (_g1 + (int)1);
-HXLINE( 116)				http->setParameter(( (::String)(o1->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o1->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
+HXLINE( 115)			int _g = (int)0;
+HXDLIN( 115)			while((_g < headers->length)){
+HXLINE( 115)				 ::Dynamic o = headers->__get(_g);
+HXDLIN( 115)				_g = (_g + (int)1);
+HXLINE( 116)				http->setHeader(( (::String)(o->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
             			}
             		}
-HXLINE( 119)		http->request(post);
+HXLINE( 119)		{
+HXLINE( 119)			int _g1 = (int)0;
+HXDLIN( 119)			while((_g1 < parameters->length)){
+HXLINE( 119)				 ::Dynamic o1 = parameters->__get(_g1);
+HXDLIN( 119)				_g1 = (_g1 + (int)1);
+HXLINE( 120)				http->setParameter(( (::String)(o1->__Field(HX_("k",6b,00,00,00),hx::paccDynamic)) ),( (::String)(o1->__Field(HX_("v",76,00,00,00),hx::paccDynamic)) ));
+            			}
+            		}
+HXLINE( 123)		http->request(post);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC6(Cyph_obj,request,(void))
 
  ::Dynamic Cyph_obj::generateLink(::Array< int > options, ::Dynamic services){
-            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_125_generateLink)
-HXLINE( 126)		if (hx::IsNull( options )) {
-HXLINE( 127)			options = ::Array_obj< int >::__new(0);
-            		}
-HXLINE( 129)		if (hx::IsNull( services )) {
-HXLINE( 130)			services = ::Cyph_obj::services;
-            		}
-HXLINE( 133)		::String id = ::Cyph_obj::generateGuid((int)7);
-HXLINE( 137)		::String _hx_tmp;
-HXDLIN( 137)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 137)			_hx_tmp = ( (::String)(services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
+            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_129_generateLink)
+HXLINE( 130)		::String id = ::Cyph_obj::generateGuid((int)7);
+HXLINE( 134)		::String _hx_tmp;
+HXDLIN( 134)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 134)			_hx_tmp = ( (::String)(services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) );
             		}
             		else {
-HXLINE( 140)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 137)				_hx_tmp = ( (::String)(services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
+HXLINE( 137)			if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 134)				_hx_tmp = ( (::String)(services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) );
             			}
             			else {
-HXLINE( 137)				_hx_tmp = ( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
+HXLINE( 134)				_hx_tmp = ( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) );
             			}
             		}
-HXLINE( 144)		::String _hx_tmp1;
-HXDLIN( 144)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 144)			_hx_tmp1 = HX_("&",26,00,00,00);
+HXLINE( 141)		::String _hx_tmp1;
+HXDLIN( 141)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 141)			_hx_tmp1 = HX_("&",26,00,00,00);
             		}
             		else {
-HXLINE( 144)			_hx_tmp1 = HX_("",00,00,00,00);
+HXLINE( 141)			_hx_tmp1 = HX_("",00,00,00,00);
             		}
-HXLINE( 137)		::String _hx_tmp2 = (_hx_tmp + _hx_tmp1);
-HXLINE( 145)		::String _hx_tmp3;
-HXDLIN( 145)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 145)			_hx_tmp3 = HX_("$",24,00,00,00);
-            		}
-            		else {
-HXLINE( 145)			_hx_tmp3 = HX_("",00,00,00,00);
-            		}
-HXLINE( 137)		::String _hx_tmp4 = (_hx_tmp2 + _hx_tmp3);
-HXLINE( 146)		::String _hx_tmp5;
-HXDLIN( 146)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 146)			_hx_tmp5 = HX_("%",25,00,00,00);
+HXLINE( 134)		::String _hx_tmp2 = (_hx_tmp + _hx_tmp1);
+HXLINE( 142)		::String _hx_tmp3;
+HXDLIN( 142)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("disableP2P",46,97,a5,b6),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 142)			_hx_tmp3 = HX_("$",24,00,00,00);
             		}
             		else {
-HXLINE( 146)			_hx_tmp5 = HX_("",00,00,00,00);
+HXLINE( 142)			_hx_tmp3 = HX_("",00,00,00,00);
             		}
-HXLINE( 137)		::String _hx_tmp6 = ((_hx_tmp4 + _hx_tmp5) + id);
-HXLINE( 135)		return  ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE( 134)		::String _hx_tmp4 = (_hx_tmp2 + _hx_tmp3);
+HXLINE( 143)		::String _hx_tmp5;
+HXDLIN( 143)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("nativeCrypto",38,16,6a,3e),hx::paccDynamic)),null()) > (int)-1)) {
+HXLINE( 143)			_hx_tmp5 = HX_("%",25,00,00,00);
+            		}
+            		else {
+HXLINE( 143)			_hx_tmp5 = HX_("",00,00,00,00);
+            		}
+HXLINE( 134)		::String _hx_tmp6 = ((_hx_tmp4 + _hx_tmp5) + id);
+HXLINE( 132)		return  ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("id",db,5b,00,00),id)
             			->setFixed(1,HX_("link",fa,17,b3,47),(_hx_tmp6 + ::Cyph_obj::generateGuid((int)19))));
             	}
@@ -194,17 +191,20 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(Cyph_obj,generateLink,return )
 void Cyph_obj::initiateSession(::String apiKey,::Array< int > options, ::Dynamic services, ::Dynamic onData, ::Dynamic onError){
             		HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0, ::Dynamic,linkData, ::Dynamic,onData) HXARGC(1)
             		void _hx_run(::String data){
-            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_170_initiateSession)
-HXLINE( 170)			onData( ::Dynamic(linkData->__Field(HX_("link",fa,17,b3,47),hx::paccDynamic)));
+            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_181_initiateSession)
+HXLINE( 181)			onData( ::Dynamic(linkData->__Field(HX_("link",fa,17,b3,47),hx::paccDynamic)));
             		}
             		HX_END_LOCAL_FUNC1((void))
 
-            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_158_initiateSession)
-HXLINE( 159)		if (hx::IsNull( services )) {
-HXLINE( 160)			services = ::Cyph_obj::services;
+            	HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_155_initiateSession)
+HXLINE( 156)		if (hx::IsNull( options )) {
+HXLINE( 157)			options = ::Array_obj< int >::__new(0);
             		}
-HXLINE( 163)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,services);
-HXLINE( 165)		::Cyph_obj::request(((( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) + HX_("/preauth/",f3,23,8b,ce)) + ( (::String)(linkData->__Field(HX_("id",db,5b,00,00),hx::paccDynamic)) )),true,::Array_obj< ::Dynamic>::__new(1)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE( 165)		if (hx::IsNull( services )) {
+HXLINE( 166)			services = ::Cyph_obj::services;
+            		}
+HXLINE( 174)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,services);
+HXLINE( 176)		::Cyph_obj::request(((( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) + HX_("/preauth/",f3,23,8b,ce)) + ( (::String)(linkData->__Field(HX_("id",db,5b,00,00),hx::paccDynamic)) )),true,::Array_obj< ::Dynamic>::__new(1)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("Authorization",d9,69,3c,31))
             			->setFixed(1,HX_("v",76,00,00,00),apiKey))),::Array_obj< ::Dynamic>::__new(0), ::Dynamic(new _hx_Closure_0(linkData,onData)),onError);
             	}

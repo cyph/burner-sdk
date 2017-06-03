@@ -72,6 +72,9 @@ class HXCPP_CLASS_ATTRIBUTES Http_obj : public hx::Object
 		 ::haxe::Http setParameter(::String param,::String value);
 		::Dynamic setParameter_dyn();
 
+		 ::haxe::Http setPostData(::String data);
+		::Dynamic setPostData_dyn();
+
 		void request( ::Dynamic post);
 		::Dynamic request_dyn();
 
