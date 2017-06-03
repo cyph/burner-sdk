@@ -108,6 +108,10 @@ class Cyph {
 		http.onData		= onData;
 		http.onError	= onError;
 
+		if (post) {
+			http.setPostData('');
+		}
+
 		for (o in headers) {
 			http.setHeader(o.k, o.v);
 		}
@@ -120,16 +124,9 @@ class Cyph {
 	}
 
 	public static function generateLink (
-		?options: Array<Int>,
-		?services: {backend: String, chat: String, video: String, voice: String}
+		options: Array<Int>,
+		services: {backend: String, chat: String, video: String, voice: String}
 	) : {id: String, link: String} {
-		if (options == null) {
-			options	= [];
-		}
-		if (services == null) {
-			services	= Cyph.services;
-		}
-
 		var id	= Cyph.generateGuid(7);
 
 		return {
@@ -156,8 +153,22 @@ class Cyph {
 		onData: String -> Void,
 		onError: String -> Void
 	) : Void {
+		if (options == null) {
+			options	= [];
+		}
+		else {
+			#if php
+				untyped __php__("$options = new _hx_array($options)");
+			#end
+		}
+
 		if (services == null) {
 			services	= Cyph.services;
+		}
+		else {
+			#if php
+				untyped __php__("$services = _hx_anonymous($services)");
+			#end
 		}
 
 		var linkData	= Cyph.generateLink(options, services);

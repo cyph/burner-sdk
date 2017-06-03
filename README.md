@@ -32,17 +32,13 @@ The following languages are actively supported:
 
 * JavaScript / TypeScript (Node.js + browser)
 
-* Python 3
+* PHP
 
 The following languages have experimental support:
 
 * C++
 
-* C#
-
 * Java
-
-* PHP
 
 ## Example uses
 
@@ -124,7 +120,46 @@ JavaScript (ES5):
 		function (err) { console.error(err); }
 	);
 
-Python:
+PHP:
+
+	foreach (glob('cyph/*/*.php') as $f) include $f;
+	foreach (glob('cyph/*.php') as $f) include $f;
+
+
+	Cyph::initiateSession(
+		$apiKey,
+		null,
+		null,
+		function ($cyphLink) { echo $cyphLink; },
+		function ($err) { echo $err; }
+	);
+
+
+	Cyph::initiateSession(
+		$apiKey,
+		[Cyph::$options->voice],
+		null,
+		function ($cyphLink) { echo $cyphLink; },
+		function ($err) { echo $err; }
+	);
+
+
+	Cyph::initiateSession(
+		$apiKey,
+		[Cyph::$options->voice],
+		array(
+			'backend' => 'https://api.cyph.com',
+			'chat' => 'https://starfleet.cyph.ws/#',
+			'video' => 'https://starfleet.cyph.ws/#video/',
+			'voice' => 'https://starfleet.cyph.ws/#audio/'
+		),
+		function ($cyphLink) { echo $cyphLink; },
+		function ($err) { echo $err; }
+	);
+
+# Coming soon
+
+Python 3 will be supported after an upcoming release of Haxe, as in the following example:
 
 	from Cyph import Cyph
 
