@@ -140,7 +140,7 @@ class Cyph {
 				) +
 				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
-				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '%' : '') +
+				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '*' : '') +
 				id +
 				Cyph.generateGuid(19)
 		};
