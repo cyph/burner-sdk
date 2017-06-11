@@ -87,7 +87,11 @@ class Cyph {
 		$id = Cyph::generateGuid(7);
 		$tmp = null;
 		if($options->indexOf(Cyph::$options->video, null) > -1) {
-			$tmp = $services->video;
+			if($options->indexOf(Cyph::$options->telehealth, null) > -1) {
+				$tmp = $services->telehealthVideo;
+			} else {
+				$tmp = $services->video;
+			}
 		} else {
 			if($options->indexOf(Cyph::$options->voice, null) > -1) {
 				$tmp = $services->voice;
@@ -96,24 +100,36 @@ class Cyph {
 			}
 		}
 		$tmp1 = null;
-		if($options->indexOf(Cyph::$options->modestBranding, null) > -1) {
-			$tmp1 = "&";
+		$tmp2 = null;
+		if($options->indexOf(Cyph::$options->telehealth, null) > -1) {
+			$tmp2 = $options->indexOf(Cyph::$options->video, null) < 0;
+		} else {
+			$tmp2 = false;
+		}
+		if($tmp2) {
+			$tmp1 = "@";
 		} else {
 			$tmp1 = "";
 		}
-		$tmp2 = null;
-		if($options->indexOf(Cyph::$options->disableP2P, null) > -1) {
-			$tmp2 = "\$";
-		} else {
-			$tmp2 = "";
-		}
 		$tmp3 = null;
-		if($options->indexOf(Cyph::$options->nativeCrypto, null) > -1) {
-			$tmp3 = "%";
+		if($options->indexOf(Cyph::$options->modestBranding, null) > -1) {
+			$tmp3 = "&";
 		} else {
 			$tmp3 = "";
 		}
-		return _hx_anonymous(array("id" => $id, "link" => _hx_string_or_null($tmp) . _hx_string_or_null($tmp1) . _hx_string_or_null($tmp2) . _hx_string_or_null($tmp3) . _hx_string_or_null($id) . _hx_string_or_null(Cyph::generateGuid(19))));
+		$tmp4 = null;
+		if($options->indexOf(Cyph::$options->disableP2P, null) > -1) {
+			$tmp4 = "\$";
+		} else {
+			$tmp4 = "";
+		}
+		$tmp5 = null;
+		if($options->indexOf(Cyph::$options->nativeCrypto, null) > -1) {
+			$tmp5 = "*";
+		} else {
+			$tmp5 = "";
+		}
+		return _hx_anonymous(array("id" => $id, "link" => _hx_string_or_null($tmp) . _hx_string_or_null($tmp1) . _hx_string_or_null($tmp3) . _hx_string_or_null($tmp4) . _hx_string_or_null($tmp5) . _hx_string_or_null($id) . _hx_string_or_null(Cyph::generateGuid(19))));
 	}
 	static function initiateSession($apiKey, $options = null, $services = null, $onData, $onError) {
 		if($options === null) {
@@ -126,13 +142,22 @@ class Cyph {
 		} else {
 			$services = _hx_anonymous($services);
 		}
+		if($services->telehealthVideo === null) {
+			$services->telehealthVideo = _hx_string_or_null($services->chat) . "video/@";
+		}
+		if($services->video === null) {
+			$services->video = _hx_string_or_null($services->chat) . "video/";
+		}
+		if($services->voice === null) {
+			$services->voice = _hx_string_or_null($services->chat) . "audio/";
+		}
 		$linkData = Cyph::generateLink($options, $services);
 		Cyph::request(_hx_string_or_null($services->backend) . "/preauth/" . _hx_string_or_null($linkData->id), true, (new _hx_array(array(_hx_anonymous(array("k" => "Authorization", "v" => $apiKey))))), (new _hx_array(array())), array(new _hx_lambda(array(&$linkData, &$onData), "Cyph_0"), 'execute'), $onError);
 	}
 	function __toString() { return 'Cyph'; }
 }
 Cyph::$addressSpace = _hx_deref((new _hx_array(array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"))))->map(array(new _hx_lambda(array(), "Cyph_1"), 'execute'));
-Cyph::$services = _hx_anonymous(array("backend" => "https://api.cyph.com", "chat" => "https://cyph.im/#", "video" => "https://cyph.video/#", "voice" => "https://cyph.audio/#"));
+Cyph::$services = _hx_anonymous(array("backend" => "https://api.cyph.com", "chat" => "https://cyph.im/#", "telehealthVideo" => "https://cyph.healthcare/#", "video" => "https://cyph.video/#", "voice" => "https://cyph.audio/#"));
 Cyph::$options = _hx_anonymous(array("disableP2P" => 1, "modestBranding" => 2, "nativeCrypto" => 3, "telehealth" => 4, "video" => 5, "voice" => 6));
 function Cyph_0(&$linkData, &$onData, $data) {
 	{
