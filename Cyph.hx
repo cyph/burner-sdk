@@ -171,7 +171,7 @@ class Cyph {
 		apiKey: String,
 		?options: Array<Int>,
 		?services: {
-			backend: String,
+			?backend: String,
 			chat: String,
 			?telehealthVideo: String,
 			?video: String,
@@ -198,14 +198,17 @@ class Cyph {
 			#end
 		}
 
+		if (services.backend == null) {
+			services.backend			= services.backend;
+		}
 		if (services.telehealthVideo == null) {
 			services.telehealthVideo	= services.chat + "video/@";
 		}
 		if (services.video == null) {
-			services.video	= services.chat + "video/";
+			services.video				= services.chat + "video/";
 		}
 		if (services.voice == null) {
-			services.voice	= services.chat + "audio/";
+			services.voice				= services.chat + "audio/";
 		}
 
 		var linkData	= Cyph.generateLink(options, services);

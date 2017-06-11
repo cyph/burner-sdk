@@ -54,10 +54,13 @@ Command line shell:
 	# https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW
 
 
-	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
-		"backend": "https://api.cyph.com",
-		"chat": "https://starfleet.cyph.ws/#"
-	}'
+	cyph-sdk \
+		$apiKey \
+		disableP2P \
+		modestBranding \
+		nativeCrypto \
+		video \
+		'{"chat": "https://starfleet.cyph.ws/#"}'
 	# https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe
 
 JavaScript (ES2017) / TypeScript:
@@ -82,10 +85,7 @@ JavaScript (ES2017) / TypeScript:
 				Cyph.options.nativeCrypto,
 				Cyph.options.video
 			],
-			{
-				backend: 'https://api.cyph.com',
-				chat: 'https://starfleet.cyph.ws/#'
-			}
+			{chat: 'https://starfleet.cyph.ws/#'}
 		)
 	);
 
@@ -123,10 +123,7 @@ JavaScript (ES5):
 			Cyph.options.nativeCrypto,
 			Cyph.options.video
 		],
-		{
-			backend: 'https://api.cyph.com',
-			chat: 'https://starfleet.cyph.ws/#'
-		},
+		{chat: 'https://starfleet.cyph.ws/#'},
 		function (cyphLink) { console.log(cyphLink); },
 		function (err) { console.error(err); }
 	);
@@ -163,10 +160,7 @@ PHP:
 			Cyph::$options->nativeCrypto,
 			Cyph::$options->video
 		],
-		array(
-			'backend' => 'https://api.cyph.com',
-			'chat' => 'https://starfleet.cyph.ws/#'
-		),
+		array('chat' => 'https://starfleet.cyph.ws/#'),
 		function ($cyphLink) { echo $cyphLink; },
 		function ($err) { echo $err; }
 	);
@@ -201,10 +195,7 @@ Python 3 will be supported after an upcoming release of Haxe, as in the followin
 			Cyph.options.nativeCrypto,
 			Cyph.options.video
 		],
-		{
-			'backend': 'https://api.cyph.com',
-			'chat': 'https://starfleet.cyph.ws/#'
-		},
+		{'chat': 'https://starfleet.cyph.ws/#'},
 		lambda cyphLink: print(cyphLink),
 		lambda err: print(err)
 	)

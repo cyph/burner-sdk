@@ -32,7 +32,7 @@ Cyph.initiateSession(
 				return;
 			}
 
-			var keys	= ['backend', 'chat'];
+			var keys	= ['chat'];
 			for (var i = 0 ; i < keys.length ; ++i) {
 				var k	= keys[i];
 				if (typeof Cyph.services[k] !== typeof services[k]) {
