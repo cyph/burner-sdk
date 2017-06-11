@@ -57,6 +57,7 @@ Command line shell:
 	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
 		"backend": "https://api.cyph.com",
 		"chat": "https://starfleet.cyph.ws/#",
+		"telehealthVideo": "https://starfleet.cyph.ws/#video/@",
 		"video": "https://starfleet.cyph.ws/#video/",
 		"voice": "https://starfleet.cyph.ws/#audio/"
 	}'
@@ -87,6 +88,7 @@ JavaScript (ES2017) / TypeScript:
 			{
 				backend: 'https://api.cyph.com',
 				chat: 'https://starfleet.cyph.ws/#',
+				telehealthVideo: 'https://starfleet.cyph.ws/#video/@',
 				video: 'https://starfleet.cyph.ws/#video/',
 				voice: 'https://starfleet.cyph.ws/#audio/'
 			}
@@ -130,6 +132,7 @@ JavaScript (ES5):
 		{
 			backend: 'https://api.cyph.com',
 			chat: 'https://starfleet.cyph.ws/#',
+			telehealthVideo: 'https://starfleet.cyph.ws/#video/@',
 			video: 'https://starfleet.cyph.ws/#video/',
 			voice: 'https://starfleet.cyph.ws/#audio/'
 		},
@@ -172,6 +175,7 @@ PHP:
 		array(
 			'backend' => 'https://api.cyph.com',
 			'chat' => 'https://starfleet.cyph.ws/#',
+			'telehealthVideo' => 'https://starfleet.cyph.ws/#video/@',
 			'video' => 'https://starfleet.cyph.ws/#video/',
 			'voice' => 'https://starfleet.cyph.ws/#audio/'
 		),
@@ -212,6 +216,7 @@ Python 3 will be supported after an upcoming release of Haxe, as in the followin
 		{
 			'backend': 'https://api.cyph.com',
 			'chat': 'https://starfleet.cyph.ws/#',
+			'telehealthVideo': 'https://starfleet.cyph.ws/#video/@',
 			'video': 'https://starfleet.cyph.ws/#video/',
 			'voice': 'https://starfleet.cyph.ws/#audio/'
 		},

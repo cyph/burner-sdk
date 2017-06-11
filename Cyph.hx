@@ -19,6 +19,7 @@ class Cyph {
 	private static var services		= {
 		backend: 'https://api.cyph.com',
 		chat: 'https://cyph.im/#',
+		telehealthVideo: 'https://cyph.healthcare/#',
 		video: 'https://cyph.video/#',
 		voice: 'https://cyph.audio/#'
 	};
@@ -125,7 +126,13 @@ class Cyph {
 
 	public static function generateLink (
 		options: Array<Int>,
-		services: {backend: String, chat: String, video: String, voice: String}
+		services: {
+			backend: String,
+			chat: String,
+			telehealthVideo: String,
+			video: String,
+			voice: String
+		}
 	) : {id: String, link: String} {
 		var id	= Cyph.generateGuid(7);
 
@@ -133,10 +140,24 @@ class Cyph {
 			id: id,
 			link: (
 					options.indexOf(Cyph.options.video) > -1 ?
-						services.video :
-						options.indexOf(Cyph.options.voice) > -1 ?
-							services.voice :
-							services.chat
+						(
+							options.indexOf(Cyph.options.telehealth) > -1 ?
+								services.telehealthVideo :
+								services.video
+						) :
+						(
+							options.indexOf(Cyph.options.voice) > -1 ?
+								services.voice :
+								services.chat
+						)
+				) +
+				(
+					(
+						options.indexOf(Cyph.options.telehealth) > -1 &&
+						options.indexOf(Cyph.options.video) < 0
+					) ?
+						'@' :
+						''
 				) +
 				(options.indexOf(Cyph.options.modestBranding) > -1 ? '&' : '') +
 				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
@@ -149,7 +170,13 @@ class Cyph {
 	public static function initiateSession (
 		apiKey: String,
 		?options: Array<Int>,
-		?services: {backend: String, chat: String, video: String, voice: String},
+		?services: {
+			backend: String,
+			chat: String,
+			telehealthVideo: String,
+			video: String,
+			voice: String
+		},
 		onData: String -> Void,
 		onError: String -> Void
 	) : Void {
