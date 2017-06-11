@@ -56,10 +56,7 @@ Command line shell:
 
 	cyph-sdk $apiKey disableP2P modestBranding nativeCrypto video '{
 		"backend": "https://api.cyph.com",
-		"chat": "https://starfleet.cyph.ws/#",
-		"telehealthVideo": "https://starfleet.cyph.ws/#video/@",
-		"video": "https://starfleet.cyph.ws/#video/",
-		"voice": "https://starfleet.cyph.ws/#audio/"
+		"chat": "https://starfleet.cyph.ws/#"
 	}'
 	# https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe
 
@@ -87,10 +84,7 @@ JavaScript (ES2017) / TypeScript:
 			],
 			{
 				backend: 'https://api.cyph.com',
-				chat: 'https://starfleet.cyph.ws/#',
-				telehealthVideo: 'https://starfleet.cyph.ws/#video/@',
-				video: 'https://starfleet.cyph.ws/#video/',
-				voice: 'https://starfleet.cyph.ws/#audio/'
+				chat: 'https://starfleet.cyph.ws/#'
 			}
 		)
 	);
@@ -131,10 +125,7 @@ JavaScript (ES5):
 		],
 		{
 			backend: 'https://api.cyph.com',
-			chat: 'https://starfleet.cyph.ws/#',
-			telehealthVideo: 'https://starfleet.cyph.ws/#video/@',
-			video: 'https://starfleet.cyph.ws/#video/',
-			voice: 'https://starfleet.cyph.ws/#audio/'
+			chat: 'https://starfleet.cyph.ws/#'
 		},
 		function (cyphLink) { console.log(cyphLink); },
 		function (err) { console.error(err); }
@@ -174,10 +165,7 @@ PHP:
 		],
 		array(
 			'backend' => 'https://api.cyph.com',
-			'chat' => 'https://starfleet.cyph.ws/#',
-			'telehealthVideo' => 'https://starfleet.cyph.ws/#video/@',
-			'video' => 'https://starfleet.cyph.ws/#video/',
-			'voice' => 'https://starfleet.cyph.ws/#audio/'
+			'chat' => 'https://starfleet.cyph.ws/#'
 		),
 		function ($cyphLink) { echo $cyphLink; },
 		function ($err) { echo $err; }
@@ -215,10 +203,7 @@ Python 3 will be supported after an upcoming release of Haxe, as in the followin
 		],
 		{
 			'backend': 'https://api.cyph.com',
-			'chat': 'https://starfleet.cyph.ws/#',
-			'telehealthVideo': 'https://starfleet.cyph.ws/#video/@',
-			'video': 'https://starfleet.cyph.ws/#video/',
-			'voice': 'https://starfleet.cyph.ws/#audio/'
+			'chat': 'https://starfleet.cyph.ws/#'
 		},
 		lambda cyphLink: print(cyphLink),
 		lambda err: print(err)

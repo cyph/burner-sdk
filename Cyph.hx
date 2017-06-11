@@ -173,9 +173,9 @@ class Cyph {
 		?services: {
 			backend: String,
 			chat: String,
-			telehealthVideo: String,
-			video: String,
-			voice: String
+			?telehealthVideo: String,
+			?video: String,
+			?voice: String
 		},
 		onData: String -> Void,
 		onError: String -> Void
@@ -196,6 +196,16 @@ class Cyph {
 			#if php
 				untyped __php__("$services = _hx_anonymous($services)");
 			#end
+		}
+
+		if (services.telehealthVideo == null) {
+			services.telehealthVideo	= services.chat + "video/@";
+		}
+		if (services.video == null) {
+			services.video	= services.chat + "video/";
+		}
+		if (services.voice == null) {
+			services.voice	= services.chat + "audio/";
 		}
 
 		var linkData	= Cyph.generateLink(options, services);
