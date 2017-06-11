@@ -36,7 +36,7 @@
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_36_generateGuid,"Cyph","generateGuid",0x4feb9d7e,"Cyph.generateGuid","Cyph.hx",36,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_59_request,"Cyph","request",0x7c76dd2f,"Cyph.request","Cyph.hx",59,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_136_generateLink,"Cyph","generateLink",0x533097ef,"Cyph.generateLink","Cyph.hx",136,0x050f2930)
-HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_218_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",218,0x050f2930)
+HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_221_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",221,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_182_initiateSession,"Cyph","initiateSession",0x9ff79fdd,"Cyph.initiateSession","Cyph.hx",182,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_16_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",16,0x050f2930)
 HX_LOCAL_STACK_FRAME(_hx_pos_4d4623eba6a46339_8_boot,"Cyph","boot",0xc2121a52,"Cyph.boot","Cyph.hx",8,0x050f2930)
@@ -211,8 +211,8 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC2(Cyph_obj,generateLink,return )
 void Cyph_obj::initiateSession(::String apiKey,::Array< int > options, ::Dynamic services, ::Dynamic onData, ::Dynamic onError){
             		HX_BEGIN_LOCAL_FUNC_S2(hx::LocalFunc,_hx_Closure_0, ::Dynamic,linkData, ::Dynamic,onData) HXARGC(1)
             		void _hx_run(::String data){
-            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_218_initiateSession)
-HXLINE( 218)			onData( ::Dynamic(linkData->__Field(HX_("link",fa,17,b3,47),hx::paccDynamic)));
+            			HX_STACKFRAME(&_hx_pos_4d4623eba6a46339_221_initiateSession)
+HXLINE( 221)			onData( ::Dynamic(linkData->__Field(HX_("link",fa,17,b3,47),hx::paccDynamic)));
             		}
             		HX_END_LOCAL_FUNC1((void))
 
@@ -223,17 +223,20 @@ HXLINE( 184)			options = ::Array_obj< int >::__new(0);
 HXLINE( 192)		if (hx::IsNull( services )) {
 HXLINE( 193)			services = ::Cyph_obj::services;
             		}
-HXLINE( 201)		if (hx::IsNull( ( (::String)(services->__Field(HX_("telehealthVideo",55,20,a0,2b),hx::paccDynamic)) ) )) {
-HXLINE( 202)			services->__SetField(HX_("telehealthVideo",55,20,a0,2b),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("video/@",6c,92,86,fd)),hx::paccDynamic);
+HXLINE( 201)		if (hx::IsNull( ( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) )) {
+HXLINE( 202)			services->__SetField(HX_("backend",14,bc,87,fb),( (::String)(::Cyph_obj::services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ),hx::paccDynamic);
             		}
-HXLINE( 204)		if (hx::IsNull( ( (::String)(services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) ) )) {
-HXLINE( 205)			services->__SetField(HX_("video",7b,14,fc,36),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("video/",54,d7,95,e5)),hx::paccDynamic);
+HXLINE( 204)		if (hx::IsNull( ( (::String)(services->__Field(HX_("telehealthVideo",55,20,a0,2b),hx::paccDynamic)) ) )) {
+HXLINE( 205)			services->__SetField(HX_("telehealthVideo",55,20,a0,2b),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("video/@",6c,92,86,fd)),hx::paccDynamic);
             		}
-HXLINE( 207)		if (hx::IsNull( ( (::String)(services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) ) )) {
-HXLINE( 208)			services->__SetField(HX_("voice",b2,25,f7,3a),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("audio/",99,42,e9,68)),hx::paccDynamic);
+HXLINE( 207)		if (hx::IsNull( ( (::String)(services->__Field(HX_("video",7b,14,fc,36),hx::paccDynamic)) ) )) {
+HXLINE( 208)			services->__SetField(HX_("video",7b,14,fc,36),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("video/",54,d7,95,e5)),hx::paccDynamic);
             		}
-HXLINE( 211)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,services);
-HXLINE( 213)		::Cyph_obj::request(((( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) + HX_("/preauth/",f3,23,8b,ce)) + ( (::String)(linkData->__Field(HX_("id",db,5b,00,00),hx::paccDynamic)) )),true,::Array_obj< ::Dynamic>::__new(1)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
+HXLINE( 210)		if (hx::IsNull( ( (::String)(services->__Field(HX_("voice",b2,25,f7,3a),hx::paccDynamic)) ) )) {
+HXLINE( 211)			services->__SetField(HX_("voice",b2,25,f7,3a),(( (::String)(services->__Field(HX_("chat",d8,5e,bf,41),hx::paccDynamic)) ) + HX_("audio/",99,42,e9,68)),hx::paccDynamic);
+            		}
+HXLINE( 214)		 ::Dynamic linkData = ::Cyph_obj::generateLink(options,services);
+HXLINE( 216)		::Cyph_obj::request(((( (::String)(services->__Field(HX_("backend",14,bc,87,fb),hx::paccDynamic)) ) + HX_("/preauth/",f3,23,8b,ce)) + ( (::String)(linkData->__Field(HX_("id",db,5b,00,00),hx::paccDynamic)) )),true,::Array_obj< ::Dynamic>::__new(1)->init(0, ::Dynamic(hx::Anon_obj::Create(2)
             			->setFixed(0,HX_("k",6b,00,00,00),HX_("Authorization",d9,69,3c,31))
             			->setFixed(1,HX_("v",76,00,00,00),apiKey))),::Array_obj< ::Dynamic>::__new(0), ::Dynamic(new _hx_Closure_0(linkData,onData)),onError);
             	}

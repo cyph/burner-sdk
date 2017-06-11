@@ -171,30 +171,37 @@ public class Cyph extends haxe.lang.HxObject
 		}
 		
 		//line 201 "/cyph/Cyph.hx"
-		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "telehealthVideo", true)) == null )) 
+		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "backend", true)) == null )) 
 		{
 			//line 202 "/cyph/Cyph.hx"
-			haxe.lang.Runtime.setField(services, "telehealthVideo", ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "chat", true)) + "video/@" ));
+			haxe.lang.Runtime.setField(services, "backend", haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(haxe.root.Cyph.services, "backend", true)));
 		}
 		
 		//line 204 "/cyph/Cyph.hx"
-		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "video", true)) == null )) 
+		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "telehealthVideo", true)) == null )) 
 		{
 			//line 205 "/cyph/Cyph.hx"
-			haxe.lang.Runtime.setField(services, "video", ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "chat", true)) + "video/" ));
+			haxe.lang.Runtime.setField(services, "telehealthVideo", ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "chat", true)) + "video/@" ));
 		}
 		
 		//line 207 "/cyph/Cyph.hx"
-		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "voice", true)) == null )) 
+		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "video", true)) == null )) 
 		{
 			//line 208 "/cyph/Cyph.hx"
+			haxe.lang.Runtime.setField(services, "video", ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "chat", true)) + "video/" ));
+		}
+		
+		//line 210 "/cyph/Cyph.hx"
+		if (( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "voice", true)) == null )) 
+		{
+			//line 211 "/cyph/Cyph.hx"
 			haxe.lang.Runtime.setField(services, "voice", ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "chat", true)) + "audio/" ));
 		}
 		
-		//line 211 "/cyph/Cyph.hx"
+		//line 214 "/cyph/Cyph.hx"
 		java.lang.Object linkData = haxe.root.Cyph.generateLink(options, services);
-		//line 213 "/cyph/Cyph.hx"
-		haxe.root.Cyph.request(( ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "backend", true)) + "/preauth/" ) + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_218__Fun(onData, linkData), onError);
+		//line 216 "/cyph/Cyph.hx"
+		haxe.root.Cyph.request(( ( haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(services, "backend", true)) + "/preauth/" ) + haxe.lang.Runtime.toString(haxe.lang.Runtime.getField(linkData, "id", true)) ), true, new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{new haxe.lang.DynamicObject(new java.lang.String[]{"k", "v"}, new java.lang.Object[]{"Authorization", apiKey}, new java.lang.String[]{}, new double[]{})}), new haxe.root.Array<java.lang.Object>(new java.lang.Object[]{}), new haxe.root.Cyph_initiateSession_221__Fun(onData, linkData), onError);
 	}
 	
 	

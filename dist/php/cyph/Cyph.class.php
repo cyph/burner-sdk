@@ -142,6 +142,9 @@ class Cyph {
 		} else {
 			$services = _hx_anonymous($services);
 		}
+		if($services->backend === null) {
+			$services->backend = Cyph::$services->backend;
+		}
 		if($services->telehealthVideo === null) {
 			$services->telehealthVideo = _hx_string_or_null($services->chat) . "video/@";
 		}

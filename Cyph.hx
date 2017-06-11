@@ -199,7 +199,7 @@ class Cyph {
 		}
 
 		if (services.backend == null) {
-			services.backend			= services.backend;
+			services.backend			= Cyph.services.backend;
 		}
 		if (services.telehealthVideo == null) {
 			services.telehealthVideo	= services.chat + "video/@";
