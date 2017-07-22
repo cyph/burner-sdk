@@ -61,7 +61,7 @@ Command line shell:
 		nativeCrypto \
 		video \
 		'{"chat": "https://starfleet.cyph.ws/#"}'
-	# https://starfleet.cyph.ws/#video/#&$%1ro2HQ4q7wBbC7hHCF2oWggVGe
+	# https://starfleet.cyph.ws/#video/#!$%1ro2HQ4q7wBbC7hHCF2oWggVGe
 
 JavaScript (ES2017) / TypeScript:
 
