@@ -178,7 +178,7 @@ HXLINE( 154)			_hx_tmp1 = HX_("",00,00,00,00);
 HXLINE( 141)		::String _hx_tmp3 = (_hx_tmp + _hx_tmp1);
 HXLINE( 162)		::String _hx_tmp4;
 HXDLIN( 162)		if ((options->indexOf( ::Dynamic(::Cyph_obj::options->__Field(HX_("modestBranding",1f,fb,4c,44),hx::paccDynamic)),null()) > (int)-1)) {
-HXLINE( 162)			_hx_tmp4 = HX_("&",26,00,00,00);
+HXLINE( 162)			_hx_tmp4 = HX_("!",21,00,00,00);
             		}
             		else {
 HXLINE( 162)			_hx_tmp4 = HX_("",00,00,00,00);

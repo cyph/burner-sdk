@@ -113,7 +113,7 @@ class Cyph {
 		}
 		$tmp3 = null;
 		if($options->indexOf(Cyph::$options->modestBranding, null) > -1) {
-			$tmp3 = "&";
+			$tmp3 = "!";
 		} else {
 			$tmp3 = "";
 		}
