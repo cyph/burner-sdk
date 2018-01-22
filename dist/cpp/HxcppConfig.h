@@ -14,7 +14,7 @@
 #endif
 
 #if !defined(HXCPP_API_LEVEL) && !defined(NO_HXCPP_API_LEVEL)
-#define HXCPP_API_LEVEL 331
+#define HXCPP_API_LEVEL 321
 #endif
 
 #if !defined(HXCPP_M64) && !defined(NO_HXCPP_M64)
