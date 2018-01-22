@@ -4,7 +4,6 @@ declare module '@cyph/sdk' {
 		options: {
 			disableP2P: number;
 			modestBranding: number;
-			nativeCrypto: number;
 			telehealth: number;
 			video: number;
 			voice: number;
@@ -20,7 +19,13 @@ declare module '@cyph/sdk' {
 		initiateSession (
 			apiKey: string,
 			options?: number[],
-			services?: {backend: string; chat: string; video: string; voice: string}
+			services?: {
+				backend?: string;
+				chat: string;
+				telehealth?: string;
+				video?: string;
+				voice?: string;
+			}
 		) : Promise<string>;
 	}
 

@@ -14,10 +14,7 @@ routed through Twilio's low-latency network traversal infrastructure
 
 * `Cyph.options.modestBranding`: Uses modest branding (greyscale UI with toned down Cyph branding)
 
-* `Cyph.options.nativeCrypto`: Switches from our default cross-browser cryptographic primitives to a
-set of FIPS-approved primitives natively implemented by Google Chrome and Mozilla Firefox
-
-* `Cyph.options.telehealth`: Uses telehealth UI
+* `Cyph.options.telehealth`: Goes directly into a video call in telehealth application
 
 * `Cyph.options.video`: Goes directly into a video call
 
@@ -58,10 +55,9 @@ Command line shell:
 		$apiKey \
 		disableP2P \
 		modestBranding \
-		nativeCrypto \
 		video \
 		'{"chat": "https://starfleet.cyph.ws/#"}'
-	# https://starfleet.cyph.ws/#video/#!$%1ro2HQ4q7wBbC7hHCF2oWggVGe
+	# https://starfleet.cyph.ws/#video/#!$1ro2HQ4q7wBbC7hHCF2oWggVGe
 
 JavaScript (ES2017) / TypeScript:
 
@@ -82,7 +78,6 @@ JavaScript (ES2017) / TypeScript:
 			[
 				Cyph.options.disableP2P,
 				Cyph.options.modestBranding,
-				Cyph.options.nativeCrypto,
 				Cyph.options.video
 			],
 			{chat: 'https://starfleet.cyph.ws/#'}
@@ -120,7 +115,6 @@ JavaScript (ES5):
 		[
 			Cyph.options.disableP2P,
 			Cyph.options.modestBranding,
-			Cyph.options.nativeCrypto,
 			Cyph.options.video
 		],
 		{chat: 'https://starfleet.cyph.ws/#'},
@@ -157,7 +151,6 @@ PHP:
 		[
 			Cyph::$options->disableP2P,
 			Cyph::$options->modestBranding,
-			Cyph::$options->nativeCrypto,
 			Cyph::$options->video
 		],
 		array('chat' => 'https://starfleet.cyph.ws/#'),
@@ -192,7 +185,6 @@ Python 3 will be supported after an upcoming release of Haxe, as in the followin
 		[
 			Cyph.options.disableP2P,
 			Cyph.options.modestBranding,
-			Cyph.options.nativeCrypto,
 			Cyph.options.video
 		],
 		{'chat': 'https://starfleet.cyph.ws/#'},

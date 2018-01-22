@@ -19,7 +19,7 @@ class Cyph {
 	private static var services		= {
 		backend: 'https://api.cyph.com',
 		chat: 'https://cyph.im/#',
-		telehealthVideo: 'https://cyph.healthcare/#',
+		telehealth: 'https://cyph.healthcare/#',
 		video: 'https://cyph.video/#',
 		voice: 'https://cyph.audio/#'
 	};
@@ -27,10 +27,9 @@ class Cyph {
 	public static var options		= {
 		disableP2P: 1,
 		modestBranding: 2,
-		nativeCrypto: 3,
-		telehealth: 4,
-		video: 5,
-		voice: 6
+		telehealth: 3,
+		video: 4,
+		voice: 5
 	};
 
 	private static function generateGuid (length: Int) : String {
@@ -129,7 +128,7 @@ class Cyph {
 		services: {
 			backend: String,
 			chat: String,
-			telehealthVideo: String,
+			telehealth: String,
 			video: String,
 			voice: String
 		}
@@ -139,29 +138,20 @@ class Cyph {
 		return {
 			id: id,
 			link: (
-					options.indexOf(Cyph.options.video) > -1 ?
+					options.indexOf(Cyph.options.telehealth) > -1 ?
+						services.telehealth :
 						(
-							options.indexOf(Cyph.options.telehealth) > -1 ?
-								services.telehealthVideo :
-								services.video
-						) :
-						(
-							options.indexOf(Cyph.options.voice) > -1 ?
-								services.voice :
-								services.chat
+							options.indexOf(Cyph.options.video) > -1 ?
+								services.video :
+								(
+									options.indexOf(Cyph.options.voice) > -1 ?
+										services.voice :
+										services.chat
+								)
 						)
-				) +
-				(
-					(
-						options.indexOf(Cyph.options.telehealth) > -1 &&
-						options.indexOf(Cyph.options.video) < 0
-					) ?
-						'@' :
-						''
 				) +
 				(options.indexOf(Cyph.options.modestBranding) > -1 ? '!' : '') +
 				(options.indexOf(Cyph.options.disableP2P) > -1 ? '$' : '') +
-				(options.indexOf(Cyph.options.nativeCrypto) > -1 ? '*' : '') +
 				id +
 				Cyph.generateGuid(19)
 		};
@@ -173,7 +163,7 @@ class Cyph {
 		?services: {
 			?backend: String,
 			chat: String,
-			?telehealthVideo: String,
+			?telehealth: String,
 			?video: String,
 			?voice: String
 		},
@@ -201,8 +191,8 @@ class Cyph {
 		if (services.backend == null) {
 			services.backend			= Cyph.services.backend;
 		}
-		if (services.telehealthVideo == null) {
-			services.telehealthVideo	= services.chat + "video/@";
+		if (services.telehealth == null) {
+			services.telehealth			= services.chat + "video/";
 		}
 		if (services.video == null) {
 			services.video				= services.chat + "video/";
