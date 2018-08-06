@@ -29,5 +29,5 @@ declare module '@cyph/sdk' {
 		) : Promise<string>;
 	}
 
-	const Cyph: ICyphSDK;
+	const cyph: ICyphSDK;
 }

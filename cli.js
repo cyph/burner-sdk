@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 
-var Cyph	= require('./module');
+var cyph	= require('./module');
 
 var apiKey	= process.argv[2];
 
@@ -10,11 +10,11 @@ if (!apiKey) {
 	return;
 }
 
-Cyph.initiateSession(
+cyph.initiateSession(
 	apiKey,
 	process.argv.slice(3).
 		map(function (arg) {
-			return Cyph.options[arg];
+			return cyph.options[arg];
 		}).filter(function (option) {
 			return !isNaN(option);
 		})
@@ -35,7 +35,7 @@ Cyph.initiateSession(
 			var keys	= ['chat'];
 			for (var i = 0 ; i < keys.length ; ++i) {
 				var k	= keys[i];
-				if (typeof Cyph.services[k] !== typeof services[k]) {
+				if (typeof cyph.services[k] !== typeof services[k]) {
 					return;
 				}
 			}

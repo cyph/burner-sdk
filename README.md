@@ -9,16 +9,16 @@ shared with two parties.
 
 Additionally, the following optional features are supported:
 
-* `Cyph.options.disableP2P`: Disables P2P networking for voice/video calls, with traffic instead
+* `disableP2P`: Disables P2P networking for voice/video calls, with traffic instead
 routed through Twilio's low-latency network traversal infrastructure
 
-* `Cyph.options.modestBranding`: Uses modest branding (greyscale UI with toned down Cyph branding)
+* `modestBranding`: Uses modest branding (greyscale UI with toned down Cyph branding)
 
-* `Cyph.options.telehealth`: Goes directly into a video call in telehealth application
+* `telehealth`: Goes directly into a video call in telehealth application
 
-* `Cyph.options.video`: Goes directly into a video call
+* `video`: Goes directly into a video call
 
-* `Cyph.options.voice`: Goes directly into a voice call
+* `voice`: Goes directly into a voice call
 
 ## Language Support
 
@@ -61,24 +61,24 @@ Command line shell:
 
 JavaScript (ES2017) / TypeScript:
 
-	import {Cyph} from '@cyph/sdk';
+	import {cyph} from '@cyph/sdk';
 
 	(async () => {
 
 
-	console.log(await Cyph.initiateSession(apiKey));
+	console.log(await cyph.initiateSession(apiKey));
 
 
-	console.log(await Cyph.initiateSession(apiKey, [Cyph.options.voice]));
+	console.log(await cyph.initiateSession(apiKey, [cyph.options.voice]));
 
 
 	console.log(
-		await Cyph.initiateSession(
+		await cyph.initiateSession(
 			apiKey,
 			[
-				Cyph.options.disableP2P,
-				Cyph.options.modestBranding,
-				Cyph.options.video
+				cyph.options.disableP2P,
+				cyph.options.modestBranding,
+				cyph.options.video
 			],
 			{chat: 'https://starfleet.cyph.ws/#'}
 		)
@@ -89,10 +89,10 @@ JavaScript (ES2017) / TypeScript:
 
 JavaScript (ES5):
 
-	var Cyph = require('@cyph/sdk');
+	var cyph = require('@cyph/sdk');
 
 
-	Cyph.initiateSession(
+	cyph.initiateSession(
 		apiKey,
 		undefined,
 		undefined,
@@ -101,21 +101,21 @@ JavaScript (ES5):
 	);
 
 
-	Cyph.initiateSession(
+	cyph.initiateSession(
 		apiKey,
-		[Cyph.options.voice],
+		[cyph.options.voice],
 		undefined,
 		function (cyphLink) { console.log(cyphLink); },
 		function (err) { console.error(err); }
 	);
 
 
-	Cyph.initiateSession(
+	cyph.initiateSession(
 		apiKey,
 		[
-			Cyph.options.disableP2P,
-			Cyph.options.modestBranding,
-			Cyph.options.video
+			cyph.options.disableP2P,
+			cyph.options.modestBranding,
+			cyph.options.video
 		],
 		{chat: 'https://starfleet.cyph.ws/#'},
 		function (cyphLink) { console.log(cyphLink); },

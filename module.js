@@ -1,10 +1,10 @@
-var Cyph				= require('./dist/js/Cyph').Cyph;
-var initiateSession		= Cyph.initiateSession;
+var cyph				= require('./dist/js/Cyph').Cyph;
+var initiateSession		= cyph.initiateSession;
 
-Cyph.initiateSession	= function (apiKey, options, services, onData, onError) {
+cyph.initiateSession	= function (apiKey, options, services, onData, onError) {
 	if (onData || onError) {
 		return initiateSession.call(
-			Cyph,
+			cyph,
 			apiKey,
 			options,
 			services,
@@ -15,7 +15,7 @@ Cyph.initiateSession	= function (apiKey, options, services, onData, onError) {
 	else {
 		return new Promise(function (resolve, reject) {
 			initiateSession.call(
-				Cyph,
+				cyph,
 				apiKey,
 				options,
 				services,
@@ -26,5 +26,5 @@ Cyph.initiateSession	= function (apiKey, options, services, onData, onError) {
 	}
 };
 
-Cyph.Cyph		= Cyph;
-module.exports	= Cyph;
+cyph.cyph		= cyph;
+module.exports	= cyph;
