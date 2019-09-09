@@ -39,6 +39,8 @@ The following languages have experimental support:
 
 * Java
 
+* Python
+
 ## Example Uses
 
 Command line shell:
@@ -158,9 +160,7 @@ PHP:
 		function ($err) { echo $err; }
 	);
 
-# Coming Soon
-
-Python 3 will be supported after an upcoming release of Haxe, as in the following example:
+Python:
 
 	from Cyph import Cyph
 

@@ -16,8 +16,8 @@ all:
 
 	haxe Cyph --php-lib cyph -php dist/php
 
-	# mkdir dist/python
-	# haxe Cyph -python dist/python/Cyph.py
+	mkdir dist/python
+	haxe Cyph -python dist/python/Cyph.py
 
 clean:
 	rm -rf dist SecureRandom.hx
