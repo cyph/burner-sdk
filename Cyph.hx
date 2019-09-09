@@ -19,7 +19,7 @@ class Cyph {
 	private static var services		= {
 		backend: 'https://api.cyph.com',
 		chat: 'https://cyph.im/#',
-		telehealth: 'https://cyph.healthcare/#',
+		telehealth: 'https://video.cyph.healthcare/#',
 		video: 'https://cyph.video/#',
 		voice: 'https://cyph.audio/#'
 	};
