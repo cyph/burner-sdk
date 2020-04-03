@@ -1,8 +1,8 @@
-# @cyph/sdk
+# @cyph/burner-sdk
 
 ## Overview
 
-The Cyph SDK allows third-party services to initiate new Cyph sessions.
+The Cyph Burner SDK allows third-party services to initiate new Cyph Burner sessions.
 
 The core functionality is to create an ephemeral encrypted text chat link that can be
 shared with two parties.
@@ -43,15 +43,15 @@ The following languages have experimental support:
 
 Command line shell:
 
-	cyph-sdk $apiKey
+	cyph-burner-sdk $apiKey
 	# https://cyph.im/#2D2gzbqggQxTaanHZYbDXb8fVr
 
 
-	cyph-sdk $apiKey voice
+	cyph-burner-sdk $apiKey voice
 	# https://cyph.audio/#1nckgXAumVXWjmwrYdSjXaZGW
 
 
-	cyph-sdk \
+	cyph-burner-sdk \
 		$apiKey \
 		disableP2P \
 		modestBranding \
@@ -61,7 +61,7 @@ Command line shell:
 
 JavaScript (ES2017) / TypeScript:
 
-	import {cyph} from '@cyph/sdk';
+	import {cyph} from '@cyph/burner-sdk';
 
 	(async () => {
 
@@ -89,7 +89,7 @@ JavaScript (ES2017) / TypeScript:
 
 JavaScript (ES5):
 
-	var cyph = require('@cyph/sdk');
+	var cyph = require('@cyph/burner-sdk');
 
 
 	cyph.initiateSession(

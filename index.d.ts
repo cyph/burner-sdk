@@ -1,5 +1,5 @@
-declare module '@cyph/sdk' {
-	interface ICyphSDK {
+declare module '@cyph/burner-sdk' {
+	interface ICyphBurnerSDK {
 		/** Optional features that can be activated when initiating a session. */
 		options: {
 			disableP2P: number;
@@ -10,9 +10,9 @@ declare module '@cyph/sdk' {
 		};
 
 		/**
-		 * Starts a new Cyph session.
+		 * Starts a new Cyph Burner session.
 		 * @param apiKey API key
-		 * @param options List of values from ICyphSDK.options
+		 * @param options List of values from ICyphBurnerSDK.options
 		 * @param services Configuration to override default Cyph environment (example in readme)
 		 * @returns Promise resolving to the link to the session
 		 */
@@ -29,5 +29,5 @@ declare module '@cyph/sdk' {
 		) : Promise<string>;
 	}
 
-	const cyph: ICyphSDK;
+	const cyph: ICyphBurnerSDK;
 }

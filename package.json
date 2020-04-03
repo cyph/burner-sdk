@@ -1,24 +1,24 @@
 {
-	"name": "@cyph/sdk",
+	"name": "@cyph/burner-sdk",
 	"version": "3.2.0",
 	"description": "Client side of Cyph API",
 	"main": "module.js",
-	"types": "./sdk.d.ts",
+	"types": "./index.d.ts",
 	"bin": {
-		"cyph-sdk": "cli.js"
+		"cyph-burner-sdk": "cli.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/cyph/sdk.git"
+		"url": "git://github.com/cyph/burner-sdk.git"
 	},
 	"keywords": [
 		"cyph",
 		"cryptography"
 	],
-	"author": "Cyph, Inc. <sdk@cyph.com> (https://github.com/cyph)",
+	"author": "Cyph, Inc. <burner-sdk@cyph.com> (https://github.com/cyph)",
 	"license": "Ms-RSL",
 	"bugs": {
-		"url": "https://github.com/cyph/sdk/issues"
+		"url": "https://github.com/cyph/burner-sdk/issues"
 	},
 	"dependencies": {
 		"node-fetch": "*"
